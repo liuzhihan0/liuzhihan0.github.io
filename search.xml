@@ -22,7 +22,7 @@
   <entry>
     <title>Github+Hexo搭建博客</title>
     <url>/2020/04/15/Github+Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</url>
-    <content><![CDATA[<h1 id="吐槽"><a href="#吐槽" class="headerlink" title="吐槽"></a>吐槽</h1><p>在家闲来无事（其实是一直在家憋得慌）就搭了这个博客，太麻烦了，这么多配置的坑一个一个填，现在还没把小图标的问题解决……</p>
+    <content><![CDATA[<h2 id="吐槽"><a href="#吐槽" class="headerlink" title="吐槽"></a>吐槽</h2><p>在家闲来无事（其实是一直在家憋得慌）就搭了这个博客，太麻烦了，这么多配置的坑一个一个填，现在还没把小图标的问题解决……</p>
 <a id="more"></a>
 
 <hr>
@@ -30,15 +30,15 @@
 <p>终于解决了小图标的问题了！！！值得庆祝</p>
 <p>小图标的问题我也不知道是升级了版本还是icon图标名称前的<code>fa fa-xxx</code>前缀的原因，不想再试了。</p>
 <p>用 Github + Hexo 搭建博客需要用到 Nodejs 和 Git 。</p>
-<h2 id="下载-NexT-主题"><a href="#下载-NexT-主题" class="headerlink" title="下载 NexT 主题"></a>下载 NexT 主题</h2><figure class="highlight elixir"><table><tr><td class="code"><pre><span class="line"><span class="variable">$ </span>git clone <span class="symbol">https:</span>/<span class="regexp">/github.com/theme</span>-<span class="keyword">next</span>/hexo-theme-<span class="keyword">next</span> themes/<span class="keyword">next</span></span><br></pre></td></tr></table></figure>
+<h3 id="下载-NexT-主题"><a href="#下载-NexT-主题" class="headerlink" title="下载 NexT 主题"></a>下载 NexT 主题</h3><figure class="highlight elixir"><table><tr><td class="code"><pre><span class="line"><span class="variable">$ </span>git clone <span class="symbol">https:</span>/<span class="regexp">/github.com/theme</span>-<span class="keyword">next</span>/hexo-theme-<span class="keyword">next</span> themes/<span class="keyword">next</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="本地预览"><a href="#本地预览" class="headerlink" title="本地预览"></a>本地预览</h2><figure class="highlight elixir"><table><tr><td class="code"><pre><span class="line"><span class="variable">$ </span>hexo clean</span><br><span class="line"><span class="variable">$ </span>hexo g</span><br><span class="line"><span class="variable">$ </span>hexo s</span><br></pre></td></tr></table></figure>
+<h3 id="本地预览"><a href="#本地预览" class="headerlink" title="本地预览"></a>本地预览</h3><figure class="highlight elixir"><table><tr><td class="code"><pre><span class="line"><span class="variable">$ </span>hexo clean</span><br><span class="line"><span class="variable">$ </span>hexo g</span><br><span class="line"><span class="variable">$ </span>hexo s</span><br></pre></td></tr></table></figure>
 
-<h2 id="本地调试（-debug）"><a href="#本地调试（-debug）" class="headerlink" title="本地调试（--debug）"></a>本地调试（<code>--debug</code>）</h2><figure class="highlight elixir"><table><tr><td class="code"><pre><span class="line"><span class="variable">$ </span>hexo clean</span><br><span class="line"><span class="variable">$ </span>hexo g</span><br><span class="line"><span class="variable">$ </span>hexo s --debug</span><br></pre></td></tr></table></figure>
+<h3 id="本地调试（-debug）"><a href="#本地调试（-debug）" class="headerlink" title="本地调试（--debug）"></a>本地调试（<code>--debug</code>）</h3><figure class="highlight elixir"><table><tr><td class="code"><pre><span class="line"><span class="variable">$ </span>hexo clean</span><br><span class="line"><span class="variable">$ </span>hexo g</span><br><span class="line"><span class="variable">$ </span>hexo s --debug</span><br></pre></td></tr></table></figure>
 
-<h2 id="部署步骤"><a href="#部署步骤" class="headerlink" title="部署步骤"></a>部署步骤</h2><figure class="highlight elixir"><table><tr><td class="code"><pre><span class="line"><span class="variable">$ </span>hexo clean</span><br><span class="line"><span class="variable">$ </span>hexo g</span><br><span class="line"><span class="variable">$ </span>hexo d</span><br></pre></td></tr></table></figure>
+<h3 id="部署步骤"><a href="#部署步骤" class="headerlink" title="部署步骤"></a>部署步骤</h3><figure class="highlight elixir"><table><tr><td class="code"><pre><span class="line"><span class="variable">$ </span>hexo clean</span><br><span class="line"><span class="variable">$ </span>hexo g</span><br><span class="line"><span class="variable">$ </span>hexo d</span><br></pre></td></tr></table></figure>
 
-<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"postName"</span>      # 新建文章</span><br><span class="line">$ hexo new<span class="built_in"> page </span><span class="string">"pageName"</span> # 新建页面</span><br><span class="line">$ hexo generate            # 生成静态页面至public目录</span><br><span class="line">$ hexo<span class="built_in"> server </span>             # 开启预览访问端口(默认端口4000)</span><br><span class="line">$ hexo deploy              # 项目部署</span><br><span class="line">$ hexo help                # 查看帮助</span><br><span class="line">$ hexo version             # 查看Hexo的版本</span><br></pre></td></tr></table></figure>
+<h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"postName"</span>      # 新建文章</span><br><span class="line">$ hexo new<span class="built_in"> page </span><span class="string">"pageName"</span> # 新建页面</span><br><span class="line">$ hexo generate            # 生成静态页面至public目录</span><br><span class="line">$ hexo<span class="built_in"> server </span>             # 开启预览访问端口(默认端口4000)</span><br><span class="line">$ hexo deploy              # 项目部署</span><br><span class="line">$ hexo help                # 查看帮助</span><br><span class="line">$ hexo version             # 查看Hexo的版本</span><br></pre></td></tr></table></figure>
 
 <hr>
 <p>把我的 NexT 主题配置文件记录下来，只修改了下面的部分，其他的都是默认的：</p>
