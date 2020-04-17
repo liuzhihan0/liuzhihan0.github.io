@@ -3,13 +3,20 @@
   <entry>
     <title>Linux命令学习</title>
     <url>/2020/04/17/Linux-command/</url>
-    <content><![CDATA[<p>2020年春大二下学期，我们开设了操作系统课程，开始了Linux的学习历程，用此文章记录下学习到的命令。</p>
-<p>几个学习网站：</p>
-<p><a href="https://www.runoob.com/linux/linux-command-manual.html" target="_blank" rel="noopener">Linux 命令大全 | 菜鸟教程</a> ——列出了很多命令，有详细说明</p>
-<p><a href="https://man.linuxde.net/" target="_blank" rel="noopener">Linux命令大全(手册)</a> ——可以搜索某个命令的用法和解释</p>
+    <content><![CDATA[<p>2020年春大二下学期，我们开设了操作系统课程，开始了Linux的学习历程，用此文章记录下学习到的命令。<br>几个学习网站：<br><a href="https://www.runoob.com/linux/linux-command-manual.html" target="_blank" rel="noopener">Linux 命令大全 | 菜鸟教程</a> ——列出了很多命令，有详细说明<br><a href="https://man.linuxde.net/" target="_blank" rel="noopener">Linux命令大全(手册)</a> ——可以搜索某个命令的用法和解释</p>
 <a id="more"></a>
+<h2 id="Linux-命令"><a href="#Linux-命令" class="headerlink" title="Linux 命令"></a>Linux 命令</h2><h3 id="cd"><a href="#cd" class="headerlink" title="cd"></a>cd</h3><p>切换当前工作目录至 dirName(目录参数)。</p>
+<h4 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> [dirName]</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="Linux-命令"><a href="#Linux-命令" class="headerlink" title="Linux 命令"></a>Linux 命令</h2>]]></content>
+<ul>
+<li>dirName：要切换的目标目录。</li>
+<li>若省略 dirName，则变换至使用者的 home 目录</li>
+<li>另外，”~” 也表示 home 目录，”.” 表示目前所在的目录，”..” 则表示目前目录位置的上一层目录。</li>
+</ul>
+<h3 id="pwd"><a href="#pwd" class="headerlink" title="pwd"></a>pwd</h3><p>显示当前所在的工作目录。</p>
+<h4 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">pwd</span></span></span><br></pre></td></tr></table></figure>
+
+<h3 id="ls"><a href="#ls" class="headerlink" title="ls"></a>ls</h3><h3 id="vi"><a href="#vi" class="headerlink" title="vi"></a>vi</h3>]]></content>
       <categories>
         <category>Linux</category>
       </categories>
