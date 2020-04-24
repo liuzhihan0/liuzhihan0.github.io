@@ -20,30 +20,33 @@
     var CONFIG = {"hostname":"liuzhihan0.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="Always Challenge Miracles!">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Liuzhihan的博客">
-<meta property="og:url" content="http://liuzhihan0.github.io/index.html">
+  <meta name="description" content="实例1：温度转换12345678910# TempConvert.pyTempStr &#x3D; input(&quot;请输入带有符号的温度值：&quot;)if TempStr[-1] in [&#39;F&#39;, &#39;f&#39;]:    C &#x3D; (eval(TempStr[0:-1]) - 32) &#x2F; 1.8    print(&quot;转换后的温度是&amp;#123;:.2f&amp;#125;C&quot;.format(C))elif TempStr[-1] i">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python基础学习笔记-MOOC">
+<meta property="og:url" content="http://liuzhihan0.github.io/2020/04/24/python-learn-note/index.html">
 <meta property="og:site_name" content="Liuzhihan的博客">
-<meta property="og:description" content="Always Challenge Miracles!">
+<meta property="og:description" content="实例1：温度转换12345678910# TempConvert.pyTempStr &#x3D; input(&quot;请输入带有符号的温度值：&quot;)if TempStr[-1] in [&#39;F&#39;, &#39;f&#39;]:    C &#x3D; (eval(TempStr[0:-1]) - 32) &#x2F; 1.8    print(&quot;转换后的温度是&amp;#123;:.2f&amp;#125;C&quot;.format(C))elif TempStr[-1] i">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-04-24T01:43:08.000Z">
+<meta property="article:modified_time" content="2020-04-24T01:54:58.697Z">
 <meta property="article:author" content="Liuzhihan">
+<meta property="article:tag" content="Python基础">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://liuzhihan0.github.io/">
+<link rel="canonical" href="http://liuzhihan0.github.io/2020/04/24/python-learn-note/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>Liuzhihan的博客</title>
+  <title>Python基础学习笔记-MOOC | Liuzhihan的博客</title>
   
 
 
@@ -192,9 +195,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
+
+    
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
@@ -210,10 +214,9 @@
       <meta itemprop="name" content="Liuzhihan的博客">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/04/24/python-learn-note/" class="post-title-link" itemprop="url">Python基础学习笔记-MOOC</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          Python基础学习笔记-MOOC
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -226,7 +229,14 @@
               <time title="创建时间：2020-04-24 09:43:08 / 修改时间：09:54:58" itemprop="dateCreated datePublished" datetime="2020-04-24T09:43:08+08:00">2020-04-24</time>
             </span>
 
-          <br>
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
             <span class="post-meta-item" title="本文字数">
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
@@ -251,7 +261,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="实例1：温度转换"><a href="#实例1：温度转换" class="headerlink" title="实例1：温度转换"></a>实例1：温度转换</h2><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># TempConvert.py</span></span><br><span class="line">TempStr = input(<span class="string">"请输入带有符号的温度值："</span>)</span><br><span class="line"><span class="keyword">if</span> TempStr[<span class="number">-1</span>] <span class="keyword">in</span> [<span class="string">'F'</span>, <span class="string">'f'</span>]:</span><br><span class="line">    C = (eval(TempStr[<span class="number">0</span>:<span class="number">-1</span>]) - <span class="number">32</span>) / <span class="number">1.8</span></span><br><span class="line">    print(<span class="string">"转换后的温度是&#123;:.2f&#125;C"</span>.format(C))</span><br><span class="line"><span class="keyword">elif</span> TempStr[<span class="number">-1</span>] <span class="keyword">in</span> [<span class="string">'C'</span>, <span class="string">'c'</span>]:</span><br><span class="line">    F = <span class="number">1.8</span> * eval(TempStr[<span class="number">0</span>:<span class="number">-1</span>]) + <span class="number">32</span></span><br><span class="line">    print(<span class="string">"转换后的温度是&#123;:.2f&#125;F"</span>.format(F))</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(<span class="string">"输入格式错误"</span>)</span><br></pre></td></tr></table></figure>
+        <h2 id="实例1：温度转换"><a href="#实例1：温度转换" class="headerlink" title="实例1：温度转换"></a>实例1：温度转换</h2><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># TempConvert.py</span></span><br><span class="line">TempStr = input(<span class="string">"请输入带有符号的温度值："</span>)</span><br><span class="line"><span class="keyword">if</span> TempStr[<span class="number">-1</span>] <span class="keyword">in</span> [<span class="string">'F'</span>, <span class="string">'f'</span>]:</span><br><span class="line">    C = (eval(TempStr[<span class="number">0</span>:<span class="number">-1</span>]) - <span class="number">32</span>) / <span class="number">1.8</span></span><br><span class="line">    print(<span class="string">"转换后的温度是&#123;:.2f&#125;C"</span>.format(C))</span><br><span class="line"><span class="keyword">elif</span> TempStr[<span class="number">-1</span>] <span class="keyword">in</span> [<span class="string">'C'</span>, <span class="string">'c'</span>]:</span><br><span class="line">    F = <span class="number">1.8</span> * eval(TempStr[<span class="number">0</span>:<span class="number">-1</span>]) + <span class="number">32</span></span><br><span class="line">    print(<span class="string">"转换后的温度是&#123;:.2f&#125;F"</span>.format(F))</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(<span class="string">"输入格式错误"</span>)</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li><p><strong>缩进</strong> 表达程序的框架</p>
@@ -905,7 +915,6 @@
 </ol>
 <h3 id="实例8：科赫雪花小包裹"><a href="#实例8：科赫雪花小包裹" class="headerlink" title="实例8：科赫雪花小包裹"></a>实例8：科赫雪花小包裹</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 科赫雪花</span></span><br><span class="line"><span class="keyword">import</span> turtle</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">koch</span><span class="params">(size, n)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> n == <span class="number">0</span>:</span><br><span class="line">        turtle.fd(size)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">for</span> angle <span class="keyword">in</span> [<span class="number">0</span>, <span class="number">60</span>, <span class="number">-120</span>, <span class="number">60</span>]:</span><br><span class="line">            turtle.left(angle)</span><br><span class="line">            koch(size / <span class="number">3</span>, n - <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">    turtle.setup(<span class="number">600</span>, <span class="number">600</span>)</span><br><span class="line">    turtle.penup()</span><br><span class="line">    turtle.goto(<span class="number">-200</span>, <span class="number">100</span>)</span><br><span class="line">    turtle.pendown()</span><br><span class="line">    turtle.pensize(<span class="number">2</span>)</span><br><span class="line">    level = <span class="number">3</span></span><br><span class="line">    koch(<span class="number">400</span>, level)</span><br><span class="line">    turtle.right(<span class="number">120</span>)</span><br><span class="line">    koch(<span class="number">400</span>, level)</span><br><span class="line">    turtle.right(<span class="number">120</span>)</span><br><span class="line">    koch(<span class="number">400</span>, level)</span><br><span class="line">    turtle.hideturtle()</span><br><span class="line">    turtle.done()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
 
-      
     </div>
 
     
@@ -914,290 +923,72 @@
 
     <div>
       
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">------------本文结束<i class="fa fa-paw"></i>感谢阅读------------</div>
+    
+</div>
+      
     </div>
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
+        <div class="reward-container">
+  <div>感谢支持</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
       
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://liuzhihan0.github.io/2020/04/17/Linux-command/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/author.jpg">
-      <meta itemprop="name" content="Liuzhihan">
-      <meta itemprop="description" content="Always Challenge Miracles!">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Liuzhihan的博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/04/17/Linux-command/" class="post-title-link" itemprop="url">Linux命令学习</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-04-17 11:26:13 / 修改时间：17:45:04" itemprop="dateCreated datePublished" datetime="2020-04-17T11:26:13+08:00">2020-04-17</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>350</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.jpg" alt="Liuzhihan 微信支付">
+        <p>微信支付</p>
+      </div>
       
-          <p>2020年春大二下学期，我们开设了操作系统课程，开始接触Linux，用这篇文章记录学习到的命令。  </p>
-<p><a href="https://www.runoob.com/linux/linux-command-manual.html" target="_blank" rel="noopener">Linux 命令大全 | 菜鸟教程</a> ——列出了很多命令，有详细说明<br><a href="https://man.linuxde.net/" target="_blank" rel="noopener">Linux命令大全(手册)</a> ——可以搜索某个命令的用法和解释</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/04/17/Linux-command/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
+      <div style="display: inline-block;">
+        <img src="/images/alipay.jpg" alt="Liuzhihan 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
         
-      
-    </div>
 
-    
-    
-    
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Liuzhihan
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://liuzhihan0.github.io/2020/04/24/python-learn-note/" title="Python基础学习笔记-MOOC">http://liuzhihan0.github.io/2020/04/24/python-learn-note/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
 
-    <div>
-      
-    </div>
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
+          <div class="post-tags">
+              <a href="/tags/Python%E5%9F%BA%E7%A1%80/" rel="tag"># Python基础</a>
+          </div>
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://liuzhihan0.github.io/2020/04/15/djbk/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/author.jpg">
-      <meta itemprop="name" content="Liuzhihan">
-      <meta itemprop="description" content="Always Challenge Miracles!">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Liuzhihan的博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/04/15/djbk/" class="post-title-link" itemprop="url">Github+Hexo搭建博客</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-04-15 19:35:47" itemprop="dateCreated datePublished" datetime="2020-04-15T19:35:47+08:00">2020-04-15</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-04-17 18:26:24" itemprop="dateModified" datetime="2020-04-17T18:26:24+08:00">2020-04-17</time>
-              </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>4.4k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>4 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="吐槽"><a href="#吐槽" class="headerlink" title="吐槽"></a>吐槽</h2><p>在家闲来无事（其实是一直在家憋得慌）就搭了这个博客，太麻烦了，这么多配置的坑一个一个填，现在还没把小图标的问题解决……</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/04/15/djbk/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
         
-      
-    </div>
 
-    
-    
-    
 
-    <div>
-      
-    </div>
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://liuzhihan0.github.io/2020/04/14/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/author.jpg">
-      <meta itemprop="name" content="Liuzhihan">
-      <meta itemprop="description" content="Always Challenge Miracles!">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Liuzhihan的博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/04/14/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-04-14 19:06:49" itemprop="dateCreated datePublished" datetime="2020-04-14T19:06:49+08:00">2020-04-14</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-04-15 21:58:11" itemprop="dateModified" datetime="2020-04-15T21:58:11+08:00">2020-04-15</time>
-              </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>357</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/04/14/hello-world/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
         
-      
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/04/17/Linux-command/" rel="prev" title="Linux命令学习">
+      <i class="fa fa-chevron-left"></i> Linux命令学习
+    </a></div>
+      <div class="post-nav-item"></div>
     </div>
-
-    
-    
-    
-
-    <div>
-      
-    </div>
-      <footer class="post-footer">
-        <div class="post-eof"></div>
       </footer>
+    
   </article>
   
   
-  
-
-
   
 
 
@@ -1245,6 +1036,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#实例1：温度转换"><span class="nav-text">实例1：温度转换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实例2：Python蟒蛇绘制"><span class="nav-text">实例2：Python蟒蛇绘制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#turtle库的使用"><span class="nav-text">turtle库的使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RGB色彩体系"><span class="nav-text">RGB色彩体系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#循环语句和range-函数"><span class="nav-text">循环语句和range()函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本数据类型"><span class="nav-text">基本数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#整数类型"><span class="nav-text">整数类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浮点类型"><span class="nav-text">浮点类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#复数类型"><span class="nav-text">复数类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数值运算操作符"><span class="nav-text">数值运算操作符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数值运算函数"><span class="nav-text">数值运算函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实例3"><span class="nav-text">实例3</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字符串类型及操作"><span class="nav-text">字符串类型及操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串"><span class="nav-text">字符串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串的序号"><span class="nav-text">字符串的序号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串的使用"><span class="nav-text">字符串的使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串处理函数"><span class="nav-text">字符串处理函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串处理方法"><span class="nav-text">字符串处理方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串类型的格式化"><span class="nav-text">字符串类型的格式化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#time库的使用"><span class="nav-text">time库的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#时间获取"><span class="nav-text">时间获取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#时间格式化"><span class="nav-text">时间格式化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#程序计时"><span class="nav-text">程序计时</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实例4-文本进度条"><span class="nav-text">实例4 文本进度条</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#程序的控制结构"><span class="nav-text">程序的控制结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#程序的分支结构"><span class="nav-text">程序的分支结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例5-身体质量指数"><span class="nav-text">实例5 身体质量指数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#程序的循环结构"><span class="nav-text">程序的循环结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模块3-random库的使用"><span class="nav-text">模块3 random库的使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例6-圆周率的计算"><span class="nav-text">实例6 圆周率的计算</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数和代码复用"><span class="nav-text">函数和代码复用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#函数的定义与使用"><span class="nav-text">函数的定义与使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例7：七段数码管绘制"><span class="nav-text">实例7：七段数码管绘制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码复用与函数递归"><span class="nav-text">代码复用与函数递归</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模块4：pyinstaller库的使用"><span class="nav-text">模块4：pyinstaller库的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装：打开-cmd"><span class="nav-text">安装：打开 cmd</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用"><span class="nav-text">使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#常用参数"><span class="nav-text">常用参数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例8：科赫雪花小包裹"><span class="nav-text">实例8：科赫雪花小包裹</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
