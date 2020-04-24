@@ -30,7 +30,7 @@
   </entry>
   <entry>
     <title>Github+Hexo搭建博客</title>
-    <url>/2020/04/15/djbk/</url>
+    <url>/2020/04/15/build-blog-hexo/</url>
     <content><![CDATA[<h2 id="吐槽"><a href="#吐槽" class="headerlink" title="吐槽"></a>吐槽</h2><p>在家闲来无事（其实是一直在家憋得慌）就搭了这个博客，太麻烦了，这么多配置的坑一个一个填，现在还没把小图标的问题解决……</p>
 <a id="more"></a>
 
@@ -135,28 +135,18 @@
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2020/04/14/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<a id="more"></a>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>Python基础学习笔记-MOOC</title>
-    <url>/2020/04/24/python-learn-note/</url>
-    <content><![CDATA[<h2 id="实例1：温度转换"><a href="#实例1：温度转换" class="headerlink" title="实例1：温度转换"></a>实例1：温度转换</h2><figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="comment"># TempConvert.py</span></span><br><span class="line">TempStr = input(<span class="string">"请输入带有符号的温度值："</span>)</span><br><span class="line"><span class="keyword">if</span> TempStr[<span class="number">-1</span>] <span class="keyword">in</span> [<span class="string">'F'</span>, <span class="string">'f'</span>]:</span><br><span class="line">    C = (eval(TempStr[<span class="number">0</span>:<span class="number">-1</span>]) - <span class="number">32</span>) / <span class="number">1.8</span></span><br><span class="line">    print(<span class="string">"转换后的温度是&#123;:.2f&#125;C"</span>.format(C))</span><br><span class="line"><span class="keyword">elif</span> TempStr[<span class="number">-1</span>] <span class="keyword">in</span> [<span class="string">'C'</span>, <span class="string">'c'</span>]:</span><br><span class="line">    F = <span class="number">1.8</span> * eval(TempStr[<span class="number">0</span>:<span class="number">-1</span>]) + <span class="number">32</span></span><br><span class="line">    print(<span class="string">"转换后的温度是&#123;:.2f&#125;F"</span>.format(F))</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(<span class="string">"输入格式错误"</span>)</span><br></pre></td></tr></table></figure>
+    <url>/2020/04/24/Python-Basics/</url>
+    <content><![CDATA[<p>之前在中国大学慕课MOOC上看嵩天老师的Python语言程序设计慕课，看视频的过程中把学的基础知识做了笔记……</p>
+<a id="more"></a>
+
+<h2 id="Python-pip-安装与使用"><a href="#Python-pip-安装与使用" class="headerlink" title="Python pip 安装与使用"></a>Python pip 安装与使用</h2><blockquote>
+<p><a href="https://pypi.org/project/pip/" target="_blank" rel="noopener">pip 官网</a><br><a href="https://www.runoob.com/w3cnote/python-pip-install-usage.html" target="_blank" rel="noopener">Python pip 安装与使用 | 菜鸟教程</a></p>
+</blockquote>
+<h3 id="pip安装库使用豆瓣镜像源"><a href="#pip安装库使用豆瓣镜像源" class="headerlink" title="pip安装库使用豆瓣镜像源"></a>pip安装库使用豆瓣镜像源</h3><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">pip <span class="keyword">install</span> <span class="keyword">name</span> -i <span class="keyword">http</span>://pypi.douban.com/simple <span class="comment">--trusted-host pypi.douban.com</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="实例1：温度转换"><a href="#实例1：温度转换" class="headerlink" title="实例1：温度转换"></a>实例1：温度转换</h2><figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="comment"># TempConvert.py</span></span><br><span class="line">TempStr = input(<span class="string">"请输入带有符号的温度值："</span>)</span><br><span class="line"><span class="keyword">if</span> TempStr[<span class="number">-1</span>] <span class="keyword">in</span> [<span class="string">'F'</span>, <span class="string">'f'</span>]:</span><br><span class="line">    C = (eval(TempStr[<span class="number">0</span>:<span class="number">-1</span>]) - <span class="number">32</span>) / <span class="number">1.8</span></span><br><span class="line">    print(<span class="string">"转换后的温度是&#123;:.2f&#125;C"</span>.format(C))</span><br><span class="line"><span class="keyword">elif</span> TempStr[<span class="number">-1</span>] <span class="keyword">in</span> [<span class="string">'C'</span>, <span class="string">'c'</span>]:</span><br><span class="line">    F = <span class="number">1.8</span> * eval(TempStr[<span class="number">0</span>:<span class="number">-1</span>]) + <span class="number">32</span></span><br><span class="line">    print(<span class="string">"转换后的温度是&#123;:.2f&#125;F"</span>.format(F))</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(<span class="string">"输入格式错误"</span>)</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li><p><strong>缩进</strong> 表达程序的框架</p>
@@ -813,5 +803,24 @@
       <tags>
         <tag>Python基础</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2020/04/14/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<a id="more"></a>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+]]></content>
   </entry>
 </search>
