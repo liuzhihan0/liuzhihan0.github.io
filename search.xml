@@ -1,243 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Github+Hexo搭建博客</title>
-    <url>/2020/04/15/BlogbyHexo/</url>
-    <content><![CDATA[<p>在家闲来无事（其实是一直在家憋得慌）就搭了这个博客，太麻烦了，这么多配置的坑一个一个填，现在还没把小图标不显示的问题解决</p>
-<p>2020.2.15 23:32</p>
-<p>解决了小图标的问题，小图标的问题是icon图标名称前的 <code>fa fa-xxx</code> 前缀的原因，我之前以为fa是多余的就都给删了，重新下载了一次 NexT 主题，默认的东西都没动，图标名称也没动。现在我也是在尝试着一点一点完善这个博客，感觉挺好玩的。</p>
-<p>我感觉 Hexo 搭建博客操作是比较简单的，但是写博客上传是比较麻烦的，要在本地命令行进行，我现在刚开始只有一两篇文章部署的速度还是很快的，但是以后文章数量多了的话我也不知道速度会怎么样。</p>
-<p>之后会抽时间把自己用 Hexo 搭建博客的这个过程给完整记录下来，遇到的问题也会整理一下。</p>
-<hr>
-<h2 id="Hexo-搭建过程"><a href="#Hexo-搭建过程" class="headerlink" title="Hexo 搭建过程"></a>Hexo 搭建过程</h2><p>可以点击查看 <a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">Hexo 官方文档</a> ，中文版的。</p>
-<h3 id="GitHub-创建个人仓库"><a href="#GitHub-创建个人仓库" class="headerlink" title="GitHub 创建个人仓库"></a>GitHub 创建个人仓库</h3><p>在 GitHub 首页右上角头像旁点击 “➕”，然后 New repository 创建新仓库，Repository name 写成 username.github.io 的形式，这里的 username 需要和你的 GitHub 用户名<strong>相同</strong>，比如我的 GitHub 用户名是 liuzhihan0，那我创建的仓库名就是 liuzhihan0.github.io ，仓库名填写好后，点击 Create repository 即可。</p>
-<h3 id="安装-Node-js-和-Git"><a href="#安装-Node-js-和-Git" class="headerlink" title="安装 Node.js 和 Git"></a>安装 Node.js 和 Git</h3><p>用 Github + Hexo 搭建博客需要用到 Node.js 和 Git 。</p>
-<blockquote>
-<p><a href="https://nodejs.org/en/" target="_blank" rel="noopener">Node.js</a><br><a href="https://git-scm.com/" target="_blank" rel="noopener">Git</a></p>
-</blockquote>
-<h3 id="配置信息"><a href="#配置信息" class="headerlink" title="配置信息"></a>配置信息</h3><p>安装好 Git 后，需要进行下面的配置。<br>打开 Git Bush 终端进行操作，设置 user.name 和 user.email 配置信息，这里设置为全局。</p>
-<pre class=" language-lang-bash"><code class="language-lang-bash">git config --global user.name "你的GitHub用户名"
-git config --global user.email "你的GitHub注册邮箱"
+    <title>Hello World</title>
+    <url>/2020/04/14/HelloWorld/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<p>Quick Start</p>
+<h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class=" language-lang-bash"><code class="language-lang-bash">$ hexo new "My New Post"
 </code></pre>
-<p>加引号。</p>
-<h3 id="生成密钥"><a href="#生成密钥" class="headerlink" title="生成密钥"></a>生成密钥</h3><p>通过注册的邮箱生成 ssh 密钥文件，这个同样在 Git Bush 下：</p>
-<pre class=" language-lang-bash"><code class="language-lang-bash">ssh-keygen -t rsa -C "你的GitHub注册邮箱"
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class=" language-lang-bash"><code class="language-lang-bash">$ hexo server
 </code></pre>
-<p>然后一直回车，默认不需要密码，最后得到了两个文件 id_rsa 和 id_rsa.pub。</p>
-<h3 id="拷贝密钥到-GitHub"><a href="#拷贝密钥到-GitHub" class="headerlink" title="拷贝密钥到 GitHub"></a>拷贝密钥到 GitHub</h3><p>打开 id_rsa.pub 文件，将里面的内容全部复制，然后粘贴到 GitHub -&gt; 头像-&gt; Settings -&gt; SSH and GPG keys -&gt; New SSH key。</p>
-<p>然后测试一下 GitHub SSH，打开 Git Bush ，输入下面的命令</p>
-<pre class=" language-lang-bash"><code class="language-lang-bash">ssh -T git@github.com
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class=" language-lang-bash"><code class="language-lang-bash">$ hexo generate
 </code></pre>
-<p>看到</p>
-<pre><code>Are you sure you want to continue connecting (yes/no)?
-</code></pre><p>选择 <code>yes</code></p>
-<pre><code>Hi liuzhihan0! You&#39;ve successfully authenticated, but GitHub does not provide shell access.
-</code></pre><p>Hi 后面出现你的 GitHub 用户名那么就成功了。</p>
-<h3 id="安装-Hexo"><a href="#安装-Hexo" class="headerlink" title="安装 Hexo"></a>安装 Hexo</h3><p>有了 Node.js ，就可以使用 npm 安装 Hexo ，打开 cmd ，输入以下命令。</p>
-<pre class=" language-lang-bash"><code class="language-lang-bash">$ npm install -g hexo-cli
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class=" language-lang-bash"><code class="language-lang-bash">$ hexo deploy
 </code></pre>
-<h3 id="使用-Hexo"><a href="#使用-Hexo" class="headerlink" title="使用 Hexo"></a>使用 Hexo</h3><p>安装完成后，先初始化。</p>
-<pre class=" language-lang-bash"><code class="language-lang-bash">hexo init foldername
-</code></pre>
-<p>这样就在当前目录下创建了一个名为 foldername 的指定文件夹， Hexo 将会在指定文件夹中新建所需要的文件。</p>
-<p>接下来进入 foldername 目录下，输入</p>
-<pre class=" language-lang-bash"><code class="language-lang-bash">hexo g # 生成静态页面
-hexo s # 在本地预览
-</code></pre>
-<p>在浏览器中输入 <code>localhost:4000</code> ，就能预览到搭建的博客页面了。</p>
-<h3 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h3><h4 id="安装-hexo-deployer-git"><a href="#安装-hexo-deployer-git" class="headerlink" title="安装 hexo-deployer-git"></a>安装 hexo-deployer-git</h4><pre class=" language-lang-bash"><code class="language-lang-bash">npm install hexo-deployer-git --save
-</code></pre>
-<h4 id="修改站点配置文件"><a href="#修改站点配置文件" class="headerlink" title="修改站点配置文件"></a>修改站点配置文件</h4><p>修改 foldername 文件下的 <code>_config.yml</code> 的参数。</p>
-<p>站点配置文件中 <code>url</code> 和 <code>root</code> 比较容易导致错误，可以像我这样写，最后显示的网址是比如标签页是 <code>https://liuzhihan0.github.io/tags/</code> ，deploy 下必须写上 <code>type: git</code>，repo 的写法是 <code>https://github.com/username/username.github.io</code> ，前面说过这两个 username 是完全相同的。</p>
-<pre class=" language-lang-yml"><code class="language-lang-yml"># URL
-url: http://liuzhihan0.github.io
-root: /
-
-# ......
-
-deploy:
-  type: git
-  repo: https://github.com/liuzhihan0/liuzhihan0.github.io.git
-  branch: master
-</code></pre>
-<p>然后执行命令</p>
-<pre class=" language-lang-bash"><code class="language-lang-bash">hexo d
-</code></pre>
-<p>在浏览器中输入 username.github.io ，就能看到搭建好的博客了。</p>
-<p>以后就可以一点点的完善博客了。</p>
-<h3 id="写文章"><a href="#写文章" class="headerlink" title="写文章"></a>写文章</h3><pre class=" language-lang-bash"><code class="language-lang-bash">hexo new "文章名称"
-</code></pre>
-<p>新建的文章都在 <code>.\source\_posts</code> 目录下，md 格式，可以直接导入。</p>
-<p>在本地写好文章后保存，然后执行 <strong>部署三部曲</strong> 更新博客内容：</p>
-<pre class=" language-lang-bash"><code class="language-lang-bash">hexo clean
-hexo g
-hexo d
-</code></pre>
-<p>当然，执行 <code>hexo d</code> 之前可以先 <code>hexo s</code> 预览一下效果，如果觉得可以了再部署。</p>
-<p>这个就是 Hexo 比较麻烦的地方了，它只能在自己的电脑上把文章写好改好，然后再通过命令行终端cmd部署，每次修改都需要重新部署，但是它免费啊，唉，忍忍吧。</p>
-<p>写 Markdown 可以用 VScode 或者 Typora 。</p>
-<h3 id="本地预览"><a href="#本地预览" class="headerlink" title="本地预览"></a>本地预览</h3><pre class=" language-lang-bash"><code class="language-lang-bash">hexo clean
-hexo g
-hexo s
-</code></pre>
-<h3 id="本地调试（-debug）"><a href="#本地调试（-debug）" class="headerlink" title="本地调试（--debug）"></a>本地调试（<code>--debug</code>）</h3><pre class=" language-lang-bash"><code class="language-lang-bash">hexo clean
-hexo g
-hexo s --debug
-</code></pre>
-<h3 id="部署步骤"><a href="#部署步骤" class="headerlink" title="部署步骤"></a>部署步骤</h3><pre class=" language-lang-bash"><code class="language-lang-bash">hexo clean
-hexo g
-hexo d
-</code></pre>
-<h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><pre class=" language-lang-bash"><code class="language-lang-bash">hexo new "postName"      # 新建文章
-hexo new page "pageName" # 新建页面
-hexo generate            # 生成静态页面至public目录
-hexo server              # 开启预览访问端口(默认端口4000)
-hexo deploy              # 项目部署
-hexo help                # 查看帮助
-hexo version             # 查看Hexo的版本
-</code></pre>
-<hr>
-<h2 id="NexT-主题配置"><a href="#NexT-主题配置" class="headerlink" title="NexT 主题配置"></a>NexT 主题配置</h2><h3 id="下载-NexT-主题"><a href="#下载-NexT-主题" class="headerlink" title="下载 NexT 主题"></a>下载 NexT 主题</h3><pre class=" language-lang-bash"><code class="language-lang-bash">git clone https://github.com/theme-next/hexo-theme-next themes/next
-</code></pre>
-<p>themes/next 是安装的相对路径，next是对应的主题文件夹名称。</p>
-<h3 id="主题配置文件"><a href="#主题配置文件" class="headerlink" title="主题配置文件"></a>主题配置文件</h3><h4 id="版权信息"><a href="#版权信息" class="headerlink" title="版权信息"></a>版权信息</h4><p>找到 creative_commons 改为下面所示。</p>
-<pre class=" language-lang-yml"><code class="language-lang-yml">creative_commons:
-  license: by-nc-sa
-  sidebar: true
-  post: true
-  language:
-</code></pre>
-<h4 id="NexT-主题的四种样式"><a href="#NexT-主题的四种样式" class="headerlink" title="NexT 主题的四种样式"></a>NexT 主题的四种样式</h4><pre class=" language-lang-yml"><code class="language-lang-yml"># Schemes
-#scheme: Muse
-#scheme: Mist
-#scheme: Pisces
-scheme: Gemini
-</code></pre>
-<h4 id="menu-菜单"><a href="#menu-菜单" class="headerlink" title="menu 菜单"></a>menu 菜单</h4><p><code>||</code> 后是图标名称，不要修改。</p>
-<pre class=" language-lang-yml"><code class="language-lang-yml">menu:
-  home: / || fa fa-home                     # 首页
-  about: /about/ || fa fa-user              # 关于
-  tags: /tags/ || fa fa-tags                # 标签
-  categories: /categories/ || fa fa-th      # 分类
-  archives: /archives/ || fa fa-archive     # 归档
-  schedule: /schedule/ || fa fa-calendar    # 日程表
-  #sitemap: /sitemap.xml || fa fa-sitemap   # 站点地图
-  #commonweal: /404/ || fa fa-heartbeat     # 404页面
-
-# Enable / Disable menu icons / item badges.
-menu_settings:
-  icons: true
-  badges: false
-</code></pre>
-<h4 id="作者栏"><a href="#作者栏" class="headerlink" title="作者栏"></a>作者栏</h4><pre class=" language-lang-yml"><code class="language-lang-yml">avatar:
-  # 头像图片路径 \themes\next6\source\images\
-  url: /images/author.jpg
-  # true为圆形，false为方形
-  rounded: true
-  # true头像旋转
-  rotated: false
-
-# 头像下面的 日志|分类|标签 如果是0则不显示
-site_state: true
-
-# 我的其他网站信息
-social:
-  GitHub: https://github.com/username || fab fa-github
-  CSDN: https://blog.csdn.net/xxxxxxx || fa fa-heartbeat
-
-# 显示小图标
-social_icons:
-  enable: true
-  icons_only: false # 是否只显示小图标
-  transition: false
-
-# 友链
-links_settings:
-  icon: fa fa-link
-  title: 友情链接
-  # Available values: block | inline
-  layout: block
-
-links:
-  #Title: http://yoursite.com
-</code></pre>
-<h4 id="打赏功能"><a href="#打赏功能" class="headerlink" title="打赏功能"></a>打赏功能</h4><p>把自己的收款二维码放到 <code>\themes\next6\source\images\</code> 目录下。</p>
-<pre class=" language-lang-yml"><code class="language-lang-yml">reward_settings:
-  # true开启打赏功能
-  enable: true
-  animation: true
-  comment: 感谢支持
-
-reward:
-  wechatpay: /images/wechatpay.png
-  alipay: /images/alipay.png
-  #paypal: /images/paypal.png
-  #bitcoin: /images/bitcoin.png
-</code></pre>
-<h4 id="右上角显示-GitHub-绑带"><a href="#右上角显示-GitHub-绑带" class="headerlink" title="右上角显示 GitHub 绑带"></a>右上角显示 GitHub 绑带</h4><pre class=" language-lang-yml"><code class="language-lang-yml">github_banner:
-  enable: true
-  permalink: https://github.com/liuzhihan0
-  title: Follow me on GitHub # 鼠标放到上面显示 title
-</code></pre>
-<h4 id="开启不蒜子统计功能"><a href="#开启不蒜子统计功能" class="headerlink" title="开启不蒜子统计功能"></a>开启不蒜子统计功能</h4><pre class=" language-lang-yml"><code class="language-lang-yml">busuanzi_count:
-  enable: true
-  total_visitors: true
-  total_visitors_icon: fa fa-user
-  total_views: true
-  total_views_icon: fa fa-eye
-  post_views: true
-  post_views_icon: fa fa-eye
-</code></pre>
-<h4 id="添加本地搜索功能"><a href="#添加本地搜索功能" class="headerlink" title="添加本地搜索功能"></a>添加本地搜索功能</h4><p>安装 hexo-generator-searchdb 插件</p>
-<pre><code>$ npm install hexo-generator-searchdb --save
-</code></pre><p>打开 _config.yml 找到 local_search ，将 enable 改为 true 。</p>
-<pre class=" language-lang-yml"><code class="language-lang-yml"># 本地搜索
-local_search:
-  enable: true
-  trigger: auto
-  top_n_per_article: 1
-  unescape: false
-  preload: false
-</code></pre>
-<h2 id="闪烁之狐主题"><a href="#闪烁之狐主题" class="headerlink" title="闪烁之狐主题"></a>闪烁之狐主题</h2><p>最近换了闪烁之狐这个主题，这是个比较成熟的主题，想要的东西基本都有。<a href="https://blinkfox.github.io/2018/09/28/qian-duan/hexo-bo-ke-zhu-ti-zhi-hexo-theme-matery-de-jie-shao/" target="_blank" rel="noopener">Hexo博客主题之hexo-theme-matery的介绍</a></p>
-<hr>
-<p>如果有什么建议或者文章有需要修改的地方欢迎指出 😁</p>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 ]]></content>
-      <tags>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Linux命令学习</title>
-    <url>/2020/04/17/LinuxCommand/</url>
-    <content><![CDATA[<p>2020年春大二下学期，我们开设了操作系统课程，开始接触Linux，用这篇文章记录学习到的命令。  </p>
-<p><a href="https://www.runoob.com/linux/linux-command-manual.html" target="_blank" rel="noopener">Linux 命令大全 | 菜鸟教程</a> ——列出了很多命令，有详细说明</p>
-<p><a href="https://man.linuxde.net/" target="_blank" rel="noopener">Linux命令大全(手册)</a> ——可以搜索某个命令的用法和解释</p>
-<h2 id="Linux-命令"><a href="#Linux-命令" class="headerlink" title="Linux 命令"></a>Linux 命令</h2><h3 id="cd"><a href="#cd" class="headerlink" title="cd"></a>cd</h3><p>切换当前工作目录至 dirName(目录参数)。</p>
-<h4 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h4><pre class=" language-lang-bash"><code class="language-lang-bash">cd [dirName]
-</code></pre>
-<ul>
-<li>dirName：要切换的目标目录。</li>
-<li>若省略 dirName，则变换至使用者的 home 目录</li>
-<li>另外，”~” 也表示 home 目录，”.” 表示目前所在的目录，”..” 则表示目前目录位置的上一层目录。</li>
-</ul>
-<h3 id="pwd"><a href="#pwd" class="headerlink" title="pwd"></a>pwd</h3><p>显示当前所在的工作目录。</p>
-<h4 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h4><pre class=" language-lang-bash"><code class="language-lang-bash">pwd
-</code></pre>
-<h3 id="ls"><a href="#ls" class="headerlink" title="ls"></a>ls</h3><p>显示指定工作目录下之内容（列出目前工作目录所含之文件及子目录)。它有很多参数可用。比如：</p>
-<pre class=" language-lang-bash"><code class="language-lang-bash">ls
-ls -a
-ls -l
-ls -all
-ls fileName -l
-</code></pre>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-      </tags>
   </entry>
   <entry>
     <title>Python基础学习笔记-MOOC</title>
@@ -1201,23 +981,211 @@ if __name__ == '__main__':
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2020/04/14/HelloWorld/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<p>Quick Start</p>
-<h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class=" language-lang-bash"><code class="language-lang-bash">$ hexo new "My New Post"
+    <title>Github+Hexo搭建博客</title>
+    <url>/2020/04/15/BlogbyHexo/</url>
+    <content><![CDATA[<p>在家闲来无事（其实是一直在家憋得慌）就搭了这个博客，太麻烦了，这么多配置的坑一个一个填，现在还没把小图标不显示的问题解决</p>
+<p>2020.2.15 23:32</p>
+<p>解决了小图标的问题，小图标的问题是icon图标名称前的 <code>fa fa-xxx</code> 前缀的原因，我之前以为fa是多余的就都给删了，重新下载了一次 NexT 主题，默认的东西都没动，图标名称也没动。现在我也是在尝试着一点一点完善这个博客，感觉挺好玩的。</p>
+<p>我感觉 Hexo 搭建博客操作是比较简单的，但是写博客上传是比较麻烦的，要在本地命令行进行，我现在刚开始只有一两篇文章部署的速度还是很快的，但是以后文章数量多了的话我也不知道速度会怎么样。</p>
+<p>之后会抽时间把自己用 Hexo 搭建博客的这个过程给完整记录下来，遇到的问题也会整理一下。</p>
+<hr>
+<h2 id="Hexo-搭建过程"><a href="#Hexo-搭建过程" class="headerlink" title="Hexo 搭建过程"></a>Hexo 搭建过程</h2><p>可以点击查看 <a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">Hexo 官方文档</a> ，中文版的。</p>
+<h3 id="GitHub-创建个人仓库"><a href="#GitHub-创建个人仓库" class="headerlink" title="GitHub 创建个人仓库"></a>GitHub 创建个人仓库</h3><p>在 GitHub 首页右上角头像旁点击 “➕”，然后 New repository 创建新仓库，Repository name 写成 username.github.io 的形式，这里的 username 需要和你的 GitHub 用户名<strong>相同</strong>，比如我的 GitHub 用户名是 liuzhihan0，那我创建的仓库名就是 liuzhihan0.github.io ，仓库名填写好后，点击 Create repository 即可。</p>
+<h3 id="安装-Node-js-和-Git"><a href="#安装-Node-js-和-Git" class="headerlink" title="安装 Node.js 和 Git"></a>安装 Node.js 和 Git</h3><p>用 Github + Hexo 搭建博客需要用到 Node.js 和 Git 。</p>
+<blockquote>
+<p><a href="https://nodejs.org/en/" target="_blank" rel="noopener">Node.js</a><br><a href="https://git-scm.com/" target="_blank" rel="noopener">Git</a></p>
+</blockquote>
+<h3 id="配置信息"><a href="#配置信息" class="headerlink" title="配置信息"></a>配置信息</h3><p>安装好 Git 后，需要进行下面的配置。<br>打开 Git Bush 终端进行操作，设置 user.name 和 user.email 配置信息，这里设置为全局。</p>
+<pre class=" language-lang-bash"><code class="language-lang-bash">git config --global user.name "你的GitHub用户名"
+git config --global user.email "你的GitHub注册邮箱"
 </code></pre>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class=" language-lang-bash"><code class="language-lang-bash">$ hexo server
+<p>加引号。</p>
+<h3 id="生成密钥"><a href="#生成密钥" class="headerlink" title="生成密钥"></a>生成密钥</h3><p>通过注册的邮箱生成 ssh 密钥文件，这个同样在 Git Bush 下：</p>
+<pre class=" language-lang-bash"><code class="language-lang-bash">ssh-keygen -t rsa -C "你的GitHub注册邮箱"
 </code></pre>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class=" language-lang-bash"><code class="language-lang-bash">$ hexo generate
+<p>然后一直回车，默认不需要密码，最后得到了两个文件 id_rsa 和 id_rsa.pub。</p>
+<h3 id="拷贝密钥到-GitHub"><a href="#拷贝密钥到-GitHub" class="headerlink" title="拷贝密钥到 GitHub"></a>拷贝密钥到 GitHub</h3><p>打开 id_rsa.pub 文件，将里面的内容全部复制，然后粘贴到 GitHub -&gt; 头像-&gt; Settings -&gt; SSH and GPG keys -&gt; New SSH key。</p>
+<p>然后测试一下 GitHub SSH，打开 Git Bush ，输入下面的命令</p>
+<pre class=" language-lang-bash"><code class="language-lang-bash">ssh -T git@github.com
 </code></pre>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class=" language-lang-bash"><code class="language-lang-bash">$ hexo deploy
+<p>看到</p>
+<pre><code>Are you sure you want to continue connecting (yes/no)?
+</code></pre><p>选择 <code>yes</code></p>
+<pre><code>Hi liuzhihan0! You&#39;ve successfully authenticated, but GitHub does not provide shell access.
+</code></pre><p>Hi 后面出现你的 GitHub 用户名那么就成功了。</p>
+<h3 id="安装-Hexo"><a href="#安装-Hexo" class="headerlink" title="安装 Hexo"></a>安装 Hexo</h3><p>有了 Node.js ，就可以使用 npm 安装 Hexo ，打开 cmd ，输入以下命令。</p>
+<pre class=" language-lang-bash"><code class="language-lang-bash">$ npm install -g hexo-cli
 </code></pre>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+<h3 id="使用-Hexo"><a href="#使用-Hexo" class="headerlink" title="使用 Hexo"></a>使用 Hexo</h3><p>安装完成后，先初始化。</p>
+<pre class=" language-lang-bash"><code class="language-lang-bash">hexo init foldername
+</code></pre>
+<p>这样就在当前目录下创建了一个名为 foldername 的指定文件夹， Hexo 将会在指定文件夹中新建所需要的文件。</p>
+<p>接下来进入 foldername 目录下，输入</p>
+<pre class=" language-lang-bash"><code class="language-lang-bash">hexo g # 生成静态页面
+hexo s # 在本地预览
+</code></pre>
+<p>在浏览器中输入 <code>localhost:4000</code> ，就能预览到搭建的博客页面了。</p>
+<h3 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h3><h4 id="安装-hexo-deployer-git"><a href="#安装-hexo-deployer-git" class="headerlink" title="安装 hexo-deployer-git"></a>安装 hexo-deployer-git</h4><pre class=" language-lang-bash"><code class="language-lang-bash">npm install hexo-deployer-git --save
+</code></pre>
+<h4 id="修改站点配置文件"><a href="#修改站点配置文件" class="headerlink" title="修改站点配置文件"></a>修改站点配置文件</h4><p>修改 foldername 文件下的 <code>_config.yml</code> 的参数。</p>
+<p>站点配置文件中 <code>url</code> 和 <code>root</code> 比较容易导致错误，可以像我这样写，最后显示的网址是比如标签页是 <code>https://liuzhihan0.github.io/tags/</code> ，deploy 下必须写上 <code>type: git</code>，repo 的写法是 <code>https://github.com/username/username.github.io</code> ，前面说过这两个 username 是完全相同的。</p>
+<pre class=" language-lang-yml"><code class="language-lang-yml"># URL
+url: http://liuzhihan0.github.io
+root: /
+
+# ......
+
+deploy:
+  type: git
+  repo: https://github.com/liuzhihan0/liuzhihan0.github.io.git
+  branch: master
+</code></pre>
+<p>然后执行命令</p>
+<pre class=" language-lang-bash"><code class="language-lang-bash">hexo d
+</code></pre>
+<p>在浏览器中输入 username.github.io ，就能看到搭建好的博客了。</p>
+<p>以后就可以一点点的完善博客了。</p>
+<h3 id="写文章"><a href="#写文章" class="headerlink" title="写文章"></a>写文章</h3><pre class=" language-lang-bash"><code class="language-lang-bash">hexo new "文章名称"
+</code></pre>
+<p>新建的文章都在 <code>.\source\_posts</code> 目录下，md 格式，可以直接导入。</p>
+<p>在本地写好文章后保存，然后执行 <strong>部署三部曲</strong> 更新博客内容：</p>
+<pre class=" language-lang-bash"><code class="language-lang-bash">hexo clean
+hexo g
+hexo d
+</code></pre>
+<p>当然，执行 <code>hexo d</code> 之前可以先 <code>hexo s</code> 预览一下效果，如果觉得可以了再部署。</p>
+<p>这个就是 Hexo 比较麻烦的地方了，它只能在自己的电脑上把文章写好改好，然后再通过命令行终端cmd部署，每次修改都需要重新部署，但是它免费啊，唉，忍忍吧。</p>
+<p>写 Markdown 可以用 VScode 或者 Typora 。</p>
+<h3 id="本地预览"><a href="#本地预览" class="headerlink" title="本地预览"></a>本地预览</h3><pre class=" language-lang-bash"><code class="language-lang-bash">hexo clean
+hexo g
+hexo s
+</code></pre>
+<h3 id="本地调试（-debug）"><a href="#本地调试（-debug）" class="headerlink" title="本地调试（--debug）"></a>本地调试（<code>--debug</code>）</h3><pre class=" language-lang-bash"><code class="language-lang-bash">hexo clean
+hexo g
+hexo s --debug
+</code></pre>
+<h3 id="部署步骤"><a href="#部署步骤" class="headerlink" title="部署步骤"></a>部署步骤</h3><pre class=" language-lang-bash"><code class="language-lang-bash">hexo clean
+hexo g
+hexo d
+</code></pre>
+<h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><pre class=" language-lang-bash"><code class="language-lang-bash">hexo new "postName"      # 新建文章
+hexo new page "pageName" # 新建页面
+hexo generate            # 生成静态页面至public目录
+hexo server              # 开启预览访问端口(默认端口4000)
+hexo deploy              # 项目部署
+hexo help                # 查看帮助
+hexo version             # 查看Hexo的版本
+</code></pre>
+<hr>
+<h2 id="NexT-主题配置"><a href="#NexT-主题配置" class="headerlink" title="NexT 主题配置"></a>NexT 主题配置</h2><h3 id="下载-NexT-主题"><a href="#下载-NexT-主题" class="headerlink" title="下载 NexT 主题"></a>下载 NexT 主题</h3><pre class=" language-lang-bash"><code class="language-lang-bash">git clone https://github.com/theme-next/hexo-theme-next themes/next
+</code></pre>
+<p>themes/next 是安装的相对路径，next是对应的主题文件夹名称。</p>
+<h3 id="主题配置文件"><a href="#主题配置文件" class="headerlink" title="主题配置文件"></a>主题配置文件</h3><h4 id="版权信息"><a href="#版权信息" class="headerlink" title="版权信息"></a>版权信息</h4><p>找到 creative_commons 改为下面所示。</p>
+<pre class=" language-lang-yml"><code class="language-lang-yml">creative_commons:
+  license: by-nc-sa
+  sidebar: true
+  post: true
+  language:
+</code></pre>
+<h4 id="NexT-主题的四种样式"><a href="#NexT-主题的四种样式" class="headerlink" title="NexT 主题的四种样式"></a>NexT 主题的四种样式</h4><pre class=" language-lang-yml"><code class="language-lang-yml"># Schemes
+#scheme: Muse
+#scheme: Mist
+#scheme: Pisces
+scheme: Gemini
+</code></pre>
+<h4 id="menu-菜单"><a href="#menu-菜单" class="headerlink" title="menu 菜单"></a>menu 菜单</h4><p><code>||</code> 后是图标名称，不要修改。</p>
+<pre class=" language-lang-yml"><code class="language-lang-yml">menu:
+  home: / || fa fa-home                     # 首页
+  about: /about/ || fa fa-user              # 关于
+  tags: /tags/ || fa fa-tags                # 标签
+  categories: /categories/ || fa fa-th      # 分类
+  archives: /archives/ || fa fa-archive     # 归档
+  schedule: /schedule/ || fa fa-calendar    # 日程表
+  #sitemap: /sitemap.xml || fa fa-sitemap   # 站点地图
+  #commonweal: /404/ || fa fa-heartbeat     # 404页面
+
+# Enable / Disable menu icons / item badges.
+menu_settings:
+  icons: true
+  badges: false
+</code></pre>
+<h4 id="作者栏"><a href="#作者栏" class="headerlink" title="作者栏"></a>作者栏</h4><pre class=" language-lang-yml"><code class="language-lang-yml">avatar:
+  # 头像图片路径 \themes\next6\source\images\
+  url: /images/author.jpg
+  # true为圆形，false为方形
+  rounded: true
+  # true头像旋转
+  rotated: false
+
+# 头像下面的 日志|分类|标签 如果是0则不显示
+site_state: true
+
+# 我的其他网站信息
+social:
+  GitHub: https://github.com/username || fab fa-github
+  CSDN: https://blog.csdn.net/xxxxxxx || fa fa-heartbeat
+
+# 显示小图标
+social_icons:
+  enable: true
+  icons_only: false # 是否只显示小图标
+  transition: false
+
+# 友链
+links_settings:
+  icon: fa fa-link
+  title: 友情链接
+  # Available values: block | inline
+  layout: block
+
+links:
+  #Title: http://yoursite.com
+</code></pre>
+<h4 id="打赏功能"><a href="#打赏功能" class="headerlink" title="打赏功能"></a>打赏功能</h4><p>把自己的收款二维码放到 <code>\themes\next6\source\images\</code> 目录下。</p>
+<pre class=" language-lang-yml"><code class="language-lang-yml">reward_settings:
+  # true开启打赏功能
+  enable: true
+  animation: true
+  comment: 感谢支持
+
+reward:
+  wechatpay: /images/wechatpay.png
+  alipay: /images/alipay.png
+  #paypal: /images/paypal.png
+  #bitcoin: /images/bitcoin.png
+</code></pre>
+<h4 id="右上角显示-GitHub-绑带"><a href="#右上角显示-GitHub-绑带" class="headerlink" title="右上角显示 GitHub 绑带"></a>右上角显示 GitHub 绑带</h4><pre class=" language-lang-yml"><code class="language-lang-yml">github_banner:
+  enable: true
+  permalink: https://github.com/liuzhihan0
+  title: Follow me on GitHub # 鼠标放到上面显示 title
+</code></pre>
+<h4 id="开启不蒜子统计功能"><a href="#开启不蒜子统计功能" class="headerlink" title="开启不蒜子统计功能"></a>开启不蒜子统计功能</h4><pre class=" language-lang-yml"><code class="language-lang-yml">busuanzi_count:
+  enable: true
+  total_visitors: true
+  total_visitors_icon: fa fa-user
+  total_views: true
+  total_views_icon: fa fa-eye
+  post_views: true
+  post_views_icon: fa fa-eye
+</code></pre>
+<h4 id="添加本地搜索功能"><a href="#添加本地搜索功能" class="headerlink" title="添加本地搜索功能"></a>添加本地搜索功能</h4><p>安装 hexo-generator-searchdb 插件</p>
+<pre><code>$ npm install hexo-generator-searchdb --save
+</code></pre><p>打开 _config.yml 找到 local_search ，将 enable 改为 true 。</p>
+<pre class=" language-lang-yml"><code class="language-lang-yml"># 本地搜索
+local_search:
+  enable: true
+  trigger: auto
+  top_n_per_article: 1
+  unescape: false
+  preload: false
+</code></pre>
+<h2 id="闪烁之狐主题"><a href="#闪烁之狐主题" class="headerlink" title="闪烁之狐主题"></a>闪烁之狐主题</h2><p>最近换了闪烁之狐这个主题，这是个比较成熟的主题，想要的东西基本都有。<a href="https://blinkfox.github.io/2018/09/28/qian-duan/hexo-bo-ke-zhu-ti-zhi-hexo-theme-matery-de-jie-shao/" target="_blank" rel="noopener">Hexo博客主题之hexo-theme-matery的介绍</a></p>
+<hr>
+<p>如果有什么建议或者文章有需要修改的地方欢迎指出 😁</p>
 ]]></content>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
   </entry>
   <entry>
     <title>软件工程概论第一章笔记</title>
@@ -1297,6 +1265,38 @@ if __name__ == '__main__':
       </categories>
       <tags>
         <tag>软件工程概论</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Linux命令学习</title>
+    <url>/2020/04/17/LinuxCommand/</url>
+    <content><![CDATA[<p>2020年春大二下学期，我们开设了操作系统课程，开始接触Linux，用这篇文章记录学习到的命令。  </p>
+<p><a href="https://www.runoob.com/linux/linux-command-manual.html" target="_blank" rel="noopener">Linux 命令大全 | 菜鸟教程</a> ——列出了很多命令，有详细说明</p>
+<p><a href="https://man.linuxde.net/" target="_blank" rel="noopener">Linux命令大全(手册)</a> ——可以搜索某个命令的用法和解释</p>
+<h2 id="Linux-命令"><a href="#Linux-命令" class="headerlink" title="Linux 命令"></a>Linux 命令</h2><h3 id="cd"><a href="#cd" class="headerlink" title="cd"></a>cd</h3><p>切换当前工作目录至 dirName(目录参数)。</p>
+<h4 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h4><pre class=" language-lang-bash"><code class="language-lang-bash">cd [dirName]
+</code></pre>
+<ul>
+<li>dirName：要切换的目标目录。</li>
+<li>若省略 dirName，则变换至使用者的 home 目录</li>
+<li>另外，”~” 也表示 home 目录，”.” 表示目前所在的目录，”..” 则表示目前目录位置的上一层目录。</li>
+</ul>
+<h3 id="pwd"><a href="#pwd" class="headerlink" title="pwd"></a>pwd</h3><p>显示当前所在的工作目录。</p>
+<h4 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h4><pre class=" language-lang-bash"><code class="language-lang-bash">pwd
+</code></pre>
+<h3 id="ls"><a href="#ls" class="headerlink" title="ls"></a>ls</h3><p>显示指定工作目录下之内容（列出目前工作目录所含之文件及子目录)。它有很多参数可用。比如：</p>
+<pre class=" language-lang-bash"><code class="language-lang-bash">ls
+ls -a
+ls -l
+ls -all
+ls fileName -l
+</code></pre>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
       </tags>
   </entry>
 </search>
