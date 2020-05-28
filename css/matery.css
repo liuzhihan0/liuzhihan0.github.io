@@ -250,7 +250,8 @@ mark {
 }
 
 .bg-color {
-    background-image: linear-gradient(to right, #4cbf30 0%, #0f9d58 100%);
+    /* background-image: linear-gradient(to right, #4cbf30 0%, #0f9d58 100%); */
+    background-image: linear-gradient(to right, rgba(35, 40, 45, 1), rgba(35, 40, 45, 1));
 }
 
 .text-color {
@@ -262,7 +263,8 @@ mark {
 }
 
 .progress-bar {
-    height: 4px;
+    /* 线条宽度 */
+    height: 0px;
     position: fixed;
     bottom: 0;
     z-index: 300;

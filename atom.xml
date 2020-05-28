@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>且将新火试新茶</title>
+  
+  <subtitle>且将新火试新茶</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://liuzhihan0.github.io/"/>
+  <updated>2020-05-28T02:55:46.170Z</updated>
+  <id>http://liuzhihan0.github.io/</id>
+  
+  <author>
+    <name>Zhihan</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>软件工程概论第一章笔记</title>
+    <link href="http://liuzhihan0.github.io/2020/05/14/softwareengineering1/"/>
+    <id>http://liuzhihan0.github.io/2020/05/14/softwareengineering1/</id>
+    <published>2020-05-14T02:30:01.000Z</published>
+    <updated>2020-05-28T02:55:46.170Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;教材：软件工程——原理、方法与应用（第3版）&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;第1章-绪论&quot;&gt;&lt;a href=&quot;#第1章-绪论&quot; class=&quot;headerlink&quot; title=&quot;第1章 绪论&quot;&gt;&lt;/a&gt;第1章
+        
+      
+    
+    </summary>
+    
+    
+      <category term="软件工程概论" scheme="http://liuzhihan0.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E6%A6%82%E8%AE%BA/"/>
+    
+    
+      <category term="软件工程概论" scheme="http://liuzhihan0.github.io/tags/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E6%A6%82%E8%AE%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python基础学习笔记-MOOC</title>
+    <link href="http://liuzhihan0.github.io/2020/04/24/pythonbasics/"/>
+    <id>http://liuzhihan0.github.io/2020/04/24/pythonbasics/</id>
+    <published>2020-04-24T01:43:08.000Z</published>
+    <updated>2020-05-28T03:36:44.538Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;之前在中国大学慕课MOOC上看嵩天老师的Python语言程序设计慕课，看视频的过程中把学的基础知识做了笔记&lt;/p&gt;
+&lt;h2 id=&quot;Python-pip-安装与使用&quot;&gt;&lt;a href=&quot;#Python-pip-安装与使用&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="Python基础" scheme="http://liuzhihan0.github.io/tags/Python%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux命令学习</title>
+    <link href="http://liuzhihan0.github.io/2020/04/17/linuxcommand/"/>
+    <id>http://liuzhihan0.github.io/2020/04/17/linuxcommand/</id>
+    <published>2020-04-17T03:26:13.000Z</published>
+    <updated>2020-05-28T02:55:18.912Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;2020年春大二下学期，我们开设了操作系统课程，开始接触Linux，用这篇文章记录学习到的命令。  &lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.runoob.com/linux/linux-command-manual.html&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Linux" scheme="http://liuzhihan0.github.io/categories/Linux/"/>
+    
+    
+      <category term="Linux" scheme="http://liuzhihan0.github.io/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Github+Hexo搭建博客</title>
+    <link href="http://liuzhihan0.github.io/2020/04/15/blogbyhexo/"/>
+    <id>http://liuzhihan0.github.io/2020/04/15/blogbyhexo/</id>
+    <published>2020-04-15T11:35:47.000Z</published>
+    <updated>2020-05-28T02:53:57.795Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;在家闲来无事（其实是一直在家憋得慌）就搭了这个博客，太麻烦了，这么多配置的坑一个一个填，现在还没把小图标不显示的问题解决&lt;/p&gt;
+&lt;p&gt;2020.2.15 23:32&lt;/p&gt;
+&lt;p&gt;解决了小图标的问题，小图标的问题是icon图标名称前的 &lt;code&gt;fa
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="Hexo" scheme="http://liuzhihan0.github.io/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://liuzhihan0.github.io/2020/04/14/helloworld/"/>
+    <id>http://liuzhihan0.github.io/2020/04/14/helloworld/</id>
+    <published>2020-04-14T11:06:49.264Z</published>
+    <updated>2020-05-28T02:54:18.131Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+</feed>
