@@ -1,133 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>软件工程概论第一章笔记</title>
-    <url>/2020/05/14/SoftwareEngineeringChapter1/</url>
-    <content><![CDATA[<blockquote>
-<p>教材：软件工程——原理、方法与应用（第3版）</p>
-</blockquote>
-<a id="more"></a>
-<h2 id="第1章-绪论"><a href="#第1章-绪论" class="headerlink" title="第1章 绪论"></a>第1章 绪论</h2><h3 id="1-1-软件和软件危机"><a href="#1-1-软件和软件危机" class="headerlink" title="1.1 软件和软件危机"></a>1.1 软件和软件危机</h3><h4 id="1-1-1-软件的定义"><a href="#1-1-1-软件的定义" class="headerlink" title="1.1.1 软件的定义"></a>1.1.1 软件的定义</h4><p><strong>软件</strong>是能够完成预定功能和性能的可执行的计算机程序和使程序正常执行所需要的数据，加上描述程序的操作和使用的文档</p>
-<p><strong>软件 = 程序 + 数据 + 文档</strong></p>
-<p><strong>程序</strong>是按事先设计的功能和性能要求执行的指令序列<br><strong>数据</strong>是使程序能正常操纵信息的数据结构<br><strong>文档</strong>是与程序开发，维护和使用有关的图文材料</p>
-<h4 id="1-1-2-软件的特征"><a href="#1-1-2-软件的特征" class="headerlink" title="1.1.2 软件的特征"></a>1.1.2 软件的特征</h4><p>软件是逻辑的而不是物理的，是一种<strong>逻辑实体</strong></p>
-<ol>
-<li><p>软件开发不同于硬件设计</p>
-<p>软件开发的成本很难估计，通常占整个生产成本的大部分</p>
-</li>
-<li><p>软件生产不同于硬件制造</p>
-<p>在它的开发过程中没有明显的制造过程</p>
-</li>
-<li><p>软件维护不同于软件维修</p>
-<p>软件没有硬件那样的机械磨损，老化问题，但在使用过程中的维护却比硬件复杂的多。如果软件内部的逻辑关系比较复杂或规模比较大，在维护过程中很可能产生新的错误</p>
-</li>
-</ol>
-<h4 id="1-1-3-软件危机"><a href="#1-1-3-软件危机" class="headerlink" title="1.1.3 软件危机"></a>1.1.3 软件危机</h4><p>定义：在软件开发和维护过程中所存在一系列严重问题（开发费用超出预算、完成时间拖期、软件可靠性往往随着规模的增长而下降，质量差）</p>
-<p>原因（从<strong>维护</strong>和<strong>生产</strong>两个方面）</p>
-<ol>
-<li><p>软件维护费用急剧上升，直接威胁计算机应用的扩大</p>
-<p>纠错性维护、完善性性维护、适应性维护</p>
-</li>
-<li><p>软件生产技术进步缓慢，是加剧软件危机的重要原因</p>
-</li>
-</ol>
-<h3 id="1-2-软件工程学范畴"><a href="#1-2-软件工程学范畴" class="headerlink" title="1.2 软件工程学范畴"></a>1.2 软件工程学范畴</h3><p>宗旨：摆脱软件危机，谋求解决这一危机的方法。<br>中心思想：把软件当作一种工业产品，用工程的方法进行开发</p>
-<h4 id="1-2-1-软件开发方法学"><a href="#1-2-1-软件开发方法学" class="headerlink" title="1.2.1 软件开发方法学"></a>1.2.1 软件开发方法学</h4><ul>
-<li><p>早期的程序设计</p>
-<p>   追求程序设计技巧和效率，程序员各行其是，无统一标准</p>
-</li>
-<li><p>结构化程序设计</p>
-<p>   三种基本程序结构，自顶向下、逐步细化的开发方法，形成“结构化分析”、“结构化设计”传统方法</p>
-</li>
-<li><p>面向对象的程序设计</p>
-<p>   引入对象、类、继承等概念，形成构件，达到软件复用的目的</p>
-</li>
-</ul>
-<h4 id="1-2-2-软件工具"><a href="#1-2-2-软件工具" class="headerlink" title="1.2.2 软件工具"></a>1.2.2 软件工具</h4><p>帮助开发和维护软件的软件</p>
-<p>编译程序、编辑程序、连接程序以及支持他们的计算机操作系统，都属于软件工具</p>
-<p>另外还有：分析工具、设计工具、测试工具、维护工具</p>
-<h4 id="1-2-3-软件工程环境"><a href="#1-2-3-软件工程环境" class="headerlink" title="1.2.3 软件工程环境"></a>1.2.3 软件工程环境</h4><p>方法与工具相结合，再加上配套的软、硬件支持就形成环境。</p>
-<h4 id="1-2-4-软件工程管理"><a href="#1-2-4-软件工程管理" class="headerlink" title="1.2.4 软件工程管理"></a>1.2.4 软件工程管理</h4><p>软件工程管理的目的，是为了按照进度及预算完成软件开发计划，实现预期的经济和社会效益。它包括成本估算<br>进度安排、人员组织和质量保证等多方面的内容，还涉及管理学、度量学和经济学等多个学科方面的知识。</p>
-<p>一个理想的软件工程环境，应该同时具备支持开发和支持管理两个方面的工具。</p>
-<h3 id="1-3-软件工程的发展"><a href="#1-3-软件工程的发展" class="headerlink" title="1.3 软件工程的发展"></a>1.3 软件工程的发展</h3><h4 id="1-3-1-3种编程范型"><a href="#1-3-1-3种编程范型" class="headerlink" title="1.3.1 3种编程范型"></a>1.3.1 3种编程范型</h4><ol>
-<li><p>过程式编程范型</p>
-<p>程序 = 数据结构 + 算法</p>
-</li>
-<li><p>面向对象编程范型</p>
-<p>程序 = 对象 + 消息</p>
-</li>
-<li><p>基于构件技术的编程范型</p>
-<p>构件：标准化的对象类。</p>
-</li>
-</ol>
-<h4 id="1-3-2-3代软件工程"><a href="#1-3-2-3代软件工程" class="headerlink" title="1.3.2 3代软件工程"></a>1.3.2 3代软件工程</h4><p>软件工程的分代</p>
-<ol>
-<li><p>传统的软件工程</p>
-<p>以结构化的程序设计为基础</p>
-</li>
-<li><p>面向对象的软件工程</p>
-<p>以面向对象的程序设计为基础</p>
-</li>
-<li><p>基于构件的软件工程</p>
-<p>以软件复用为目标、领域工程为基础</p>
-</li>
-</ol>
-<h3 id="1-4-软件工程的应用"><a href="#1-4-软件工程的应用" class="headerlink" title="1.4 软件工程的应用"></a>1.4 软件工程的应用</h3><p>略</p>
-]]></content>
-      <categories>
-        <category>软件工程概论</category>
-      </categories>
-      <tags>
-        <tag>软件工程概论</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Linux命令学习</title>
-    <url>/2020/04/17/Linux-command/</url>
-    <content><![CDATA[<p>2020年春大二下学期，我们开设了操作系统课程，开始接触Linux，用这篇文章记录学习到的命令。  </p>
-<p><a href="https://www.runoob.com/linux/linux-command-manual.html" target="_blank" rel="noopener">Linux 命令大全 | 菜鸟教程</a> ——列出了很多命令，有详细说明<br><a href="https://man.linuxde.net/" target="_blank" rel="noopener">Linux命令大全(手册)</a> ——可以搜索某个命令的用法和解释<br><a id="more"></a></p>
-<h2 id="Linux-命令"><a href="#Linux-命令" class="headerlink" title="Linux 命令"></a>Linux 命令</h2><h3 id="cd"><a href="#cd" class="headerlink" title="cd"></a>cd</h3><p>切换当前工作目录至 dirName(目录参数)。</p>
-<h4 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> [dirName]</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>dirName：要切换的目标目录。</li>
-<li>若省略 dirName，则变换至使用者的 home 目录</li>
-<li>另外，”~” 也表示 home 目录，”.” 表示目前所在的目录，”..” 则表示目前目录位置的上一层目录。</li>
-</ul>
-<h3 id="pwd"><a href="#pwd" class="headerlink" title="pwd"></a>pwd</h3><p>显示当前所在的工作目录。</p>
-<h4 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">pwd</span></span></span><br></pre></td></tr></table></figure>
-<h3 id="ls"><a href="#ls" class="headerlink" title="ls"></a>ls</h3><p>显示指定工作目录下之内容（列出目前工作目录所含之文件及子目录)。它有很多参数可用。比如：</p>
-<figure class="highlight gams"><table><tr><td class="code"><pre><span class="line"><span class="symbol">$</span> ls</span><br><span class="line"><span class="symbol">$</span> ls -a</span><br><span class="line"><span class="symbol">$</span> ls -l</span><br><span class="line"><span class="symbol">$</span> ls -<span class="keyword">all</span></span><br><span class="line"><span class="symbol">$</span> ls fileName -l</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Python基础学习笔记-MOOC</title>
     <url>/2020/04/24/Python-Basics/</url>
     <content><![CDATA[<p>之前在中国大学慕课MOOC上看嵩天老师的Python语言程序设计慕课，看视频的过程中把学的基础知识做了笔记……<br><a id="more"></a></p>
 <h2 id="Python-pip-安装与使用"><a href="#Python-pip-安装与使用" class="headerlink" title="Python pip 安装与使用"></a>Python pip 安装与使用</h2><blockquote>
-<p><a href="https://pypi.org/project/pip/" target="_blank" rel="noopener">pip 官网</a><br><a href="https://www.runoob.com/w3cnote/python-pip-install-usage.html" target="_blank" rel="noopener">Python pip 安装与使用 | 菜鸟教程</a></p>
+<p><a href="https://pypi.org/project/pip/" target="_blank" rel="noopener">pip 官网</a> </p>
+<p><a href="https://www.runoob.com/w3cnote/python-pip-install-usage.html" target="_blank" rel="noopener">Python pip 安装与使用 | 菜鸟教程</a></p>
 </blockquote>
-<h3 id="pip安装库使用豆瓣镜像源"><a href="#pip安装库使用豆瓣镜像源" class="headerlink" title="pip安装库使用豆瓣镜像源"></a>pip安装库使用豆瓣镜像源</h3><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">pip <span class="keyword">install</span> <span class="keyword">name</span> -i <span class="keyword">http</span>://pypi.douban.com/simple <span class="comment">--trusted-host pypi.douban.com</span></span><br></pre></td></tr></table></figure>
+<h3 id="pip安装库使用豆瓣镜像源"><a href="#pip安装库使用豆瓣镜像源" class="headerlink" title="pip安装库使用豆瓣镜像源"></a>pip安装库使用豆瓣镜像源</h3><pre class=" language-lang-bash"><code class="language-lang-bash">pip install name -i http://pypi.douban.com/simple --trusted-host pypi.douban.com
+</code></pre>
 <hr>
-<h2 id="实例1：温度转换"><a href="#实例1：温度转换" class="headerlink" title="实例1：温度转换"></a>实例1：温度转换</h2><figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="comment"># TempConvert.py</span></span><br><span class="line">TempStr = input(<span class="string">"请输入带有符号的温度值："</span>)</span><br><span class="line"><span class="keyword">if</span> TempStr[<span class="number">-1</span>] <span class="keyword">in</span> [<span class="string">'F'</span>, <span class="string">'f'</span>]:</span><br><span class="line">    C = (eval(TempStr[<span class="number">0</span>:<span class="number">-1</span>]) - <span class="number">32</span>) / <span class="number">1.8</span></span><br><span class="line">    print(<span class="string">"转换后的温度是&#123;:.2f&#125;C"</span>.format(C))</span><br><span class="line"><span class="keyword">elif</span> TempStr[<span class="number">-1</span>] <span class="keyword">in</span> [<span class="string">'C'</span>, <span class="string">'c'</span>]:</span><br><span class="line">    F = <span class="number">1.8</span> * eval(TempStr[<span class="number">0</span>:<span class="number">-1</span>]) + <span class="number">32</span></span><br><span class="line">    print(<span class="string">"转换后的温度是&#123;:.2f&#125;F"</span>.format(F))</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(<span class="string">"输入格式错误"</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="实例1：温度转换"><a href="#实例1：温度转换" class="headerlink" title="实例1：温度转换"></a>实例1：温度转换</h2><pre class=" language-lang-python"><code class="language-lang-python"># TempConvert.py
+TempStr = input("请输入带有符号的温度值：")
+if TempStr[-1] in ['F', 'f']:
+    C = (eval(TempStr[0:-1]) - 32) / 1.8
+    print("转换后的温度是{:.2f}C".format(C))
+elif TempStr[-1] in ['C', 'c']:
+    F = 1.8 * eval(TempStr[0:-1]) + 32
+    print("转换后的温度是{:.2f}F".format(F))
+else:
+    print("输入格式错误")
+</code></pre>
 <ul>
-<li><strong>缩进</strong> 表达程序的框架<ol>
+<li><p><strong>缩进</strong> 表达程序的框架</p>
+<ol>
 <li>严格明确 缩进是语法的一部分，缩进不正确程序运行错误</li>
 <li>所属关系 表达代码间包含和层次关系的唯一手段</li>
 <li>长度一致 程序内一致即可，一般用4个空格或1个Tab</li>
 </ol>
 </li>
-<li><strong>注释</strong><ol>
+<li><p><strong>注释</strong></p>
+<ol>
 <li>单行注释 以#开头，其后内容为注释信息</li>
 <li>多行注释 以’’’开头和结尾</li>
 </ol>
 </li>
-<li><strong>变量</strong> 用来保存和保存数据的占位符<ol>
+<li><p><strong>变量</strong> 用来保存和保存数据的占位符</p>
+<ol>
 <li>变量采用标识符（名字）来表示，关联标识符的过程叫命名</li>
 <li>可以使用等号（=）向变量赋值或修改值，=被称为赋值符号</li>
 </ol>
@@ -138,9 +48,11 @@
 <li>注意事项 大小写敏感、首字母不能是数字、不与保留字相同</li>
 </ol>
 </li>
-<li><p><strong>保留字</strong> 被编程语言内部定义并保留使用的标识符（33个保留字）<br> | : | : | : | : | : | : |<br> |:-:|:-:|:-:|:-:|:-:|:-:|<br> |and|as|assert|break|class|continue|<br> |def|elif|else|except|finally|for|<br> |from|if|import|in|is|lambda|<br> |not|or|pass|raise|return|try|<br> |while|with|yield|del|global|nonlocal|<br> |True|False|None|</p>
+<li><p><strong>保留字</strong> 被编程语言内部定义并保留使用的标识符（33个保留字）  </p>
+<p> |       |       |        |        |         |          |<br> |:-:|:-:|:-:|:-:|:-:|:-:|<br> |and|as|assert|break|class|continue|<br> |def|elif|else|except|finally|for|<br> |from|if|import|in|is|lambda|<br> |not|or|pass|raise|return|try|<br> |while|with|yield|del|global|nonlocal|<br> |True|False|None||||</p>
 </li>
-<li><strong>数据类型</strong><ol>
+<li><p><strong>数据类型</strong></p>
+<ol>
 <li>数字类型<ul>
 <li>整数</li>
 <li>浮点数</li>
@@ -168,13 +80,16 @@
 </li>
 </ol>
 </li>
-<li>语句和函数</li>
-<li>赋值语句<ol>
+<li><p>语句和函数</p>
+</li>
+<li><p>赋值语句</p>
+<ol>
 <li>赋值语句用来给变量赋予新的数据值</li>
 <li>赋值语句右侧的数据类型同时作用于变量</li>
 </ol>
 </li>
-<li>Python程序的输入输出<ol>
+<li><p>Python程序的输入输出</p>
+<ol>
 <li>输入函数input() 从控制台获得用户输入的函数<ul>
 <li>input()函数的使用格式：<code>&lt;变量&gt; = input(&lt;提示信息字符串&gt;)</code></li>
 <li>用户输入的信息已字符串类型保存在&lt;变量&gt;中</li>
@@ -187,14 +102,32 @@
 </li>
 </ol>
 </li>
-<li>评估函数eval() 去掉参数最外侧引号并执行余下语句的函数，基本使用格式：<code>eval(&lt;字符串或字符串变量&gt;)</code>  </li>
+<li><p>评估函数eval() 去掉参数最外侧引号并执行余下语句的函数，基本使用格式：<code>eval(&lt;字符串或字符串变量&gt;)</code>  </p>
+</li>
 </ul>
 <hr>
-<h2 id="实例2：Python蟒蛇绘制"><a href="#实例2：Python蟒蛇绘制" class="headerlink" title="实例2：Python蟒蛇绘制"></a>实例2：Python蟒蛇绘制</h2><figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="comment">#PythonDraw.py</span></span><br><span class="line"><span class="keyword">import</span> turtle</span><br><span class="line">turtle.setup(<span class="number">650</span>, <span class="number">350</span>, <span class="number">200</span>, <span class="number">200</span>)</span><br><span class="line">turtle.penup()</span><br><span class="line">turtle.fd(<span class="number">-250</span>)</span><br><span class="line">turtle.pendown()</span><br><span class="line">turtle.pensize(<span class="number">25</span>)</span><br><span class="line">turtle.pencolor(<span class="string">"purple"</span>)</span><br><span class="line">turtle.seth(<span class="number">-40</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">4</span>)</span><br><span class="line">   turtle.circle(<span class="number">40</span>, <span class="number">80</span>)</span><br><span class="line">   turtle.circle(<span class="number">-40</span>, <span class="number">80</span>)</span><br><span class="line">turtle.circle(<span class="number">40</span>, <span class="number">80</span>/<span class="number">2</span>)</span><br><span class="line">turtle.fd(<span class="number">40</span>)</span><br><span class="line">turtle.circle(<span class="number">16</span>, <span class="number">180</span>)</span><br><span class="line">turtle.fd(<span class="number">40</span> * <span class="number">2</span>/<span class="number">3</span>)</span><br><span class="line">turtle.done()</span><br></pre></td></tr></table></figure>
+<h2 id="实例2：Python蟒蛇绘制"><a href="#实例2：Python蟒蛇绘制" class="headerlink" title="实例2：Python蟒蛇绘制"></a>实例2：Python蟒蛇绘制</h2><pre class=" language-lang-python"><code class="language-lang-python">#PythonDraw.py
+import turtle
+turtle.setup(650, 350, 200, 200)
+turtle.penup()
+turtle.fd(-250)
+turtle.pendown()
+turtle.pensize(25)
+turtle.pencolor("purple")
+turtle.seth(-40)
+for i in range(4)
+   turtle.circle(40, 80)
+   turtle.circle(-40, 80)
+turtle.circle(40, 80/2)
+turtle.fd(40)
+turtle.circle(16, 180)
+turtle.fd(40 * 2/3)
+turtle.done()
+</code></pre>
 <p><code>import</code>保留字引入了一个绘图库，名字叫<code>turtle</code></p>
 <h3 id="turtle库的使用"><a href="#turtle库的使用" class="headerlink" title="turtle库的使用"></a>turtle库的使用</h3><p>turtle(海龟)库是turtle绘图体系的Python实现，turtle绘图体系诞生于1969年，主要用于程序设计入门，是Python语言的<strong>标准库</strong>之一，是入门级的图形绘制函数库。</p>
 <ul>
-<li>标准库<br>Python计生态 = 标准库 + 第三方库<br>标准库：随解释器直接安装到操作系统中的功能模块<br>第三方库：需要经过安装才能使用的功能模块<br>库Library、包Package、模块Module，统称<strong>模块</strong>  </li>
+<li>标准库<br>Python计生态 = 标准库 + 第三方库<br>标准库：随解释器直接安装到操作系统中的功能模块<br>第三方库：需要经过安装才能使用的功能模块<br>库Library、包Package、模块Module，统称<strong>模块</strong></li>
 </ul>
 <p>turtle绘制窗体布局</p>
 <ul>
@@ -305,12 +238,39 @@
 <li><code>complex(x)</code>，将x变成复数，增加虚数部分</li>
 </ul>
 <hr>
-<h2 id="实例3"><a href="#实例3" class="headerlink" title="实例3"></a>实例3</h2><figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="comment">#DayDayUp.py</span></span><br><span class="line">dayup = pow(<span class="number">1.001</span>, <span class="number">365</span>)</span><br><span class="line">daydown = pow(<span class="number">0.999</span>, <span class="number">365</span>)</span><br><span class="line">print(<span class="string">"向上:&#123;:.2f&#125;, 向下:&#123;:.2f&#125;"</span>.format(dayup, daydown))</span><br></pre></td></tr></table></figure>
+<h2 id="实例3"><a href="#实例3" class="headerlink" title="实例3"></a>实例3</h2><pre class=" language-lang-python"><code class="language-lang-python">#DayDayUp.py
+dayup = pow(1.001, 365)
+daydown = pow(0.999, 365)
+print("向上:{:.2f}, 向下:{:.2f}".format(dayup, daydown))
+</code></pre>
 <blockquote>
-<p>运行结果<br>向上:1.44, 向下:0.69</p>
+<p>运行结果</p>
+<p>向上:1.44, 向下:0.69</p>
 </blockquote>
-<figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="comment">#DayDayUp3.py</span></span><br><span class="line">dayup = <span class="number">1.0</span></span><br><span class="line">dayfactor = <span class="number">0.01</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">365</span>):</span><br><span class="line">   <span class="keyword">if</span> i % <span class="number">7</span> <span class="keyword">in</span> [<span class="number">6</span>,<span class="number">0</span>]:</span><br><span class="line">      dayup = dayup * (<span class="number">1</span> - dayfactor)</span><br><span class="line">   <span class="keyword">else</span>:</span><br><span class="line">      dayup = dayup * (<span class="number">1</span> + dayfactor)</span><br><span class="line">print(<span class="string">"工作日的力量:&#123;:.2f&#125;"</span>.format(dayup))</span><br></pre></td></tr></table></figure>
-<figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="comment">#DayDayUp4.py</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dayUP</span><span class="params">(df)</span>:</span></span><br><span class="line">   dayup = <span class="number">1</span></span><br><span class="line">   <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">365</span>):</span><br><span class="line">      <span class="keyword">if</span> i % <span class="number">7</span> <span class="keyword">in</span> [<span class="number">6</span>,<span class="number">0</span>]:</span><br><span class="line">         dayup = dayup * (<span class="number">1</span> - <span class="number">0.01</span>)</span><br><span class="line">      <span class="keyword">else</span>:</span><br><span class="line">         dayup = dayup * (<span class="number">1</span> + df)</span><br><span class="line">   <span class="keyword">return</span> dayup</span><br><span class="line">dayfactor = <span class="number">0.01</span></span><br><span class="line"><span class="keyword">while</span> dayUP(dayfactor) &lt; <span class="number">37.78</span>:</span><br><span class="line">   dayfactor += <span class="number">0.001</span></span><br><span class="line">print(<span class="string">"工作日的努力参数是:&#123;:.2f&#125;"</span>.format(dayfactor))</span><br></pre></td></tr></table></figure>
+<pre class=" language-lang-python"><code class="language-lang-python">#DayDayUp3.py
+dayup = 1.0
+dayfactor = 0.01
+for i in range(365):
+   if i % 7 in [6,0]:
+      dayup = dayup * (1 - dayfactor)
+   else:
+      dayup = dayup * (1 + dayfactor)
+print("工作日的力量:{:.2f}".format(dayup))
+</code></pre>
+<pre class=" language-lang-python"><code class="language-lang-python">#DayDayUp4.py
+def dayUP(df):
+   dayup = 1
+   for i in range(365):
+      if i % 7 in [6,0]:
+         dayup = dayup * (1 - 0.01)
+      else:
+         dayup = dayup * (1 + df)
+   return dayup
+dayfactor = 0.01
+while dayUP(dayfactor) < 37.78:
+   dayfactor += 0.001
+print("工作日的努力参数是:{:.2f}".format(dayfactor))
+</code></pre>
 <hr>
 <h2 id="字符串类型及操作"><a href="#字符串类型及操作" class="headerlink" title="字符串类型及操作"></a>字符串类型及操作</h2><h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><p>字符串有2类共4种 表示方法</p>
 <ul>
@@ -333,8 +293,12 @@
 <p>使用[M:N:K]根据步长对字符串切片</p>
 <ul>
 <li>&lt;字符串&gt;[M:N]，M缺失表示<strong>至开头</strong>，N缺失表示<strong>至结尾</strong></li>
-<li>&lt;字符串&gt;[M:N:K]，根据步长对字符串切片<ul>
-<li>例如：<br>“〇一二三四五六七八九”[1:8:2]结果是”一三五七”<br>“〇一二三四五六七八九”[::-1]结果是”十九八七六五四三二一〇”</li>
+<li><p>&lt;字符串&gt;[M:N:K]，根据步长对字符串切片</p>
+<ul>
+<li><p>例如：</p>
+<p>“〇一二三四五六七八九”[1:8:2]结果是”一三五七”  </p>
+<p>“〇一二三四五六七八九”[::-1]结果是”十九八七六五四三二一〇”</p>
+</li>
 </ul>
 </li>
 </ul>
@@ -415,7 +379,7 @@
 <table>
 <thead>
 <tr>
-<th style="text-align:center">:</th>
+<th style="text-align:center"></th>
 <th style="text-align:center">&lt;填充&gt;</th>
 <th style="text-align:center">&lt;对齐&gt;</th>
 <th style="text-align:center">&lt;宽度&gt;</th>
@@ -442,14 +406,25 @@
 <p>time库是Python中处理时间的标准库</p>
 </blockquote>
 <h3 id="时间获取"><a href="#时间获取" class="headerlink" title="时间获取"></a>时间获取</h3><ul>
-<li><code>time()</code><br> 获取当前的时间戳，即计算及内部的时间值，浮点数，它表示从1970年1月1日0:00开始到当前这一时刻为止的一个以秒为单位的数值</li>
-<li><code>ctime()</code><br> 获取当前时间并以易读方式表示，返回字符串</li>
-<li><code>gmtime()</code><br> 获取当前时间，表示为计算机可处理的时间格式，我们叫它struct_time格式</li>
+<li><p><code>time()</code> </p>
+<p> 获取当前的时间戳，即计算及内部的时间值，浮点数，它表示从1970年1月1日0:00开始到当前这一时刻为止的一个以秒为单位的数值</p>
+</li>
+<li><p><code>ctime()</code></p>
+<p> 获取当前时间并以易读方式表示，返回字符串</p>
+</li>
+<li><p><code>gmtime()</code></p>
+<p> 获取当前时间，表示为计算机可处理的时间格式，我们叫它struct_time格式</p>
+</li>
 </ul>
 <h3 id="时间格式化"><a href="#时间格式化" class="headerlink" title="时间格式化"></a>时间格式化</h3><ul>
-<li><code>strftime(tpl,ts)</code><br>tpl是格式化模板字符串，用来定义输出效果，ts是计算机内部时间类型变量  </li>
+<li><p><code>strftime(tpl,ts)</code></p>
+<p>tpl是格式化模板字符串，用来定义输出效果，ts是计算机内部时间类型变量  </p>
+</li>
 </ul>
-<figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line">t = time.gmtime()</span><br><span class="line">time.strftime(<span class="string">"%Y-%m-%d %H:%M:%S"</span>,t)</span><br></pre></td></tr></table></figure>
+<pre class=" language-lang-python"><code class="language-lang-python">import time
+t = time.gmtime()
+time.strftime("%Y-%m-%d %H:%M:%S",t)
+</code></pre>
 <blockquote>
 <p>结果：<code>&#39;2019-10-23 09:50:37&#39;</code></p>
 </blockquote>
@@ -527,18 +502,38 @@
 </table>
 </div>
 <ul>
-<li><code>strptime(str,tpl)</code><br>str是字符串形式的时间值<br>tpl是格式化模板字符串，用来定义输入效果</li>
+<li><p><code>strptime(str,tpl)</code></p>
+<p>str是字符串形式的时间值</p>
+<p>tpl是格式化模板字符串，用来定义输入效果</p>
+</li>
 </ul>
-<figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line">t = <span class="string">'2019-10-23 09:50:37'</span></span><br><span class="line">time.strptime(t, <span class="string">"%Y-%m-%d %H:%M:%S"</span>)</span><br></pre></td></tr></table></figure>
+<pre class=" language-lang-python"><code class="language-lang-python">import time
+t = '2019-10-23 09:50:37'
+time.strptime(t, "%Y-%m-%d %H:%M:%S")
+</code></pre>
 <blockquote>
 <p>结果：<code>time.struct_time(tm_year=2019, tm_mon=10, tm_mday=23, tm_hour=9, tm_min=50, tm_sec=37, tm_wday=2, tm_yday=296, tm_isdst=-1)</code></p>
 </blockquote>
 <h3 id="程序计时"><a href="#程序计时" class="headerlink" title="程序计时"></a>程序计时</h3><ul>
-<li><code>perf_counter()</code><br>返回一个CPU级别的精确时间计数值，单位为秒，由于这个计数值起点不确定，连续调用差值才有意义</li>
-<li><code>sleep(s)</code><br>s拟休眠的时间，单位是秒，可以是浮点数</li>
+<li><p><code>perf_counter()</code></p>
+<p>返回一个CPU级别的精确时间计数值，单位为秒，由于这个计数值起点不确定，连续调用差值才有意义</p>
+</li>
+<li><p><code>sleep(s)</code></p>
+<p>s拟休眠的时间，单位是秒，可以是浮点数</p>
+</li>
 </ul>
 <hr>
-<h2 id="实例4-文本进度条"><a href="#实例4-文本进度条" class="headerlink" title="实例4 文本进度条"></a>实例4 文本进度条</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line">scale = <span class="number">50</span></span><br><span class="line">start = time.perf_counter()</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(scale + <span class="number">1</span>):</span><br><span class="line">    a = <span class="string">'*'</span> * i</span><br><span class="line">    b = <span class="string">'.'</span> * (scale - i)</span><br><span class="line">    c = (i / scale) * <span class="number">100</span></span><br><span class="line">    dur = time.perf_counter() - start</span><br><span class="line">    print(<span class="string">"\r&#123;:^3.0f&#125;%[&#123;&#125;-&gt;&#123;&#125;] &#123;:.2f&#125;s"</span>.format(c, a, b, dur), end=<span class="string">""</span>)</span><br><span class="line">    time.sleep(<span class="number">0.1</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="实例4-文本进度条"><a href="#实例4-文本进度条" class="headerlink" title="实例4 文本进度条"></a>实例4 文本进度条</h2><pre class=" language-lang-python"><code class="language-lang-python">import time
+scale = 50
+start = time.perf_counter()
+for i in range(scale + 1):
+    a = '*' * i
+    b = '.' * (scale - i)
+    c = (i / scale) * 100
+    dur = time.perf_counter() - start
+    print("\r{:^3.0f}%[{}->{}] {:.2f}s".format(c, a, b, dur), end="")
+    time.sleep(0.1)
+</code></pre>
 <blockquote>
 <ul>
 <li><code>end</code>是<code>print()</code>函数的一个参数，默认情况下不加它指的是我输出了一个信息之后，默认在最后增加一个换行<code>\n</code>，但是如果增加 “<code>,end=</code>” 这样一个参数，就会改变每次print输出最后增加的那个信息  </li>
@@ -550,30 +545,80 @@
 <p>顺序结构 分支结构 和 循环结构</p>
 </blockquote>
 <h3 id="程序的分支结构"><a href="#程序的分支结构" class="headerlink" title="程序的分支结构"></a>程序的分支结构</h3><ul>
-<li>单分支结构<br> if &lt;条件&gt;:<br>   &lt;语句块&gt;</li>
-<li>二分支结构<ul>
-<li>if &lt;条件&gt;:<br> &lt;语句块1&gt;<br>else:<br> &lt;语句块2&gt;</li>
-<li>紧凑形式：&lt;表达式1&gt;if&lt;条件&gt;else&lt;表达式2&gt;</li>
+<li><p>单分支结构</p>
+<p> if &lt;条件&gt;:</p>
+<p>   &lt;语句块&gt;</p>
+</li>
+<li><p>二分支结构</p>
+<ul>
+<li><p>if &lt;条件&gt;:</p>
+<p>&lt;语句块1&gt;</p>
+<p>else:</p>
+<p> &lt;语句块2&gt;</p>
+</li>
+<li><p>紧凑形式：&lt;表达式1&gt;if&lt;条件&gt;else&lt;表达式2&gt;</p>
+</li>
 </ul>
 </li>
-<li>多分支结构<br> if &lt;条件&gt;:<br>  &lt;语句块1&gt;<br> elif:<br>  &lt;语句块2&gt;<br> ……<br> else:<br>  &lt;语句块3&gt;</li>
-<li>条件判断及组合  <ul>
+<li><p>多分支结构</p>
+<p> if &lt;条件&gt;:</p>
+<p>  &lt;语句块1&gt;</p>
+<p> elif:</p>
+<p>  &lt;语句块2&gt;</p>
+<p> ……</p>
+<p> else:</p>
+<p>  &lt;语句块3&gt;</p>
+</li>
+<li><p>条件判断及组合  </p>
+<ul>
 <li><code>and</code> 与</li>
 <li><code>or</code> 或</li>
 <li><code>not</code> 非</li>
 </ul>
 </li>
-<li>异常处理<ul>
-<li>try:<br>&lt;语句块1&gt;<br>except:<br>&lt;语句块2&gt;</li>
-<li>try:<br>&lt;语句块1&gt;<br>except &lt;异常类型&gt;:<br>&lt;语句块2&gt;</li>
-<li>try:<br>&lt;语句块1&gt;<br>except &lt;异常类型&gt;:<br>&lt;语句块2&gt;<br>else:<br>&lt;语句块3&gt;<br>finally:<br>&lt;语句块4&gt;<blockquote>
-<p><code>finally</code>对应语句块4一定执行<br><code>else</code>对应语句块3在不发生异常时执行</p>
+<li><p>异常处理</p>
+<ul>
+<li><p>try:</p>
+<p>&lt;语句块1&gt;</p>
+<p>except:</p>
+<p>&lt;语句块2&gt;</p>
+</li>
+<li><p>try:</p>
+<p>&lt;语句块1&gt;</p>
+<p>except &lt;异常类型&gt;:</p>
+<p>&lt;语句块2&gt;</p>
+</li>
+<li><p>try:</p>
+<p>&lt;语句块1&gt;</p>
+<p>except &lt;异常类型&gt;:</p>
+<p>&lt;语句块2&gt;</p>
+<p>else:</p>
+<p>&lt;语句块3&gt;</p>
+<p>finally:</p>
+<p>&lt;语句块4&gt;</p>
+<blockquote>
+<p><code>finally</code>对应语句块4一定执行</p>
+<p><code>else</code>对应语句块3在不发生异常时执行</p>
 </blockquote>
 </li>
 </ul>
 </li>
 </ul>
-<h3 id="实例5-身体质量指数"><a href="#实例5-身体质量指数" class="headerlink" title="实例5 身体质量指数"></a>实例5 身体质量指数</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">height, weight = eval(input(<span class="string">"请输入身高(米)和体重(公斤)[逗号隔开]"</span>))</span><br><span class="line">bmi = weight / pow(height, <span class="number">2</span>)</span><br><span class="line">print(<span class="string">"BMI指数为：&#123;:.2f&#125;"</span>.format(bmi))</span><br><span class="line">who, nat = <span class="string">""</span>, <span class="string">""</span></span><br><span class="line"><span class="keyword">if</span> bmi &lt; <span class="number">18.5</span>:</span><br><span class="line">   who, nat = <span class="string">"偏瘦"</span>, <span class="string">"偏瘦"</span></span><br><span class="line"><span class="keyword">elif</span> <span class="number">18.5</span> &lt;= bmi &lt; <span class="number">24</span>:</span><br><span class="line">   who, nat = <span class="string">"正常"</span>, <span class="string">"正常"</span></span><br><span class="line"><span class="keyword">elif</span> <span class="number">24</span> &lt;= <span class="number">25</span>:</span><br><span class="line">   who, nat = <span class="string">"正常"</span>, <span class="string">"偏胖"</span></span><br><span class="line"><span class="keyword">elif</span> <span class="number">25</span> &lt;= bmi &lt;<span class="number">28</span>:</span><br><span class="line">   who, nat = <span class="string">"偏胖"</span>, <span class="string">"偏胖"</span></span><br><span class="line"><span class="keyword">elif</span> <span class="number">28</span> &lt;= bmi &lt;<span class="number">30</span>:</span><br><span class="line">   who, nat = <span class="string">"偏胖"</span>, <span class="string">"偏胖"</span></span><br></pre></td></tr></table></figure>
+<h3 id="实例5-身体质量指数"><a href="#实例5-身体质量指数" class="headerlink" title="实例5 身体质量指数"></a>实例5 身体质量指数</h3><pre class=" language-lang-python"><code class="language-lang-python">height, weight = eval(input("请输入身高(米)和体重(公斤)[逗号隔开]"))
+bmi = weight / pow(height, 2)
+print("BMI指数为：{:.2f}".format(bmi))
+who, nat = "", ""
+if bmi < 18.5:
+   who, nat = "偏瘦", "偏瘦"
+elif 18.5 <= bmi < 24:
+   who, nat = "正常", "正常"
+elif 24 <= 25:
+   who, nat = "正常", "偏胖"
+elif 25 <= bmi <28:
+   who, nat = "偏胖", "偏胖"
+elif 28 <= bmi <30:
+   who, nat = "偏胖", "偏胖"
+</code></pre>
 <h3 id="程序的循环结构"><a href="#程序的循环结构" class="headerlink" title="程序的循环结构"></a>程序的循环结构</h3><ul>
 <li>遍历循环<code>for</code><ul>
 <li>计数循环</li>
@@ -625,17 +670,50 @@
 <script type="math/tex; mode=display">
 \pi=\sum^{\inf}_{k=0}[\frac{1}{16^k}(\frac{4}{8k+1}-\frac{2}{8k+4}-\frac{1}{8k+5}-\frac{1}{8k+6})]</script><p>蒙特卡罗方法</p>
 </blockquote>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> random <span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">from</span> time <span class="keyword">import</span> perf_counter</span><br><span class="line">DARTS = <span class="number">1000</span> * <span class="number">1000</span></span><br><span class="line">hits = <span class="number">0.0</span></span><br><span class="line">start = perf_counter()</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, DARTS + <span class="number">1</span>):</span><br><span class="line">    x, y = random(), random()</span><br><span class="line">    dist = pow(x ** <span class="number">2</span> + y ** <span class="number">2</span>, <span class="number">0.5</span>)</span><br><span class="line">    <span class="keyword">if</span> dist &lt;= <span class="number">1.0</span>:</span><br><span class="line">        hits += <span class="number">1</span></span><br><span class="line">pi = <span class="number">4</span> * (hits / DARTS)</span><br><span class="line">print(<span class="string">"圆周率是: &#123;&#125;"</span>.format(pi))</span><br><span class="line">print(<span class="string">"运行时间: &#123;:.5f&#125;s"</span>.format(perf_counter() - start))</span><br></pre></td></tr></table></figure>
+<pre class=" language-lang-python"><code class="language-lang-python">from random import random
+from time import perf_counter
+DARTS = 1000 * 1000
+hits = 0.0
+start = perf_counter()
+for i in range(1, DARTS + 1):
+    x, y = random(), random()
+    dist = pow(x ** 2 + y ** 2, 0.5)
+    if dist <= 1.0:
+        hits += 1
+pi = 4 * (hits / DARTS)
+print("圆周率是: {}".format(pi))
+print("运行时间: {:.5f}s".format(perf_counter() - start))
+</code></pre>
 <hr>
 <h2 id="函数和代码复用"><a href="#函数和代码复用" class="headerlink" title="函数和代码复用"></a>函数和代码复用</h2><h3 id="函数的定义与使用"><a href="#函数的定义与使用" class="headerlink" title="函数的定义与使用"></a>函数的定义与使用</h3><ul>
-<li>函数的定义<code>def</code></li>
-<li>可选参数传递 (<strong>赋初值</strong>)<br> 函数定义时可以为某些参数<strong>指定默认值</strong>，构成可选参数，可选参数必须放必选参数的后面</li>
+<li><p>函数的定义<code>def</code></p>
+</li>
+<li><p>可选参数传递 (<strong>赋初值</strong>)</p>
+<p> 函数定义时可以为某些参数<strong>指定默认值</strong>，构成可选参数，可选参数必须放必选参数的后面</p>
+</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#例 可选参数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fact</span><span class="params">(n, m=<span class="number">1</span>)</span>:</span></span><br><span class="line">   s = <span class="number">1</span></span><br><span class="line">   <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, n+<span class="number">1</span>):</span><br><span class="line">      s *= i</span><br><span class="line">   <span class="keyword">return</span> s//m</span><br></pre></td></tr></table></figure>
+<pre class=" language-lang-python"><code class="language-lang-python">#例 可选参数
+def fact(n, m=1):
+   s = 1
+   for i in range(1, n+1):
+      s *= i
+   return s//m
+</code></pre>
 <ul>
-<li>可变参数传递(<code>*b</code>)<br> 函数接受的参数是可变数量的，即不确定参数总数量<br> 在确定参数后面增加一个<code>*b</code></li>
+<li><p>可变参数传递(<code>*b</code>)</p>
+<p> 函数接受的参数是可变数量的，即不确定参数总数量</p>
+<p> 在确定参数后面增加一个<code>*b</code></p>
+</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#例 使用可变参数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fact</span><span class="params">(n, *b)</span>:</span></span><br><span class="line">   s = <span class="number">1</span></span><br><span class="line">   <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, n+<span class="number">1</span>):</span><br><span class="line">      s *= i</span><br><span class="line">   <span class="keyword">for</span> item <span class="keyword">in</span> b:</span><br><span class="line">      s *= item</span><br><span class="line">   <span class="keyword">return</span> s</span><br></pre></td></tr></table></figure>
+<pre class=" language-lang-python"><code class="language-lang-python">#例 使用可变参数
+def fact(n, *b):
+   s = 1
+   for i in range(1, n+1):
+      s *= i
+   for item in b:
+      s *= item
+   return s
+</code></pre>
 <ul>
 <li>参数传递的两种方式  <ul>
 <li>位置传递</li>
@@ -643,10 +721,17 @@
 </ul>
 </li>
 </ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#位置传递</span></span><br><span class="line">fact(<span class="number">10</span>, <span class="number">5</span>)</span><br><span class="line"><span class="comment">#名称传递</span></span><br><span class="line">fact(m=<span class="number">5</span>, n=<span class="number">10</span>)</span><br></pre></td></tr></table></figure>
+<pre class=" language-lang-python"><code class="language-lang-python">#位置传递
+fact(10, 5)
+#名称传递
+fact(m=5, n=10)
+</code></pre>
 <ul>
-<li>函数的返回值 <code>return</code><br> 可以返回任意多个结果</li>
-<li>局部变量 和 全局变量<blockquote>
+<li><p>函数的返回值 <code>return</code></p>
+<p> 可以返回任意多个结果</p>
+</li>
+<li><p>局部变量 和 全局变量</p>
+<blockquote>
 <p>规则1：局部变量和全局变量是不同的</p>
 <ul>
 <li>局部变量是函数内部的<strong>占位符</strong>，与全局变量可能重名但不同，</li>
@@ -655,24 +740,113 @@
 </ul>
 </blockquote>
 </li>
-<li><code>lambda</code>函数 (不是常用函数定义形式，建议使用<code>def</code>定义的普通函数)<br> lambda函数是一种匿名函数，返回值是函数名<br> 形式：&lt;函数名&gt; = lambda&lt;参数&gt;:&lt;表达式&gt;<br> 举例：<br> <code>f = lambda x,y : x+y</code><br> <code>f(10,15)</code><br> 或<br> <code>f = lambda : &quot;lambda函数&quot;</code><br> <code>print(f())</code></li>
+<li><p><code>lambda</code>函数 (不是常用函数定义形式，建议使用<code>def</code>定义的普通函数)</p>
+<p> lambda函数是一种匿名函数，返回值是函数名</p>
+<p> 形式：&lt;函数名&gt; = lambda&lt;参数&gt;:&lt;表达式&gt;</p>
+<p> 举例：</p>
+<p> <code>f = lambda x,y : x+y</code></p>
+<p> <code>f(10,15)</code></p>
+<p> 或</p>
+<p> <code>f = lambda : &quot;lambda函数&quot;</code></p>
+<p> <code>print(f())</code></p>
+</li>
 </ul>
-<h3 id="实例7：七段数码管绘制"><a href="#实例7：七段数码管绘制" class="headerlink" title="实例7：七段数码管绘制"></a>实例7：七段数码管绘制</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 七段数码管绘制</span></span><br><span class="line"><span class="keyword">import</span> turtle, time</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">draw_gap</span><span class="params">()</span>:</span></span><br><span class="line">    turtle.penup()</span><br><span class="line">    turtle.fd(<span class="number">5</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘制单段数码管</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">draw_line</span><span class="params">(draw)</span>:</span></span><br><span class="line">    draw_gap()</span><br><span class="line">    turtle.pendown() <span class="keyword">if</span> draw <span class="keyword">else</span> turtle.penup()</span><br><span class="line">    turtle.fd(<span class="number">40</span>)</span><br><span class="line">    draw_gap()</span><br><span class="line">    turtle.right(<span class="number">90</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 根据数字绘制七段数码管</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">draw_digit</span><span class="params">(digit)</span>:</span></span><br><span class="line">    draw_line(<span class="literal">True</span>) <span class="keyword">if</span> digit <span class="keyword">in</span> [<span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">8</span>, <span class="number">9</span>] <span class="keyword">else</span> draw_line(<span class="literal">False</span>)</span><br><span class="line">    draw_line(<span class="literal">True</span>) <span class="keyword">if</span> digit <span class="keyword">in</span> [<span class="number">0</span>, <span class="number">1</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>] <span class="keyword">else</span> draw_line(<span class="literal">False</span>)</span><br><span class="line">    draw_line(<span class="literal">True</span>) <span class="keyword">if</span> digit <span class="keyword">in</span> [<span class="number">0</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">8</span>, <span class="number">9</span>] <span class="keyword">else</span> draw_line(<span class="literal">False</span>)</span><br><span class="line">    draw_line(<span class="literal">True</span>) <span class="keyword">if</span> digit <span class="keyword">in</span> [<span class="number">0</span>, <span class="number">2</span>, <span class="number">6</span>, <span class="number">8</span>] <span class="keyword">else</span> draw_line(<span class="literal">False</span>)</span><br><span class="line">    turtle.left(<span class="number">90</span>)</span><br><span class="line">    draw_line(<span class="literal">True</span>) <span class="keyword">if</span> digit <span class="keyword">in</span> [<span class="number">0</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">8</span>, <span class="number">9</span>] <span class="keyword">else</span> draw_line(<span class="literal">False</span>)</span><br><span class="line">    draw_line(<span class="literal">True</span>) <span class="keyword">if</span> digit <span class="keyword">in</span> [<span class="number">0</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>] <span class="keyword">else</span> draw_line(<span class="literal">False</span>)</span><br><span class="line">    draw_line(<span class="literal">True</span>) <span class="keyword">if</span> digit <span class="keyword">in</span> [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>] <span class="keyword">else</span> draw_line(<span class="literal">False</span>)</span><br><span class="line">    turtle.left(<span class="number">180</span>)</span><br><span class="line">    turtle.penup()</span><br><span class="line">    turtle.fd(<span class="number">20</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获得要输出的数字</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">draw_date</span><span class="params">(date)</span>:</span></span><br><span class="line">    turtle.pencolor(<span class="string">"red"</span>)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> date:</span><br><span class="line">        <span class="keyword">if</span> i == <span class="string">'-'</span>:</span><br><span class="line">            turtle.write(<span class="string">"年"</span>, font=(<span class="string">"Arial"</span>, <span class="number">18</span>, <span class="string">"normal"</span>))</span><br><span class="line">            turtle.pencolor(<span class="string">"green"</span>)</span><br><span class="line">            turtle.fd(<span class="number">40</span>)</span><br><span class="line">        <span class="keyword">elif</span> i == <span class="string">'='</span>:</span><br><span class="line">            turtle.write(<span class="string">"月"</span>, font=(<span class="string">"Arial"</span>, <span class="number">18</span>, <span class="string">"normal"</span>))</span><br><span class="line">            turtle.pencolor(<span class="string">"blue"</span>)</span><br><span class="line">            turtle.fd(<span class="number">40</span>)</span><br><span class="line">        <span class="keyword">elif</span> i == <span class="string">'+'</span>:</span><br><span class="line">            turtle.write(<span class="string">"日"</span>, font=(<span class="string">"Arial"</span>, <span class="number">18</span>, <span class="string">"normal"</span>))</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            draw_digit(eval(i))</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">    turtle.setup(<span class="number">800</span>, <span class="number">350</span>, <span class="number">200</span>, <span class="number">200</span>)</span><br><span class="line">    turtle.penup()</span><br><span class="line">    turtle.fd(<span class="number">-320</span>)</span><br><span class="line">    turtle.pensize(<span class="number">5</span>)</span><br><span class="line">    str_time = time.strftime(<span class="string">"%Y-%m=%d+"</span>, time.gmtime())</span><br><span class="line">    <span class="comment"># print(str_time)</span></span><br><span class="line">    draw_date(str_time)</span><br><span class="line">    turtle.hideturtle()</span><br><span class="line">    turtle.done()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+<h3 id="实例7：七段数码管绘制"><a href="#实例7：七段数码管绘制" class="headerlink" title="实例7：七段数码管绘制"></a>实例7：七段数码管绘制</h3><pre class=" language-lang-python"><code class="language-lang-python"># 七段数码管绘制
+import turtle, time
+
+def draw_gap():
+    turtle.penup()
+    turtle.fd(5)
+
+# 绘制单段数码管
+def draw_line(draw):
+    draw_gap()
+    turtle.pendown() if draw else turtle.penup()
+    turtle.fd(40)
+    draw_gap()
+    turtle.right(90)
+
+# 根据数字绘制七段数码管
+def draw_digit(digit):
+    draw_line(True) if digit in [2, 3, 4, 5, 6, 8, 9] else draw_line(False)
+    draw_line(True) if digit in [0, 1, 3, 4, 5, 6, 7, 8, 9] else draw_line(False)
+    draw_line(True) if digit in [0, 2, 3, 5, 6, 8, 9] else draw_line(False)
+    draw_line(True) if digit in [0, 2, 6, 8] else draw_line(False)
+    turtle.left(90)
+    draw_line(True) if digit in [0, 4, 5, 6, 8, 9] else draw_line(False)
+    draw_line(True) if digit in [0, 2, 3, 5, 6, 7, 8, 9] else draw_line(False)
+    draw_line(True) if digit in [0, 1, 2, 3, 4, 7, 8, 9] else draw_line(False)
+    turtle.left(180)
+    turtle.penup()
+    turtle.fd(20)
+
+# 获得要输出的数字
+def draw_date(date):
+    turtle.pencolor("red")
+    for i in date:
+        if i == '-':
+            turtle.write("年", font=("Arial", 18, "normal"))
+            turtle.pencolor("green")
+            turtle.fd(40)
+        elif i == '=':
+            turtle.write("月", font=("Arial", 18, "normal"))
+            turtle.pencolor("blue")
+            turtle.fd(40)
+        elif i == '+':
+            turtle.write("日", font=("Arial", 18, "normal"))
+        else:
+            draw_digit(eval(i))
+
+def main():
+    turtle.setup(800, 350, 200, 200)
+    turtle.penup()
+    turtle.fd(-320)
+    turtle.pensize(5)
+    str_time = time.strftime("%Y-%m=%d+", time.gmtime())
+    # print(str_time)
+    draw_date(str_time)
+    turtle.hideturtle()
+    turtle.done()
+
+if __name__ == '__main__':
+    main()
+</code></pre>
 <hr>
 <h3 id="代码复用与函数递归"><a href="#代码复用与函数递归" class="headerlink" title="代码复用与函数递归"></a>代码复用与函数递归</h3><ul>
 <li>模块化设计思想：松耦合、紧耦合</li>
 <li>函数递归的两个特征：基例和链条</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 汉诺塔 递归实现</span></span><br><span class="line">count = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">hanoi</span><span class="params">(n, src, dst, mid)</span>:</span></span><br><span class="line">    <span class="keyword">global</span> count</span><br><span class="line">    <span class="keyword">if</span> n == <span class="number">1</span>:</span><br><span class="line">        print(<span class="string">"&#123;&#125;:&#123;&#125;-&gt;&#123;&#125;"</span>.format(<span class="number">1</span>, src, dst))</span><br><span class="line">        count += <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        hanoi(n - <span class="number">1</span>, src, mid, dst)</span><br><span class="line">        print(<span class="string">"&#123;&#125;:&#123;&#125;-&gt;&#123;&#125;"</span>.format(n, src, dst))</span><br><span class="line">        count += <span class="number">1</span></span><br><span class="line">        hanoi(n - <span class="number">1</span>, mid, dst, src)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    x = int(input())</span><br><span class="line">    hanoi(x, <span class="string">'A'</span>, <span class="string">'C'</span>, <span class="string">'B'</span>)</span><br><span class="line">    print(count)</span><br></pre></td></tr></table></figure>
+<pre class=" language-lang-python"><code class="language-lang-python"># 汉诺塔 递归实现
+count = 0
+
+def hanoi(n, src, dst, mid):
+    global count
+    if n == 1:
+        print("{}:{}->{}".format(1, src, dst))
+        count += 1
+    else:
+        hanoi(n - 1, src, mid, dst)
+        print("{}:{}->{}".format(n, src, dst))
+        count += 1
+        hanoi(n - 1, mid, dst, src)
+
+if __name__ == '__main__':
+    x = int(input())
+    hanoi(x, 'A', 'C', 'B')
+    print(count)
+</code></pre>
 <h3 id="模块4：pyinstaller库的使用"><a href="#模块4：pyinstaller库的使用" class="headerlink" title="模块4：pyinstaller库的使用"></a>模块4：pyinstaller库的使用</h3><blockquote>
 <p>将.py源代码转换成无需原代码的可执行文件<br>pyinstaller是第三方库</p>
 </blockquote>
-<h4 id="安装：打开-cmd"><a href="#安装：打开-cmd" class="headerlink" title="安装：打开 cmd"></a>安装：打开 cmd</h4><figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line">$ pip3 <span class="keyword">install</span> pyinstaller</span><br></pre></td></tr></table></figure>
-<h4 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h4><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="variable">$</span> pyinstaller <span class="operator">-F</span> &lt;文件名.py&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="安装：打开-cmd"><a href="#安装：打开-cmd" class="headerlink" title="安装：打开 cmd"></a>安装：打开 cmd</h4><pre class=" language-lang-bash"><code class="language-lang-bash">pip3 install pyinstaller
+</code></pre>
+<h4 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h4><pre class=" language-lang-bash"><code class="language-lang-bash">pyinstaller -F <文件名.py>
+</code></pre>
 <p>执行命令后打开目录，会看到另外生成的三个目录 <strong>__pycache__</strong> , <strong>build</strong> , <strong>dist</strong> ，然后 <strong>__pycache__</strong> , <strong>build</strong> 这两个目录可以安全地删除。在 <code>dist</code> 文件夹中会看到与 .py 文件同名的 exe 文件，这个文件就是打包之后生成的文件。</p>
 <h4 id="常用参数"><a href="#常用参数" class="headerlink" title="常用参数"></a>常用参数</h4><ol>
 <li><p><code>-h</code> 查看帮助</p>
- <figure class="highlight elixir"><table><tr><td class="code"><pre><span class="line"><span class="variable">$ </span>pyinstaller -h</span><br></pre></td></tr></table></figure>
+<pre class=" language-lang-bash"><code class="language-lang-bash"> pyinstaller -h
+</code></pre>
 </li>
 <li><p><code>--clean</code> 清理打包过程中的临时文件</p>
 <p> 使用 <code>pyinstaller</code> 是加上参数 <code>--clean</code> ，比如产生的 <strong>__pycache__</strong> 和 <strong>build</strong> 文件夹等其他的没用的文件都会被清理掉。</p>
@@ -681,16 +855,158 @@
 <p> 通过加 <code>-D</code> 参数或者什么都不加，生成dist文件夹，这个文件夹中的所有文件都是必须的。</p>
 </li>
 <li><p><code>-F</code> 在dist文件夹中只生成独立的打包文件</p>
- <figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="variable">$</span> pyinstaller <span class="operator">-F</span> &lt;文件名.py&gt;</span><br></pre></td></tr></table></figure>
+<pre class=" language-lang-bash"><code class="language-lang-bash"> pyinstaller -F <文件名.py>
+</code></pre>
 </li>
 <li><p><code>-i &lt;图标名称.ico&gt;</code> 指定打包文件使用的图标文件</p>
- <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">$ pyinstaller -i <span class="tag">&lt;<span class="name">图标名.ico</span>&gt;</span> -F <span class="tag">&lt;<span class="name">文件名.py</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre class=" language-lang-bash"><code class="language-lang-bash"> pyinstaller -i <图标名.ico> -F <文件名.py>
+</code></pre>
 </li>
 </ol>
-<h3 id="实例8：科赫雪花小包裹"><a href="#实例8：科赫雪花小包裹" class="headerlink" title="实例8：科赫雪花小包裹"></a>实例8：科赫雪花小包裹</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 科赫雪花</span></span><br><span class="line"><span class="keyword">import</span> turtle</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">koch</span><span class="params">(size, n)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> n == <span class="number">0</span>:</span><br><span class="line">        turtle.fd(size)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">for</span> angle <span class="keyword">in</span> [<span class="number">0</span>, <span class="number">60</span>, <span class="number">-120</span>, <span class="number">60</span>]:</span><br><span class="line">            turtle.left(angle)</span><br><span class="line">            koch(size / <span class="number">3</span>, n - <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">    turtle.setup(<span class="number">600</span>, <span class="number">600</span>)</span><br><span class="line">    turtle.penup()</span><br><span class="line">    turtle.goto(<span class="number">-200</span>, <span class="number">100</span>)</span><br><span class="line">    turtle.pendown()</span><br><span class="line">    turtle.pensize(<span class="number">2</span>)</span><br><span class="line">    level = <span class="number">3</span></span><br><span class="line">    koch(<span class="number">400</span>, level)</span><br><span class="line">    turtle.right(<span class="number">120</span>)</span><br><span class="line">    koch(<span class="number">400</span>, level)</span><br><span class="line">    turtle.right(<span class="number">120</span>)</span><br><span class="line">    koch(<span class="number">400</span>, level)</span><br><span class="line">    turtle.hideturtle()</span><br><span class="line">    turtle.done()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+<h3 id="实例8：科赫雪花小包裹"><a href="#实例8：科赫雪花小包裹" class="headerlink" title="实例8：科赫雪花小包裹"></a>实例8：科赫雪花小包裹</h3><pre class=" language-lang-python"><code class="language-lang-python"># 科赫雪花
+import turtle
+
+def koch(size, n):
+    if n == 0:
+        turtle.fd(size)
+    else:
+        for angle in [0, 60, -120, 60]:
+            turtle.left(angle)
+            koch(size / 3, n - 1)
+
+def main():
+    turtle.setup(600, 600)
+    turtle.penup()
+    turtle.goto(-200, 100)
+    turtle.pendown()
+    turtle.pensize(2)
+    level = 3
+    koch(400, level)
+    turtle.right(120)
+    koch(400, level)
+    turtle.right(120)
+    koch(400, level)
+    turtle.hideturtle()
+    turtle.done()
+
+if __name__ == '__main__':
+    main()
+</code></pre>
 ]]></content>
       <tags>
         <tag>Python基础</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>软件工程概论第一章笔记</title>
+    <url>/2020/05/14/SoftwareEngineeringChapter1/</url>
+    <content><![CDATA[<blockquote>
+<p>教材：软件工程——原理、方法与应用（第3版）</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="第1章-绪论"><a href="#第1章-绪论" class="headerlink" title="第1章 绪论"></a>第1章 绪论</h2><h3 id="1-1-软件和软件危机"><a href="#1-1-软件和软件危机" class="headerlink" title="1.1 软件和软件危机"></a>1.1 软件和软件危机</h3><h4 id="1-1-1-软件的定义"><a href="#1-1-1-软件的定义" class="headerlink" title="1.1.1 软件的定义"></a>1.1.1 软件的定义</h4><p><strong>软件</strong>是能够完成预定功能和性能的可执行的计算机程序和使程序正常执行所需要的数据，加上描述程序的操作和使用的文档</p>
+<p><strong>软件 = 程序 + 数据 + 文档</strong></p>
+<p><strong>程序</strong>是按事先设计的功能和性能要求执行的指令序列<br><strong>数据</strong>是使程序能正常操纵信息的数据结构<br><strong>文档</strong>是与程序开发，维护和使用有关的图文材料</p>
+<h4 id="1-1-2-软件的特征"><a href="#1-1-2-软件的特征" class="headerlink" title="1.1.2 软件的特征"></a>1.1.2 软件的特征</h4><p>软件是逻辑的而不是物理的，是一种<strong>逻辑实体</strong></p>
+<ol>
+<li><p>软件开发不同于硬件设计</p>
+<p>软件开发的成本很难估计，通常占整个生产成本的大部分</p>
+</li>
+<li><p>软件生产不同于硬件制造</p>
+<p>在它的开发过程中没有明显的制造过程</p>
+</li>
+<li><p>软件维护不同于软件维修</p>
+<p>软件没有硬件那样的机械磨损，老化问题，但在使用过程中的维护却比硬件复杂的多。如果软件内部的逻辑关系比较复杂或规模比较大，在维护过程中很可能产生新的错误</p>
+</li>
+</ol>
+<h4 id="1-1-3-软件危机"><a href="#1-1-3-软件危机" class="headerlink" title="1.1.3 软件危机"></a>1.1.3 软件危机</h4><p>定义：在软件开发和维护过程中所存在一系列严重问题（开发费用超出预算、完成时间拖期、软件可靠性往往随着规模的增长而下降，质量差）</p>
+<p>原因（从<strong>维护</strong>和<strong>生产</strong>两个方面）</p>
+<ol>
+<li><p>软件维护费用急剧上升，直接威胁计算机应用的扩大</p>
+<p>纠错性维护、完善性性维护、适应性维护</p>
+</li>
+<li><p>软件生产技术进步缓慢，是加剧软件危机的重要原因</p>
+</li>
+</ol>
+<h3 id="1-2-软件工程学范畴"><a href="#1-2-软件工程学范畴" class="headerlink" title="1.2 软件工程学范畴"></a>1.2 软件工程学范畴</h3><p>宗旨：摆脱软件危机，谋求解决这一危机的方法。<br>中心思想：把软件当作一种工业产品，用工程的方法进行开发</p>
+<h4 id="1-2-1-软件开发方法学"><a href="#1-2-1-软件开发方法学" class="headerlink" title="1.2.1 软件开发方法学"></a>1.2.1 软件开发方法学</h4><ul>
+<li><p>早期的程序设计</p>
+<p>   追求程序设计技巧和效率，程序员各行其是，无统一标准</p>
+</li>
+<li><p>结构化程序设计</p>
+<p>   三种基本程序结构，自顶向下、逐步细化的开发方法，形成“结构化分析”、“结构化设计”传统方法</p>
+</li>
+<li><p>面向对象的程序设计</p>
+<p>   引入对象、类、继承等概念，形成构件，达到软件复用的目的</p>
+</li>
+</ul>
+<h4 id="1-2-2-软件工具"><a href="#1-2-2-软件工具" class="headerlink" title="1.2.2 软件工具"></a>1.2.2 软件工具</h4><p>帮助开发和维护软件的软件</p>
+<p>编译程序、编辑程序、连接程序以及支持他们的计算机操作系统，都属于软件工具</p>
+<p>另外还有：分析工具、设计工具、测试工具、维护工具</p>
+<h4 id="1-2-3-软件工程环境"><a href="#1-2-3-软件工程环境" class="headerlink" title="1.2.3 软件工程环境"></a>1.2.3 软件工程环境</h4><p>方法与工具相结合，再加上配套的软、硬件支持就形成环境。</p>
+<h4 id="1-2-4-软件工程管理"><a href="#1-2-4-软件工程管理" class="headerlink" title="1.2.4 软件工程管理"></a>1.2.4 软件工程管理</h4><p>软件工程管理的目的，是为了按照进度及预算完成软件开发计划，实现预期的经济和社会效益。它包括成本估算<br>进度安排、人员组织和质量保证等多方面的内容，还涉及管理学、度量学和经济学等多个学科方面的知识。</p>
+<p>一个理想的软件工程环境，应该同时具备支持开发和支持管理两个方面的工具。</p>
+<h3 id="1-3-软件工程的发展"><a href="#1-3-软件工程的发展" class="headerlink" title="1.3 软件工程的发展"></a>1.3 软件工程的发展</h3><h4 id="1-3-1-3种编程范型"><a href="#1-3-1-3种编程范型" class="headerlink" title="1.3.1 3种编程范型"></a>1.3.1 3种编程范型</h4><ol>
+<li><p>过程式编程范型</p>
+<p>程序 = 数据结构 + 算法</p>
+</li>
+<li><p>面向对象编程范型</p>
+<p>程序 = 对象 + 消息</p>
+</li>
+<li><p>基于构件技术的编程范型</p>
+<p>构件：标准化的对象类。</p>
+</li>
+</ol>
+<h4 id="1-3-2-3代软件工程"><a href="#1-3-2-3代软件工程" class="headerlink" title="1.3.2 3代软件工程"></a>1.3.2 3代软件工程</h4><p>软件工程的分代</p>
+<ol>
+<li><p>传统的软件工程</p>
+<p>以结构化的程序设计为基础</p>
+</li>
+<li><p>面向对象的软件工程</p>
+<p>以面向对象的程序设计为基础</p>
+</li>
+<li><p>基于构件的软件工程</p>
+<p>以软件复用为目标、领域工程为基础</p>
+</li>
+</ol>
+<h3 id="1-4-软件工程的应用"><a href="#1-4-软件工程的应用" class="headerlink" title="1.4 软件工程的应用"></a>1.4 软件工程的应用</h3><p>略</p>
+]]></content>
+      <categories>
+        <category>软件工程概论</category>
+      </categories>
+      <tags>
+        <tag>软件工程概论</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Linux命令学习</title>
+    <url>/2020/04/17/Linux-command/</url>
+    <content><![CDATA[<p>2020年春大二下学期，我们开设了操作系统课程，开始接触Linux，用这篇文章记录学习到的命令。  </p>
+<p><a href="https://www.runoob.com/linux/linux-command-manual.html" target="_blank" rel="noopener">Linux 命令大全 | 菜鸟教程</a> ——列出了很多命令，有详细说明<br><a href="https://man.linuxde.net/" target="_blank" rel="noopener">Linux命令大全(手册)</a> ——可以搜索某个命令的用法和解释<br><a id="more"></a></p>
+<h2 id="Linux-命令"><a href="#Linux-命令" class="headerlink" title="Linux 命令"></a>Linux 命令</h2><h3 id="cd"><a href="#cd" class="headerlink" title="cd"></a>cd</h3><p>切换当前工作目录至 dirName(目录参数)。</p>
+<h4 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h4><pre class=" language-lang-bash"><code class="language-lang-bash">cd [dirName]
+</code></pre>
+<ul>
+<li>dirName：要切换的目标目录。</li>
+<li>若省略 dirName，则变换至使用者的 home 目录</li>
+<li>另外，”~” 也表示 home 目录，”.” 表示目前所在的目录，”..” 则表示目前目录位置的上一层目录。</li>
+</ul>
+<h3 id="pwd"><a href="#pwd" class="headerlink" title="pwd"></a>pwd</h3><p>显示当前所在的工作目录。</p>
+<h4 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h4><pre class=" language-lang-bash"><code class="language-lang-bash">pwd
+</code></pre>
+<h3 id="ls"><a href="#ls" class="headerlink" title="ls"></a>ls</h3><p>显示指定工作目录下之内容（列出目前工作目录所含之文件及子目录)。它有很多参数可用。比如：</p>
+<pre class=" language-lang-bash"><code class="language-lang-bash">ls
+ls -a
+ls -l
+ls -all
+ls fileName -l
+</code></pre>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
@@ -711,59 +1027,190 @@
 <p><a href="https://nodejs.org/en/" target="_blank" rel="noopener">Node.js</a><br><a href="https://git-scm.com/" target="_blank" rel="noopener">Git</a></p>
 </blockquote>
 <h3 id="配置信息"><a href="#配置信息" class="headerlink" title="配置信息"></a>配置信息</h3><p>安装好 Git 后，需要进行下面的配置。<br>打开 Git Bush 终端进行操作，设置 user.name 和 user.email 配置信息，这里设置为全局。</p>
-<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">$ git<span class="built_in"> config </span>--global user.name <span class="string">"你的GitHub用户名"</span></span><br><span class="line">$ git<span class="built_in"> config </span>--global user.email <span class="string">"你的GitHub注册邮箱"</span></span><br></pre></td></tr></table></figure>
+<pre class=" language-lang-bash"><code class="language-lang-bash">git config --global user.name "你的GitHub用户名"
+git config --global user.email "你的GitHub注册邮箱"
+</code></pre>
 <p>加引号。</p>
 <h3 id="生成密钥"><a href="#生成密钥" class="headerlink" title="生成密钥"></a>生成密钥</h3><p>通过注册的邮箱生成 ssh 密钥文件，这个同样在 Git Bush 下：</p>
-<figure class="highlight elixir"><table><tr><td class="code"><pre><span class="line"><span class="variable">$ </span>ssh-keygen -t rsa -C <span class="string">"你的GitHub注册邮箱"</span></span><br></pre></td></tr></table></figure>
+<pre class=" language-lang-bash"><code class="language-lang-bash">ssh-keygen -t rsa -C "你的GitHub注册邮箱"
+</code></pre>
 <p>然后一直回车，默认不需要密码，最后得到了两个文件 id_rsa 和 id_rsa.pub。</p>
 <h3 id="拷贝密钥到-GitHub"><a href="#拷贝密钥到-GitHub" class="headerlink" title="拷贝密钥到 GitHub"></a>拷贝密钥到 GitHub</h3><p>打开 id_rsa.pub 文件，将里面的内容全部复制，然后粘贴到 GitHub -&gt; 头像-&gt; Settings -&gt; SSH and GPG keys -&gt; New SSH key。</p>
 <p>然后测试一下 GitHub SSH，打开 Git Bush ，输入下面的命令</p>
-<figure class="highlight elixir"><table><tr><td class="code"><pre><span class="line"><span class="variable">$ </span>ssh -T git<span class="variable">@github</span>.com</span><br></pre></td></tr></table></figure>
-<p>看到<br><figure class="highlight livescript"><table><tr><td class="code"><pre><span class="line">Are you sure you want <span class="keyword">to</span> <span class="keyword">continue</span> connecting (<span class="literal">yes</span>/<span class="literal">no</span>)?</span><br></pre></td></tr></table></figure><br>选择 <code>yes</code><br><figure class="highlight ada"><table><tr><td class="code"><pre><span class="line">Hi liuzhihan0! You<span class="symbol">'ve</span> successfully authenticated, but GitHub does <span class="keyword">not</span> provide shell <span class="keyword">access</span>.</span><br></pre></td></tr></table></figure><br>Hi 后面出现你的 GitHub 用户名那么就成功了。</p>
+<pre class=" language-lang-bash"><code class="language-lang-bash">ssh -T git@github.com
+</code></pre>
+<p>看到</p>
+<pre><code>Are you sure you want to continue connecting (yes/no)?
+</code></pre><p>选择 <code>yes</code></p>
+<pre><code>Hi liuzhihan0! You&#39;ve successfully authenticated, but GitHub does not provide shell access.
+</code></pre><p>Hi 后面出现你的 GitHub 用户名那么就成功了。</p>
 <h3 id="安装-Hexo"><a href="#安装-Hexo" class="headerlink" title="安装 Hexo"></a>安装 Hexo</h3><p>有了 Node.js ，就可以使用 npm 安装 Hexo ，打开 cmd ，输入以下命令。</p>
-<figure class="highlight avrasm"><table><tr><td class="code"><pre><span class="line">$ npm install -g hexo-<span class="keyword">cli</span></span><br></pre></td></tr></table></figure>
+<pre class=" language-lang-bash"><code class="language-lang-bash">$ npm install -g hexo-cli
+</code></pre>
 <h3 id="使用-Hexo"><a href="#使用-Hexo" class="headerlink" title="使用 Hexo"></a>使用 Hexo</h3><p>安装完成后，先初始化。</p>
-<figure class="highlight elixir"><table><tr><td class="code"><pre><span class="line"><span class="variable">$ </span>hexo init foldername</span><br></pre></td></tr></table></figure>
+<pre class=" language-lang-bash"><code class="language-lang-bash">hexo init foldername
+</code></pre>
 <p>这样就在当前目录下创建了一个名为 foldername 的指定文件夹， Hexo 将会在指定文件夹中新建所需要的文件。</p>
 <p>接下来进入 foldername 目录下，输入</p>
-<figure class="highlight elixir"><table><tr><td class="code"><pre><span class="line"><span class="variable">$ </span>hexo g <span class="comment"># 生成静态页面</span></span><br><span class="line"><span class="variable">$ </span>hexo s <span class="comment"># 在本地预览</span></span><br></pre></td></tr></table></figure>
+<pre class=" language-lang-bash"><code class="language-lang-bash">hexo g # 生成静态页面
+hexo s # 在本地预览
+</code></pre>
 <p>在浏览器中输入 <code>localhost:4000</code> ，就能预览到搭建的博客页面了。</p>
-<h3 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h3><h4 id="安装-hexo-deployer-git"><a href="#安装-hexo-deployer-git" class="headerlink" title="安装 hexo-deployer-git"></a>安装 hexo-deployer-git</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">$ npm <span class="keyword">install</span> hexo-deployer-git <span class="comment">--save</span></span><br></pre></td></tr></table></figure>
+<h3 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h3><h4 id="安装-hexo-deployer-git"><a href="#安装-hexo-deployer-git" class="headerlink" title="安装 hexo-deployer-git"></a>安装 hexo-deployer-git</h4><pre class=" language-lang-bash"><code class="language-lang-bash">npm install hexo-deployer-git --save
+</code></pre>
 <h4 id="修改站点配置文件"><a href="#修改站点配置文件" class="headerlink" title="修改站点配置文件"></a>修改站点配置文件</h4><p>修改 foldername 文件下的 <code>_config.yml</code> 的参数。</p>
 <p>站点配置文件中 <code>url</code> 和 <code>root</code> 比较容易导致错误，可以像我这样写，最后显示的网址是比如标签页是 <code>https://liuzhihan0.github.io/tags/</code> ，deploy 下必须写上 <code>type: git</code>，repo 的写法是 <code>https://github.com/username/username.github.io</code> ，前面说过这两个 username 是完全相同的。</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># URL</span></span><br><span class="line"><span class="attr">url:</span> <span class="string">http://liuzhihan0.github.io</span></span><br><span class="line"><span class="attr">root:</span> <span class="string">/</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># ......</span></span><br><span class="line"></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">https://github.com/liuzhihan0/liuzhihan0.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
+<pre class=" language-lang-yml"><code class="language-lang-yml"># URL
+url: http://liuzhihan0.github.io
+root: /
+
+# ......
+
+deploy:
+  type: git
+  repo: https://github.com/liuzhihan0/liuzhihan0.github.io.git
+  branch: master
+</code></pre>
 <p>然后执行命令</p>
-<figure class="highlight elixir"><table><tr><td class="code"><pre><span class="line"><span class="variable">$ </span>hexo d</span><br></pre></td></tr></table></figure>
+<pre class=" language-lang-bash"><code class="language-lang-bash">hexo d
+</code></pre>
 <p>在浏览器中输入 username.github.io ，就能看到搭建好的博客了。</p>
 <p>以后就可以一点点的完善博客了。</p>
-<h3 id="写文章"><a href="#写文章" class="headerlink" title="写文章"></a>写文章</h3><figure class="highlight actionscript"><table><tr><td class="code"><pre><span class="line">$ hexo <span class="keyword">new</span> <span class="string">"文章名称"</span></span><br></pre></td></tr></table></figure>
+<h3 id="写文章"><a href="#写文章" class="headerlink" title="写文章"></a>写文章</h3><pre class=" language-lang-bash"><code class="language-lang-bash">hexo new "文章名称"
+</code></pre>
 <p>新建的文章都在 <code>.\source\_posts</code> 目录下，md 格式，可以直接导入。</p>
 <p>在本地写好文章后保存，然后执行 <strong>部署三部曲</strong> 更新博客内容：</p>
-<figure class="highlight elixir"><table><tr><td class="code"><pre><span class="line"><span class="variable">$ </span>hexo clean</span><br><span class="line"><span class="variable">$ </span>hexo g</span><br><span class="line"><span class="variable">$ </span>hexo d</span><br></pre></td></tr></table></figure>
+<pre class=" language-lang-bash"><code class="language-lang-bash">hexo clean
+hexo g
+hexo d
+</code></pre>
 <p>当然，执行 <code>hexo d</code> 之前可以先 <code>hexo s</code> 预览一下效果，如果觉得可以了再部署。</p>
 <p>这个就是 Hexo 比较麻烦的地方了，它只能在自己的电脑上把文章写好改好，然后再通过命令行终端cmd部署，每次修改都需要重新部署，但是它免费啊，唉，忍忍吧。</p>
 <p>写 Markdown 可以用 VScode 或者 Typora 。</p>
-<h3 id="本地预览"><a href="#本地预览" class="headerlink" title="本地预览"></a>本地预览</h3><figure class="highlight elixir"><table><tr><td class="code"><pre><span class="line"><span class="variable">$ </span>hexo clean</span><br><span class="line"><span class="variable">$ </span>hexo g</span><br><span class="line"><span class="variable">$ </span>hexo s</span><br></pre></td></tr></table></figure>
-<h3 id="本地调试（-debug）"><a href="#本地调试（-debug）" class="headerlink" title="本地调试（--debug）"></a>本地调试（<code>--debug</code>）</h3><figure class="highlight elixir"><table><tr><td class="code"><pre><span class="line"><span class="variable">$ </span>hexo clean</span><br><span class="line"><span class="variable">$ </span>hexo g</span><br><span class="line"><span class="variable">$ </span>hexo s --debug</span><br></pre></td></tr></table></figure>
-<h3 id="部署步骤"><a href="#部署步骤" class="headerlink" title="部署步骤"></a>部署步骤</h3><figure class="highlight elixir"><table><tr><td class="code"><pre><span class="line"><span class="variable">$ </span>hexo clean</span><br><span class="line"><span class="variable">$ </span>hexo g</span><br><span class="line"><span class="variable">$ </span>hexo d</span><br></pre></td></tr></table></figure>
-<h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"postName"</span>      # 新建文章</span><br><span class="line">$ hexo new<span class="built_in"> page </span><span class="string">"pageName"</span> # 新建页面</span><br><span class="line">$ hexo generate            # 生成静态页面至public目录</span><br><span class="line">$ hexo<span class="built_in"> server </span>             # 开启预览访问端口(默认端口4000)</span><br><span class="line">$ hexo deploy              # 项目部署</span><br><span class="line">$ hexo help                # 查看帮助</span><br><span class="line">$ hexo version             # 查看Hexo的版本</span><br></pre></td></tr></table></figure>
+<h3 id="本地预览"><a href="#本地预览" class="headerlink" title="本地预览"></a>本地预览</h3><pre class=" language-lang-bash"><code class="language-lang-bash">hexo clean
+hexo g
+hexo s
+</code></pre>
+<h3 id="本地调试（-debug）"><a href="#本地调试（-debug）" class="headerlink" title="本地调试（--debug）"></a>本地调试（<code>--debug</code>）</h3><pre class=" language-lang-bash"><code class="language-lang-bash">hexo clean
+hexo g
+hexo s --debug
+</code></pre>
+<h3 id="部署步骤"><a href="#部署步骤" class="headerlink" title="部署步骤"></a>部署步骤</h3><pre class=" language-lang-bash"><code class="language-lang-bash">hexo clean
+hexo g
+hexo d
+</code></pre>
+<h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><pre class=" language-lang-bash"><code class="language-lang-bash">hexo new "postName"      # 新建文章
+hexo new page "pageName" # 新建页面
+hexo generate            # 生成静态页面至public目录
+hexo server              # 开启预览访问端口(默认端口4000)
+hexo deploy              # 项目部署
+hexo help                # 查看帮助
+hexo version             # 查看Hexo的版本
+</code></pre>
 <hr>
-<h2 id="NexT-主题配置"><a href="#NexT-主题配置" class="headerlink" title="NexT 主题配置"></a>NexT 主题配置</h2><h3 id="下载-NexT-主题"><a href="#下载-NexT-主题" class="headerlink" title="下载 NexT 主题"></a>下载 NexT 主题</h3><figure class="highlight elixir"><table><tr><td class="code"><pre><span class="line"><span class="variable">$ </span>git clone <span class="symbol">https:</span>/<span class="regexp">/github.com/theme</span>-<span class="keyword">next</span>/hexo-theme-<span class="keyword">next</span> themes/<span class="keyword">next</span></span><br></pre></td></tr></table></figure>
+<h2 id="NexT-主题配置"><a href="#NexT-主题配置" class="headerlink" title="NexT 主题配置"></a>NexT 主题配置</h2><h3 id="下载-NexT-主题"><a href="#下载-NexT-主题" class="headerlink" title="下载 NexT 主题"></a>下载 NexT 主题</h3><pre class=" language-lang-bash"><code class="language-lang-bash">git clone https://github.com/theme-next/hexo-theme-next themes/next
+</code></pre>
 <p>themes/next 是安装的相对路径，next是对应的主题文件夹名称。</p>
 <h3 id="主题配置文件"><a href="#主题配置文件" class="headerlink" title="主题配置文件"></a>主题配置文件</h3><h4 id="版权信息"><a href="#版权信息" class="headerlink" title="版权信息"></a>版权信息</h4><p>找到 creative_commons 改为下面所示。</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">creative_commons:</span></span><br><span class="line">  <span class="attr">license:</span> <span class="string">by-nc-sa</span></span><br><span class="line">  <span class="attr">sidebar:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">post:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">language:</span></span><br></pre></td></tr></table></figure>
-<h4 id="NexT-主题的四种样式"><a href="#NexT-主题的四种样式" class="headerlink" title="NexT 主题的四种样式"></a>NexT 主题的四种样式</h4><figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Schemes</span></span><br><span class="line"><span class="comment">#scheme: Muse</span></span><br><span class="line"><span class="comment">#scheme: Mist</span></span><br><span class="line"><span class="comment">#scheme: Pisces</span></span><br><span class="line"><span class="attr">scheme:</span> <span class="string">Gemini</span></span><br></pre></td></tr></table></figure>
+<pre class=" language-lang-yml"><code class="language-lang-yml">creative_commons:
+  license: by-nc-sa
+  sidebar: true
+  post: true
+  language:
+</code></pre>
+<h4 id="NexT-主题的四种样式"><a href="#NexT-主题的四种样式" class="headerlink" title="NexT 主题的四种样式"></a>NexT 主题的四种样式</h4><pre class=" language-lang-yml"><code class="language-lang-yml"># Schemes
+#scheme: Muse
+#scheme: Mist
+#scheme: Pisces
+scheme: Gemini
+</code></pre>
 <h4 id="menu-菜单"><a href="#menu-菜单" class="headerlink" title="menu 菜单"></a>menu 菜单</h4><p><code>||</code> 后是图标名称，不要修改。</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">home:</span> <span class="string">/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-home</span>                     <span class="comment"># 首页</span></span><br><span class="line">  <span class="attr">about:</span> <span class="string">/about/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-user</span>              <span class="comment"># 关于</span></span><br><span class="line">  <span class="attr">tags:</span> <span class="string">/tags/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-tags</span>                <span class="comment"># 标签</span></span><br><span class="line">  <span class="attr">categories:</span> <span class="string">/categories/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-th</span>      <span class="comment"># 分类</span></span><br><span class="line">  <span class="attr">archives:</span> <span class="string">/archives/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-archive</span>     <span class="comment"># 归档</span></span><br><span class="line">  <span class="attr">schedule:</span> <span class="string">/schedule/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-calendar</span>    <span class="comment"># 日程表</span></span><br><span class="line">  <span class="comment">#sitemap: /sitemap.xml || fa fa-sitemap   # 站点地图</span></span><br><span class="line">  <span class="comment">#commonweal: /404/ || fa fa-heartbeat     # 404页面</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Enable / Disable menu icons / item badges.</span></span><br><span class="line"><span class="attr">menu_settings:</span></span><br><span class="line">  <span class="attr">icons:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">badges:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
-<h4 id="作者栏"><a href="#作者栏" class="headerlink" title="作者栏"></a>作者栏</h4><figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">avatar:</span></span><br><span class="line">  <span class="comment"># 头像图片路径 \themes\next6\source\images\</span></span><br><span class="line">  <span class="attr">url:</span> <span class="string">/images/author.jpg</span></span><br><span class="line">  <span class="comment"># true为圆形，false为方形</span></span><br><span class="line">  <span class="attr">rounded:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># true头像旋转</span></span><br><span class="line">  <span class="attr">rotated:</span> <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 头像下面的 日志|分类|标签 如果是0则不显示</span></span><br><span class="line"><span class="attr">site_state:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 我的其他网站信息</span></span><br><span class="line"><span class="attr">social:</span></span><br><span class="line">  <span class="attr">GitHub:</span> <span class="string">https://github.com/username</span> <span class="string">||</span> <span class="string">fab</span> <span class="string">fa-github</span></span><br><span class="line">  <span class="attr">CSDN:</span> <span class="string">https://blog.csdn.net/xxxxxxx</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-heartbeat</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示小图标</span></span><br><span class="line"><span class="attr">social_icons:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">icons_only:</span> <span class="literal">false</span> <span class="comment"># 是否只显示小图标</span></span><br><span class="line">  <span class="attr">transition:</span> <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 友链</span></span><br><span class="line"><span class="attr">links_settings:</span></span><br><span class="line">  <span class="attr">icon:</span> <span class="string">fa</span> <span class="string">fa-link</span></span><br><span class="line">  <span class="attr">title:</span> <span class="string">友情链接</span></span><br><span class="line">  <span class="comment"># Available values: block | inline</span></span><br><span class="line">  <span class="attr">layout:</span> <span class="string">block</span></span><br><span class="line"></span><br><span class="line"><span class="attr">links:</span></span><br><span class="line">  <span class="comment">#Title: http://yoursite.com</span></span><br></pre></td></tr></table></figure>
+<pre class=" language-lang-yml"><code class="language-lang-yml">menu:
+  home: / || fa fa-home                     # 首页
+  about: /about/ || fa fa-user              # 关于
+  tags: /tags/ || fa fa-tags                # 标签
+  categories: /categories/ || fa fa-th      # 分类
+  archives: /archives/ || fa fa-archive     # 归档
+  schedule: /schedule/ || fa fa-calendar    # 日程表
+  #sitemap: /sitemap.xml || fa fa-sitemap   # 站点地图
+  #commonweal: /404/ || fa fa-heartbeat     # 404页面
+
+# Enable / Disable menu icons / item badges.
+menu_settings:
+  icons: true
+  badges: false
+</code></pre>
+<h4 id="作者栏"><a href="#作者栏" class="headerlink" title="作者栏"></a>作者栏</h4><pre class=" language-lang-yml"><code class="language-lang-yml">avatar:
+  # 头像图片路径 \themes\next6\source\images\
+  url: /images/author.jpg
+  # true为圆形，false为方形
+  rounded: true
+  # true头像旋转
+  rotated: false
+
+# 头像下面的 日志|分类|标签 如果是0则不显示
+site_state: true
+
+# 我的其他网站信息
+social:
+  GitHub: https://github.com/username || fab fa-github
+  CSDN: https://blog.csdn.net/xxxxxxx || fa fa-heartbeat
+
+# 显示小图标
+social_icons:
+  enable: true
+  icons_only: false # 是否只显示小图标
+  transition: false
+
+# 友链
+links_settings:
+  icon: fa fa-link
+  title: 友情链接
+  # Available values: block | inline
+  layout: block
+
+links:
+  #Title: http://yoursite.com
+</code></pre>
 <h4 id="打赏功能"><a href="#打赏功能" class="headerlink" title="打赏功能"></a>打赏功能</h4><p>把自己的收款二维码放到 <code>\themes\next6\source\images\</code> 目录下。</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">reward_settings:</span></span><br><span class="line">  <span class="comment"># true开启打赏功能</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">animation:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">comment:</span> <span class="string">感谢支持</span></span><br><span class="line"></span><br><span class="line"><span class="attr">reward:</span></span><br><span class="line">  <span class="attr">wechatpay:</span> <span class="string">/images/wechatpay.png</span></span><br><span class="line">  <span class="attr">alipay:</span> <span class="string">/images/alipay.png</span></span><br><span class="line">  <span class="comment">#paypal: /images/paypal.png</span></span><br><span class="line">  <span class="comment">#bitcoin: /images/bitcoin.png</span></span><br></pre></td></tr></table></figure>
-<h4 id="右上角显示-GitHub-绑带"><a href="#右上角显示-GitHub-绑带" class="headerlink" title="右上角显示 GitHub 绑带"></a>右上角显示 GitHub 绑带</h4><figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">github_banner:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">permalink:</span> <span class="string">https://github.com/liuzhihan0</span></span><br><span class="line">  <span class="attr">title:</span> <span class="string">Follow</span> <span class="string">me</span> <span class="string">on</span> <span class="string">GitHub</span> <span class="comment"># 鼠标放到上面显示 title</span></span><br></pre></td></tr></table></figure>
-<h4 id="开启不蒜子统计功能"><a href="#开启不蒜子统计功能" class="headerlink" title="开启不蒜子统计功能"></a>开启不蒜子统计功能</h4><figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">busuanzi_count:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">total_visitors:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">total_visitors_icon:</span> <span class="string">fa</span> <span class="string">fa-user</span></span><br><span class="line">  <span class="attr">total_views:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">total_views_icon:</span> <span class="string">fa</span> <span class="string">fa-eye</span></span><br><span class="line">  <span class="attr">post_views:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">post_views_icon:</span> <span class="string">fa</span> <span class="string">fa-eye</span></span><br></pre></td></tr></table></figure>
+<pre class=" language-lang-yml"><code class="language-lang-yml">reward_settings:
+  # true开启打赏功能
+  enable: true
+  animation: true
+  comment: 感谢支持
+
+reward:
+  wechatpay: /images/wechatpay.png
+  alipay: /images/alipay.png
+  #paypal: /images/paypal.png
+  #bitcoin: /images/bitcoin.png
+</code></pre>
+<h4 id="右上角显示-GitHub-绑带"><a href="#右上角显示-GitHub-绑带" class="headerlink" title="右上角显示 GitHub 绑带"></a>右上角显示 GitHub 绑带</h4><pre class=" language-lang-yml"><code class="language-lang-yml">github_banner:
+  enable: true
+  permalink: https://github.com/liuzhihan0
+  title: Follow me on GitHub # 鼠标放到上面显示 title
+</code></pre>
+<h4 id="开启不蒜子统计功能"><a href="#开启不蒜子统计功能" class="headerlink" title="开启不蒜子统计功能"></a>开启不蒜子统计功能</h4><pre class=" language-lang-yml"><code class="language-lang-yml">busuanzi_count:
+  enable: true
+  total_visitors: true
+  total_visitors_icon: fa fa-user
+  total_views: true
+  total_views_icon: fa fa-eye
+  post_views: true
+  post_views_icon: fa fa-eye
+</code></pre>
 <h4 id="添加本地搜索功能"><a href="#添加本地搜索功能" class="headerlink" title="添加本地搜索功能"></a>添加本地搜索功能</h4><p>安装 hexo-generator-searchdb 插件</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">$ npm <span class="keyword">install</span> hexo-generator-searchdb <span class="comment">--save</span></span><br></pre></td></tr></table></figure>
-<p>打开 _config.yml 找到 local_search ，将 enable 改为 true 。</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 本地搜索</span></span><br><span class="line"><span class="attr">local_search:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">trigger:</span> <span class="string">auto</span></span><br><span class="line">  <span class="attr">top_n_per_article:</span> <span class="number">1</span></span><br><span class="line">  <span class="attr">unescape:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">preload:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+<pre><code>$ npm install hexo-generator-searchdb --save
+</code></pre><p>打开 _config.yml 找到 local_search ，将 enable 改为 true 。</p>
+<pre class=" language-lang-yml"><code class="language-lang-yml"># 本地搜索
+local_search:
+  enable: true
+  trigger: auto
+  top_n_per_article: 1
+  unescape: false
+  preload: false
+</code></pre>
+<h2 id="闪烁之狐主题"><a href="#闪烁之狐主题" class="headerlink" title="闪烁之狐主题"></a>闪烁之狐主题</h2><p>最近换了闪烁之狐这个主题，这是个比较成熟的主题，想要的东西基本都有。<a href="https://blinkfox.github.io/2018/09/28/qian-duan/hexo-bo-ke-zhu-ti-zhi-hexo-theme-matery-de-jie-shao/" target="_blank" rel="noopener">Hexo博客主题之hexo-theme-matery的介绍</a></p>
 <h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>如果文章有什么错误或者需要增加修改的地方欢迎Email指出 😁</p>
 ]]></content>
       <tags>
@@ -773,14 +1220,19 @@
   <entry>
     <title>Hello World</title>
     <url>/2020/04/14/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.<br><a id="more"></a></p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<p>Quick Start</p>
+<h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class=" language-lang-bash"><code class="language-lang-bash">$ hexo new "My New Post"
+</code></pre>
 <p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class=" language-lang-bash"><code class="language-lang-bash">$ hexo server
+</code></pre>
 <p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class=" language-lang-bash"><code class="language-lang-bash">$ hexo generate
+</code></pre>
 <p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class=" language-lang-bash"><code class="language-lang-bash">$ hexo deploy
+</code></pre>
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 ]]></content>
   </entry>

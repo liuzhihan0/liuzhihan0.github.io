@@ -29,7 +29,7 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 4.2.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+<meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
 
 <body>
@@ -305,6 +305,19 @@
 </header>
 
     
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
 
 
 
@@ -564,7 +577,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://liuzhihan0.github.io" rel="external nofollow noreferrer">ZhihanLiu</a>
+                    <a href="http://liuzhihan0.github.io" rel="external nofollow noreferrer">Zhihan</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -587,7 +600,7 @@
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="http://liuzhihan0.github.io" target="_blank">ZhihanLiu</a>
+                    <a href="http://liuzhihan0.github.io" target="_blank">Zhihan</a>
                     !
                 </span>
             </div>
@@ -855,9 +868,10 @@
                         
                             之前在中国大学慕课MOOC上看嵩天老师的Python语言程序设计慕课，看视频的过程中把学的基础知识做了笔记……
 Python pip 安装与使用
-pip 官网Python pip 安装与使用 | 菜鸟教程
+pip 官网 
+Python pip 安装与使用 | 菜鸟教程
 
-pip安装库使用豆瓣镜像源1pi
+pip安装库使用豆瓣镜像源p
                         
                     </div>
                     <div class="publish-info">
@@ -867,7 +881,7 @@ pip安装库使用豆瓣镜像源1pi
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
-                            ZhihanLiu
+                            Zhihan
                             
                         </span>
                     </div>
@@ -918,7 +932,7 @@ pip安装库使用豆瓣镜像源1pi
         var url = document.location.href;
         newdiv.innerHTML += '<br />'
             + '来源: 且将新火试新茶<br />'
-            + '文章作者: ZhihanLiu<br />'
+            + '文章作者: Zhihan<br />'
             + '文章链接: <a href="' + url + '">' + url + '</a><br />'
             + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
 
@@ -1115,7 +1129,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             <span id="year">2020</span>
-            <a href="http://liuzhihan0.github.io" target="_blank">ZhihanLiu</a>
+            <a href="http://liuzhihan0.github.io" target="_blank">Zhihan</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
