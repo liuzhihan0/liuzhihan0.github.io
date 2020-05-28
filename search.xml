@@ -1,6 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Linux命令学习</title>
+    <url>/2020/04/17/linuxcommand/</url>
+    <content><![CDATA[<p>2020年春大二下学期，我们开设了操作系统课程，开始接触Linux，用这篇文章记录学习到的命令。  </p>
+<p><a href="https://www.runoob.com/linux/linux-command-manual.html" target="_blank" rel="noopener">Linux 命令大全 | 菜鸟教程</a> ——列出了很多命令，有详细说明</p>
+<p><a href="https://man.linuxde.net/" target="_blank" rel="noopener">Linux命令大全(手册)</a> ——可以搜索某个命令的用法和解释</p>
+<h2 id="Linux-命令"><a href="#Linux-命令" class="headerlink" title="Linux 命令"></a>Linux 命令</h2><h3 id="cd"><a href="#cd" class="headerlink" title="cd"></a>cd</h3><p>切换当前工作目录至 dirName(目录参数)。</p>
+<h4 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h4><pre class=" language-lang-bash"><code class="language-lang-bash">cd [dirName]
+</code></pre>
+<ul>
+<li>dirName：要切换的目标目录。</li>
+<li>若省略 dirName，则变换至使用者的 home 目录</li>
+<li>另外，”~” 也表示 home 目录，”.” 表示目前所在的目录，”..” 则表示目前目录位置的上一层目录。</li>
+</ul>
+<h3 id="pwd"><a href="#pwd" class="headerlink" title="pwd"></a>pwd</h3><p>显示当前所在的工作目录。</p>
+<h4 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h4><pre class=" language-lang-bash"><code class="language-lang-bash">pwd
+</code></pre>
+<h3 id="ls"><a href="#ls" class="headerlink" title="ls"></a>ls</h3><p>显示指定工作目录下之内容（列出目前工作目录所含之文件及子目录)。它有很多参数可用。比如：</p>
+<pre class=" language-lang-bash"><code class="language-lang-bash">ls
+ls -a
+ls -l
+ls -all
+ls fileName -l
+</code></pre>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Github+Hexo搭建博客</title>
     <url>/2020/04/15/blogbyhexo/</url>
     <content><![CDATA[<p>在家闲来无事（其实是一直在家憋得慌）就搭了这个博客，太麻烦了，这么多配置的坑一个一个填，现在还没把小图标不显示的问题解决</p>
@@ -1266,37 +1298,5 @@ if __name__ == '__main__':
 </code></pre>
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>Linux命令学习</title>
-    <url>/2020/04/17/linuxcommand/</url>
-    <content><![CDATA[<p>2020年春大二下学期，我们开设了操作系统课程，开始接触Linux，用这篇文章记录学习到的命令。  </p>
-<p><a href="https://www.runoob.com/linux/linux-command-manual.html" target="_blank" rel="noopener">Linux 命令大全 | 菜鸟教程</a> ——列出了很多命令，有详细说明</p>
-<p><a href="https://man.linuxde.net/" target="_blank" rel="noopener">Linux命令大全(手册)</a> ——可以搜索某个命令的用法和解释</p>
-<h2 id="Linux-命令"><a href="#Linux-命令" class="headerlink" title="Linux 命令"></a>Linux 命令</h2><h3 id="cd"><a href="#cd" class="headerlink" title="cd"></a>cd</h3><p>切换当前工作目录至 dirName(目录参数)。</p>
-<h4 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h4><pre class=" language-lang-bash"><code class="language-lang-bash">cd [dirName]
-</code></pre>
-<ul>
-<li>dirName：要切换的目标目录。</li>
-<li>若省略 dirName，则变换至使用者的 home 目录</li>
-<li>另外，”~” 也表示 home 目录，”.” 表示目前所在的目录，”..” 则表示目前目录位置的上一层目录。</li>
-</ul>
-<h3 id="pwd"><a href="#pwd" class="headerlink" title="pwd"></a>pwd</h3><p>显示当前所在的工作目录。</p>
-<h4 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h4><pre class=" language-lang-bash"><code class="language-lang-bash">pwd
-</code></pre>
-<h3 id="ls"><a href="#ls" class="headerlink" title="ls"></a>ls</h3><p>显示指定工作目录下之内容（列出目前工作目录所含之文件及子目录)。它有很多参数可用。比如：</p>
-<pre class=" language-lang-bash"><code class="language-lang-bash">ls
-ls -a
-ls -l
-ls -all
-ls fileName -l
-</code></pre>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-      </tags>
   </entry>
 </search>
