@@ -262,15 +262,15 @@ mark {
     color: #fff;
 }
 
-.progress-bar {
-    /* 线条宽度 */
-    height: 0px;
+/* .progress-bar {
+    height: 20px;
     position: fixed;
     bottom: 0;
     z-index: 300;
     background: linear-gradient(to right, #4cbf30 0%, #0f9d58 100%);
     opacity: 0.8;
-}
+} 
+*/
 
 .sidenav-overlay {
     z-index: 500;
@@ -1838,7 +1838,7 @@ footer a {
 }
 
 footer .copy-right {
-    color: #dbdbdb;
+    color: #a3a3a3;
 }
 
 /*搜索层样式*/

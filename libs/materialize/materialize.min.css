@@ -2129,10 +2129,10 @@ ul.staggered-list li {
   }
 }
 .page-footer {
-  padding-top: 50px;
-  height: 200px;
+  padding: 90px 0px 90px 0px;
+  height: 300px;
   color: #3a3a3a;
-  background-color: #ee6e73;
+  background-color: #585858;
 }
 .page-footer .footer-copyright {
   overflow: hidden;
