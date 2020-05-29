@@ -322,7 +322,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/source/images/3.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -486,14 +486,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    5
+                    719
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -511,6 +511,96 @@
                 <p>测试</p>
 <pre class=" language-lang-python"><code class="language-lang-python">print('Hello World!')
 </code></pre>
+<blockquote>
+<p><a href="https://blinkfox.github.io/2018/09/28/qian-duan/hexo-bo-ke-zhu-ti-zhi-hexo-theme-matery-de-jie-shao/" target="_blank" rel="noopener">https://blinkfox.github.io/2018/09/28/qian-duan/hexo-bo-ke-zhu-ti-zhi-hexo-theme-matery-de-jie-shao/</a></p>
+</blockquote>
+<h2 id="文章-Front-matter-介绍"><a href="#文章-Front-matter-介绍" class="headerlink" title="文章 Front-matter 介绍"></a>文章 Front-matter 介绍</h2><h3 id="Front-matter-选项详解"><a href="#Front-matter-选项详解" class="headerlink" title="Front-matter 选项详解"></a>Front-matter 选项详解</h3><p><code>Front-matter</code> 选项中的所有内容均为<strong>非必填</strong>的。但我仍然建议至少填写 <code>title</code> 和 <code>date</code> 的值。</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">配置选项</th>
+<th style="text-align:left">默认值</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">title</td>
+<td style="text-align:left"><code>Markdown</code> 的文件标题</td>
+<td style="text-align:left">文章标题，强烈建议填写此选项</td>
+</tr>
+<tr>
+<td style="text-align:left">date</td>
+<td style="text-align:left">文件创建时的日期时间</td>
+<td style="text-align:left">发布时间，强烈建议填写此选项，且最好保证全局唯一</td>
+</tr>
+<tr>
+<td style="text-align:left">author</td>
+<td style="text-align:left">根 <code>_config.yml</code> 中的 <code>author</code></td>
+<td style="text-align:left">文章作者</td>
+</tr>
+<tr>
+<td style="text-align:left">img</td>
+<td style="text-align:left"><code>featureImages</code> 中的某个值</td>
+<td style="text-align:left">文章特征图，推荐使用图床(腾讯云、七牛云、又拍云等)来做图片的路径.如: <code>http://xxx.com/xxx.jpg</code></td>
+</tr>
+<tr>
+<td style="text-align:left">top</td>
+<td style="text-align:left"><code>true</code></td>
+<td style="text-align:left">推荐文章（文章是否置顶），如果 <code>top</code> 值为 <code>true</code>，则会作为首页推荐文章</td>
+</tr>
+<tr>
+<td style="text-align:left">cover</td>
+<td style="text-align:left"><code>false</code></td>
+<td style="text-align:left"><code>v1.0.2</code>版本新增，表示该文章是否需要加入到首页轮播封面中</td>
+</tr>
+<tr>
+<td style="text-align:left">coverImg</td>
+<td style="text-align:left">无</td>
+<td style="text-align:left"><code>v1.0.2</code>版本新增，表示该文章在首页轮播封面需要显示的图片路径，如果没有，则默认使用文章的特色图片</td>
+</tr>
+<tr>
+<td style="text-align:left">password</td>
+<td style="text-align:left">无</td>
+<td style="text-align:left">文章阅读密码，如果要对文章设置阅读验证密码的话，就可以设置 <code>password</code> 的值，该值必须是用 <code>SHA256</code> 加密后的密码，防止被他人识破。前提是在主题的 <code>config.yml</code> 中激活了 <code>verifyPassword</code> 选项</td>
+</tr>
+<tr>
+<td style="text-align:left">toc</td>
+<td style="text-align:left"><code>true</code></td>
+<td style="text-align:left">是否开启 TOC，可以针对某篇文章单独关闭 TOC 的功能。前提是在主题的 <code>config.yml</code> 中激活了 <code>toc</code> 选项</td>
+</tr>
+<tr>
+<td style="text-align:left">mathjax</td>
+<td style="text-align:left"><code>false</code></td>
+<td style="text-align:left">是否开启数学公式支持 ，本文章是否开启 <code>mathjax</code>，且需要在主题的 <code>_config.yml</code> 文件中也需要开启才行</td>
+</tr>
+<tr>
+<td style="text-align:left">summary</td>
+<td style="text-align:left">无</td>
+<td style="text-align:left">文章摘要，自定义的文章摘要内容，如果这个属性有值，文章卡片摘要就显示这段文字，否则程序会自动截取文章的部分内容作为摘要</td>
+</tr>
+<tr>
+<td style="text-align:left">categories</td>
+<td style="text-align:left">无</td>
+<td style="text-align:left">文章分类，本主题的分类表示宏观上大的分类，只建议一篇文章一个分类</td>
+</tr>
+<tr>
+<td style="text-align:left">tags</td>
+<td style="text-align:left">无</td>
+<td style="text-align:left">文章标签，一篇文章可以多个标签</td>
+</tr>
+</tbody>
+</table>
+</div>
+<blockquote>
+<p><strong>注意</strong>:</p>
+<ol>
+<li>如果 <code>img</code> 属性不填写的话，文章特色图会根据文章标题的 <code>hashcode</code> 的值取余，然后选取主题中对应的特色图片，从而达到让所有文章都的特色图<strong>各有特色</strong>。</li>
+<li><code>date</code> 的值尽量保证每篇文章是唯一的，因为本主题中 <code>Gitalk</code> 和 <code>Gitment</code> 识别 <code>id</code> 是通过 <code>date</code> 的值来作为唯一标识的。</li>
+<li>如果要对文章设置阅读验证密码的功能，不仅要在 Front-matter 中设置采用了 SHA256 加密的 password 的值，还需要在主题的 <code>_config.yml</code> 中激活了配置。有些在线的 SHA256 加密的地址，可供你使用：<a href="http://tool.oschina.net/encrypt?type=2" target="_blank" rel="noopener">开源中国在线工具</a>、<a href="http://encode.chahuo.com/" target="_blank" rel="noopener">chahuo</a>、<a href="http://tool.chinaz.com/tools/hash.aspx" target="_blank" rel="noopener">站长工具</a>。</li>
+</ol>
+</blockquote>
 
             </div>
             <hr/>
@@ -778,7 +868,8 @@
                 <a href="/2020/05/29/test/">
                     <div class="card-image">
                         
-                        <img src="/source/images/3.jpg" class="responsive-img" alt="测试">
+                        
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="测试">
                         
                         <span class="card-title">测试</span>
                     </div>
@@ -1108,7 +1199,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">7.5k</span>&nbsp;字
+                class="white-color">8.2k</span>&nbsp;字
             
             
             
