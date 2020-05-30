@@ -29,9 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="且将新火试新茶" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+<meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"><link rel="alternate" href="/atom.xml" title="且将新火试新茶" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
 
 
 <body>
@@ -513,7 +513,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="第十章-数据库恢复技术"><a href="#第十章-数据库恢复技术" class="headerlink" title="第十章 数据库恢复技术"></a>第十章 数据库恢复技术</h1><h2 id="10-1-事物的基本概述"><a href="#10-1-事物的基本概述" class="headerlink" title="10.1 事物的基本概述"></a>10.1 事物的基本概述</h2><h3 id="1-事务"><a href="#1-事务" class="headerlink" title="1. 事务"></a>1. 事务</h3><p>所谓<strong>事务</strong>是用户定义的<strong>一个数据库操作序列</strong>，这些操作==要么全做，要么全不做==，是一个不可分割的工作单位。</p>
+                <h1 id="第十章-数据库恢复技术"><a href="#第十章-数据库恢复技术" class="headerlink" title="第十章 数据库恢复技术"></a>第十章 数据库恢复技术</h1><h2 id="10-1-事物的基本概述"><a href="#10-1-事物的基本概述" class="headerlink" title="10.1 事物的基本概述"></a>10.1 事物的基本概述</h2><h3 id="1-事务"><a href="#1-事务" class="headerlink" title="1. 事务"></a>1. 事务</h3><p>所谓<strong>事务</strong>是用户定义的<strong>一个数据库操作序列</strong>，这些操作<strong>要么全做，要么全不做</strong>，是一个不可分割的工作单位。</p>
 <p>例如，在关系数据库中，一个事务可以是一条SQL语句、一组SQL语句或整个程序。</p>
 <p>事务和程序是两个概念。一般地讲，<strong>一个程序中包含多个事务</strong>。事务和程序是<strong>多对多</strong>的关系。</p>
 <p><strong>定义事务</strong></p>
@@ -631,7 +631,7 @@
 </ul>
 </blockquote>
 <h3 id="10-4-2-登录日志文件"><a href="#10-4-2-登录日志文件" class="headerlink" title="10.4.2 登录日志文件"></a>10.4.2 登录日志文件</h3><h4 id="1-日志文件的格式和内容"><a href="#1-日志文件的格式和内容" class="headerlink" title="1. 日志文件的格式和内容"></a>1. 日志文件的格式和内容</h4><p>日志文件是用来<strong>记录事务对数据库的更新操作</strong>的文件。日志文件主要由两种格式：以记录为单位的日志文件 和 以数据块为单位的日志文件。</p>
-<h5 id="a-以记录为单位"><a href="#a-以记录为单位" class="headerlink" title="a. 以记录为单位"></a>a. 以记录为单位</h5><p>日志文件中==需要登记的内容==包括：</p>
+<h5 id="a-以记录为单位"><a href="#a-以记录为单位" class="headerlink" title="a. 以记录为单位"></a>a. 以记录为单位</h5><p>日志文件中<strong>需要登记的内容</strong>包括：</p>
 <ul>
 <li><p>各个事务的开始（BEGIN TRANSACTION）标记。</p>
 </li>
@@ -640,8 +640,8 @@
 <li><p>各个事务的所有更新操作。</p>
 </li>
 </ul>
-<p>这里每个事务的开始标记、每个事务的结束标记和每个更新操作均作为日志文件中的==一个日志记录==</p>
-<p>==每条日志记录==的内容：</p>
+<p>这里每个事务的开始标记、每个事务的结束标记和每个更新操作均作为日志文件中的<strong>一个日志记录</strong></p>
+<p><strong>每条日志记录</strong>的内容：</p>
 <ul>
 <li>事务标识（标明是哪个事务） </li>
 <li>操作类型（插入、删除或修改）</li>
@@ -649,7 +649,7 @@
 <li>更新前数据的旧值（对插入操作而言，此项为空值）</li>
 <li>更新后数据的新值（对删除操作而言, 此项为空值）</li>
 </ul>
-<h5 id="b-以数据块为单位"><a href="#b-以数据块为单位" class="headerlink" title="b. 以数据块为单位"></a>b. 以数据块为单位</h5><p>对于以数据块为单位的日志文件，==每条日志记录的内容==包括：</p>
+<h5 id="b-以数据块为单位"><a href="#b-以数据块为单位" class="headerlink" title="b. 以数据块为单位"></a>b. 以数据块为单位</h5><p>对于以数据块为单位的日志文件，<strong>每条日志记录的内容</strong>包括：</p>
 <ul>
 <li>事务标识（标明是那个事务）</li>
 <li>被更新的数据块</li>
@@ -663,13 +663,11 @@
 <li><p>协助后备副本进行介质故障恢复</p>
 </li>
 </ul>
-<h4 id="3-登记日志文件"><a href="#3-登记日志文件" class="headerlink" title="3. 登记日志文件"></a>3. 登记日志文件</h4><p><strong>为保证数据库是可恢复的</strong>，登录日志文件时，必须遵循==两条原则==：</p>
+<h4 id="3-登记日志文件"><a href="#3-登记日志文件" class="headerlink" title="3. 登记日志文件"></a>3. 登记日志文件</h4><p><strong>为保证数据库是可恢复的</strong>，登录日志文件时，必须遵循<strong>两条原则</strong>：</p>
 <ul>
 <li>登记的次序严格按并行事务执行的时间次序</li>
 <li>必须先写日志文件，后写数据库</li>
 </ul>
-<hr>
-<p>Finished</p>
 
             </div>
             <hr/>
@@ -950,8 +948,7 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            第十章 数据库恢复技术10.1 事物的基本概述1. 事务所谓事务是用户定义的一个数据库操作序列，这些操作==要么全做，要么全不做==，是一个不可分割的工作单位。
-例如，在关系数据库中，一个事务可以是一条SQL语句、一组SQL语句或整个程序。
+                            数据库系统概论第十章数据库恢复技术学习笔记，把第十章内容的有关知识点按章节顺序写下来，方便复习
                         
                     </div>
                     <div class="publish-info">
