@@ -30,7 +30,8 @@
     <script src="/libs/jquery/jquery.min.js"></script>
 
 <meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="且将新火试新茶" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
 
 <body>
@@ -504,11 +505,11 @@
 <p><a href="https://pypi.org/project/pip/" target="_blank" rel="noopener">pip 官网</a> </p>
 <p><a href="https://www.runoob.com/w3cnote/python-pip-install-usage.html" target="_blank" rel="noopener">Python pip 安装与使用 | 菜鸟教程</a></p>
 </blockquote>
-<h3 id="pip安装库使用豆瓣镜像源"><a href="#pip安装库使用豆瓣镜像源" class="headerlink" title="pip安装库使用豆瓣镜像源"></a>pip安装库使用豆瓣镜像源</h3><pre class=" language-lang-bash"><code class="language-lang-bash">pip install name -i http://pypi.douban.com/simple --trusted-host
+<h3 id="pip安装库使用豆瓣镜像源"><a href="#pip安装库使用豆瓣镜像源" class="headerlink" title="pip安装库使用豆瓣镜像源"></a>pip安装库使用豆瓣镜像源</h3><pre class="line-numbers language-lang-bash"><code class="language-lang-bash">pip install name -i http://pypi.douban.com/simple --trusted-host
 pypi.douban.com
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <hr>
-<h2 id="实例1：温度转换"><a href="#实例1：温度转换" class="headerlink" title="实例1：温度转换"></a>实例1：温度转换</h2><pre class=" language-lang-python"><code class="language-lang-python"># TempConvert.py
+<h2 id="实例1：温度转换"><a href="#实例1：温度转换" class="headerlink" title="实例1：温度转换"></a>实例1：温度转换</h2><pre class="line-numbers language-lang-python"><code class="language-lang-python"># TempConvert.py
 TempStr = input("请输入带有符号的温度值：")
 if TempStr[-1] in ['F', 'f']:
     C = (eval(TempStr[0:-1]) - 32) / 1.8
@@ -518,7 +519,7 @@ elif TempStr[-1] in ['C', 'c']:
     print("转换后的温度是{:.2f}F".format(F))
 else:
     print("输入格式错误")
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li><p><strong>缩进</strong> 表达程序的框架</p>
 <ol>
@@ -667,7 +668,7 @@ else:
 </li>
 </ul>
 <hr>
-<h2 id="实例2：Python蟒蛇绘制"><a href="#实例2：Python蟒蛇绘制" class="headerlink" title="实例2：Python蟒蛇绘制"></a>实例2：Python蟒蛇绘制</h2><pre class=" language-lang-python"><code class="language-lang-python">#PythonDraw.py
+<h2 id="实例2：Python蟒蛇绘制"><a href="#实例2：Python蟒蛇绘制" class="headerlink" title="实例2：Python蟒蛇绘制"></a>实例2：Python蟒蛇绘制</h2><pre class="line-numbers language-lang-python"><code class="language-lang-python">#PythonDraw.py
 import turtle
 turtle.setup(650, 350, 200, 200)
 turtle.penup()
@@ -684,7 +685,7 @@ turtle.fd(40)
 turtle.circle(16, 180)
 turtle.fd(40 * 2/3)
 turtle.done()
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><code>import</code>保留字引入了一个绘图库，名字叫<code>turtle</code></p>
 <h3 id="turtle库的使用"><a href="#turtle库的使用" class="headerlink" title="turtle库的使用"></a>turtle库的使用</h3><p>turtle(海龟)库是turtle绘图体系的Python实现，turtle绘图体系诞生于1969年，主要用于程序设计入门，是Python语言的<strong>标准库</strong>之一，是入门级的图形绘制函数库。</p>
 <ul>
@@ -799,16 +800,16 @@ turtle.done()
 <li><code>complex(x)</code>，将x变成复数，增加虚数部分</li>
 </ul>
 <hr>
-<h2 id="实例3"><a href="#实例3" class="headerlink" title="实例3"></a>实例3</h2><pre class=" language-lang-python"><code class="language-lang-python">#DayDayUp.py
+<h2 id="实例3"><a href="#实例3" class="headerlink" title="实例3"></a>实例3</h2><pre class="line-numbers language-lang-python"><code class="language-lang-python">#DayDayUp.py
 dayup = pow(1.001, 365)
 daydown = pow(0.999, 365)
 print("向上:{:.2f}, 向下:{:.2f}".format(dayup, daydown))
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p>运行结果</p>
 <p>向上:1.44, 向下:0.69</p>
 </blockquote>
-<pre class=" language-lang-python"><code class="language-lang-python">#DayDayUp3.py
+<pre class="line-numbers language-lang-python"><code class="language-lang-python">#DayDayUp3.py
 dayup = 1.0
 dayfactor = 0.01
 for i in range(365):
@@ -817,8 +818,8 @@ for i in range(365):
    else:
       dayup = dayup * (1 + dayfactor)
 print("工作日的力量:{:.2f}".format(dayup))
-</code></pre>
-<pre class=" language-lang-python"><code class="language-lang-python">#DayDayUp4.py
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-lang-python"><code class="language-lang-python">#DayDayUp4.py
 def dayUP(df):
    dayup = 1
    for i in range(365):
@@ -831,7 +832,7 @@ dayfactor = 0.01
 while dayUP(dayfactor) < 37.78:
    dayfactor += 0.001
 print("工作日的努力参数是:{:.2f}".format(dayfactor))
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <hr>
 <h2 id="字符串类型及操作"><a href="#字符串类型及操作" class="headerlink" title="字符串类型及操作"></a>字符串类型及操作</h2><h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><p>字符串有2类共4种 表示方法</p>
 <ul>
@@ -982,10 +983,10 @@ print("工作日的努力参数是:{:.2f}".format(dayfactor))
 <p>tpl是格式化模板字符串，用来定义输出效果，ts是计算机内部时间类型变量  </p>
 </li>
 </ul>
-<pre class=" language-lang-python"><code class="language-lang-python">import time
+<pre class="line-numbers language-lang-python"><code class="language-lang-python">import time
 t = time.gmtime()
 time.strftime("%Y-%m-%d %H:%M:%S",t)
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p>结果：<code>&#39;2019-10-23 09:50:37&#39;</code></p>
 </blockquote>
@@ -1068,10 +1069,10 @@ time.strftime("%Y-%m-%d %H:%M:%S",t)
 <p>tpl是格式化模板字符串，用来定义输入效果</p>
 </li>
 </ul>
-<pre class=" language-lang-python"><code class="language-lang-python">import time
+<pre class="line-numbers language-lang-python"><code class="language-lang-python">import time
 t = '2019-10-23 09:50:37'
 time.strptime(t, "%Y-%m-%d %H:%M:%S")
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p>结果：<code>time.struct_time(tm_year=2019, tm_mon=10, tm_mday=23, tm_hour=9, tm_min=50, tm_sec=37, tm_wday=2, tm_yday=296, tm_isdst=-1)</code></p>
 </blockquote>
@@ -1084,7 +1085,7 @@ time.strptime(t, "%Y-%m-%d %H:%M:%S")
 </li>
 </ul>
 <hr>
-<h2 id="实例4-文本进度条"><a href="#实例4-文本进度条" class="headerlink" title="实例4 文本进度条"></a>实例4 文本进度条</h2><pre class=" language-lang-python"><code class="language-lang-python">import time
+<h2 id="实例4-文本进度条"><a href="#实例4-文本进度条" class="headerlink" title="实例4 文本进度条"></a>实例4 文本进度条</h2><pre class="line-numbers language-lang-python"><code class="language-lang-python">import time
 scale = 50
 start = time.perf_counter()
 for i in range(scale + 1):
@@ -1094,7 +1095,7 @@ for i in range(scale + 1):
     dur = time.perf_counter() - start
     print("\r{:^3.0f}%[{}->{}] {:.2f}s".format(c, a, b, dur), end="")
     time.sleep(0.1)
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <ul>
 <li><code>end</code>是<code>print()</code>函数的一个参数，默认情况下不加它指的是我输出了一个信息之后，默认在最后增加一个换行<code>\n</code>，但是如果增加 “<code>,end=</code>” 这样一个参数，就会改变每次print输出最后增加的那个信息  </li>
@@ -1165,7 +1166,7 @@ for i in range(scale + 1):
 </ul>
 </li>
 </ul>
-<h3 id="实例5-身体质量指数"><a href="#实例5-身体质量指数" class="headerlink" title="实例5 身体质量指数"></a>实例5 身体质量指数</h3><pre class=" language-lang-python"><code class="language-lang-python">height, weight = eval(input("请输入身高(米)和体重(公斤)[逗号隔开]"))
+<h3 id="实例5-身体质量指数"><a href="#实例5-身体质量指数" class="headerlink" title="实例5 身体质量指数"></a>实例5 身体质量指数</h3><pre class="line-numbers language-lang-python"><code class="language-lang-python">height, weight = eval(input("请输入身高(米)和体重(公斤)[逗号隔开]"))
 bmi = weight / pow(height, 2)
 print("BMI指数为：{:.2f}".format(bmi))
 who, nat = "", ""
@@ -1179,7 +1180,7 @@ elif 25 <= bmi <28:
    who, nat = "偏胖", "偏胖"
 elif 28 <= bmi <30:
    who, nat = "偏胖", "偏胖"
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="程序的循环结构"><a href="#程序的循环结构" class="headerlink" title="程序的循环结构"></a>程序的循环结构</h3><ul>
 <li>遍历循环<code>for</code><ul>
 <li>计数循环</li>
@@ -1231,7 +1232,7 @@ elif 28 <= bmi <30:
 <script type="math/tex; mode=display">
 \pi=\sum^{\inf}_{k=0}[\frac{1}{16^k}(\frac{4}{8k+1}-\frac{2}{8k+4}-\frac{1}{8k+5}-\frac{1}{8k+6})]</script><p>蒙特卡罗方法</p>
 </blockquote>
-<pre class=" language-lang-python"><code class="language-lang-python">from random import random
+<pre class="line-numbers language-lang-python"><code class="language-lang-python">from random import random
 from time import perf_counter
 DARTS = 1000 * 1000
 hits = 0.0
@@ -1244,7 +1245,7 @@ for i in range(1, DARTS + 1):
 pi = 4 * (hits / DARTS)
 print("圆周率是: {}".format(pi))
 print("运行时间: {:.5f}s".format(perf_counter() - start))
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <hr>
 <h2 id="函数和代码复用"><a href="#函数和代码复用" class="headerlink" title="函数和代码复用"></a>函数和代码复用</h2><h3 id="函数的定义与使用"><a href="#函数的定义与使用" class="headerlink" title="函数的定义与使用"></a>函数的定义与使用</h3><ul>
 <li><p>函数的定义<code>def</code></p>
@@ -1253,20 +1254,20 @@ print("运行时间: {:.5f}s".format(perf_counter() - start))
 <p> 函数定义时可以为某些参数<strong>指定默认值</strong>，构成可选参数，可选参数必须放必选参数的后面</p>
 </li>
 </ul>
-<pre class=" language-lang-python"><code class="language-lang-python">#例 可选参数
+<pre class="line-numbers language-lang-python"><code class="language-lang-python">#例 可选参数
 def fact(n, m=1):
    s = 1
    for i in range(1, n+1):
       s *= i
    return s//m
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li><p>可变参数传递(<code>*b</code>)</p>
 <p> 函数接受的参数是可变数量的，即不确定参数总数量</p>
 <p> 在确定参数后面增加一个<code>*b</code></p>
 </li>
 </ul>
-<pre class=" language-lang-python"><code class="language-lang-python">#例 使用可变参数
+<pre class="line-numbers language-lang-python"><code class="language-lang-python">#例 使用可变参数
 def fact(n, *b):
    s = 1
    for i in range(1, n+1):
@@ -1274,7 +1275,7 @@ def fact(n, *b):
    for item in b:
       s *= item
    return s
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>参数传递的两种方式  <ul>
 <li>位置传递</li>
@@ -1282,11 +1283,11 @@ def fact(n, *b):
 </ul>
 </li>
 </ul>
-<pre class=" language-lang-python"><code class="language-lang-python">#位置传递
+<pre class="line-numbers language-lang-python"><code class="language-lang-python">#位置传递
 fact(10, 5)
 #名称传递
 fact(m=5, n=10)
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li><p>函数的返回值 <code>return</code></p>
 <p> 可以返回任意多个结果</p>
@@ -1312,7 +1313,7 @@ fact(m=5, n=10)
 <p> <code>print(f())</code></p>
 </li>
 </ul>
-<h3 id="实例7：七段数码管绘制"><a href="#实例7：七段数码管绘制" class="headerlink" title="实例7：七段数码管绘制"></a>实例7：七段数码管绘制</h3><pre class=" language-lang-python"><code class="language-lang-python"># 七段数码管绘制
+<h3 id="实例7：七段数码管绘制"><a href="#实例7：七段数码管绘制" class="headerlink" title="实例7：七段数码管绘制"></a>实例7：七段数码管绘制</h3><pre class="line-numbers language-lang-python"><code class="language-lang-python"># 七段数码管绘制
 import turtle, time
 
 def draw_gap():
@@ -1371,13 +1372,13 @@ def main():
 
 if __name__ == '__main__':
     main()
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <hr>
 <h3 id="代码复用与函数递归"><a href="#代码复用与函数递归" class="headerlink" title="代码复用与函数递归"></a>代码复用与函数递归</h3><ul>
 <li>模块化设计思想：松耦合、紧耦合</li>
 <li>函数递归的两个特征：基例和链条</li>
 </ul>
-<pre class=" language-lang-python"><code class="language-lang-python"># 汉诺塔 递归实现
+<pre class="line-numbers language-lang-python"><code class="language-lang-python"># 汉诺塔 递归实现
 count = 0
 
 def hanoi(n, src, dst, mid):
@@ -1395,19 +1396,19 @@ if __name__ == '__main__':
     x = int(input())
     hanoi(x, 'A', 'C', 'B')
     print(count)
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="模块4：pyinstaller库的使用"><a href="#模块4：pyinstaller库的使用" class="headerlink" title="模块4：pyinstaller库的使用"></a>模块4：pyinstaller库的使用</h3><blockquote>
 <p>将.py源代码转换成无需原代码的可执行文件<br>pyinstaller是第三方库</p>
 </blockquote>
-<h4 id="安装：打开-cmd"><a href="#安装：打开-cmd" class="headerlink" title="安装：打开 cmd"></a>安装：打开 cmd</h4><pre class=" language-lang-bash"><code class="language-lang-bash">pip3 install pyinstaller
-</code></pre>
-<h4 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h4><pre class=" language-lang-bash"><code class="language-lang-bash">pyinstaller -F <文件名.py>
-</code></pre>
+<h4 id="安装：打开-cmd"><a href="#安装：打开-cmd" class="headerlink" title="安装：打开 cmd"></a>安装：打开 cmd</h4><pre class="line-numbers language-lang-bash"><code class="language-lang-bash">pip3 install pyinstaller
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h4 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h4><pre class="line-numbers language-lang-bash"><code class="language-lang-bash">pyinstaller -F <文件名.py>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>执行命令后打开目录，会看到另外生成的三个目录 <strong>__pycache__</strong> , <strong>build</strong> , <strong>dist</strong> ，然后 <strong>__pycache__</strong> , <strong>build</strong> 这两个目录可以安全地删除。在 <code>dist</code> 文件夹中会看到与 .py 文件同名的 exe 文件，这个文件就是打包之后生成的文件。</p>
 <h4 id="常用参数"><a href="#常用参数" class="headerlink" title="常用参数"></a>常用参数</h4><ol>
 <li><p><code>-h</code> 查看帮助</p>
-<pre class=" language-lang-bash"><code class="language-lang-bash"> pyinstaller -h
-</code></pre>
+<pre class="line-numbers language-lang-bash"><code class="language-lang-bash"> pyinstaller -h
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </li>
 <li><p><code>--clean</code> 清理打包过程中的临时文件</p>
 <p> 使用 <code>pyinstaller</code> 是加上参数 <code>--clean</code> ，比如产生的 <strong>__pycache__</strong> 和 <strong>build</strong> 文件夹等其他的没用的文件都会被清理掉。</p>
@@ -1416,15 +1417,15 @@ if __name__ == '__main__':
 <p> 通过加 <code>-D</code> 参数或者什么都不加，生成dist文件夹，这个文件夹中的所有文件都是必须的。</p>
 </li>
 <li><p><code>-F</code> 在dist文件夹中只生成独立的打包文件</p>
-<pre class=" language-lang-bash"><code class="language-lang-bash"> pyinstaller -F <文件名.py>
-</code></pre>
+<pre class="line-numbers language-lang-bash"><code class="language-lang-bash"> pyinstaller -F <文件名.py>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </li>
 <li><p><code>-i &lt;图标名称.ico&gt;</code> 指定打包文件使用的图标文件</p>
-<pre class=" language-lang-bash"><code class="language-lang-bash"> pyinstaller -i <图标名.ico> -F <文件名.py>
-</code></pre>
+<pre class="line-numbers language-lang-bash"><code class="language-lang-bash"> pyinstaller -i <图标名.ico> -F <文件名.py>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </li>
 </ol>
-<h3 id="实例8：科赫雪花小包裹"><a href="#实例8：科赫雪花小包裹" class="headerlink" title="实例8：科赫雪花小包裹"></a>实例8：科赫雪花小包裹</h3><pre class=" language-lang-python"><code class="language-lang-python"># 科赫雪花
+<h3 id="实例8：科赫雪花小包裹"><a href="#实例8：科赫雪花小包裹" class="headerlink" title="实例8：科赫雪花小包裹"></a>实例8：科赫雪花小包裹</h3><pre class="line-numbers language-lang-python"><code class="language-lang-python"># 科赫雪花
 import turtle
 
 def koch(size, n):
@@ -1452,7 +1453,7 @@ def main():
 
 if __name__ == '__main__':
     main()
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr/>

@@ -30,7 +30,8 @@
     <script src="/libs/jquery/jquery.min.js"></script>
 
 <meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="且将新火试新茶" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
 
 <body>
@@ -512,40 +513,40 @@
 <p><a href="https://nodejs.org/en/" target="_blank" rel="noopener">Node.js</a><br><a href="https://git-scm.com/" target="_blank" rel="noopener">Git</a></p>
 </blockquote>
 <h3 id="配置信息"><a href="#配置信息" class="headerlink" title="配置信息"></a>配置信息</h3><p>安装好 Git 后，需要进行下面的配置。<br>打开 Git Bush 终端进行操作，设置 user.name 和 user.email 配置信息，这里设置为全局。</p>
-<pre class=" language-lang-bash"><code class="language-lang-bash">git config --global user.name "你的GitHub用户名"
+<pre class="line-numbers language-lang-bash"><code class="language-lang-bash">git config --global user.name "你的GitHub用户名"
 git config --global user.email "你的GitHub注册邮箱"
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>加引号。</p>
 <h3 id="生成密钥"><a href="#生成密钥" class="headerlink" title="生成密钥"></a>生成密钥</h3><p>通过注册的邮箱生成 ssh 密钥文件，这个同样在 Git Bush 下：</p>
-<pre class=" language-lang-bash"><code class="language-lang-bash">ssh-keygen -t rsa -C "你的GitHub注册邮箱"
-</code></pre>
+<pre class="line-numbers language-lang-bash"><code class="language-lang-bash">ssh-keygen -t rsa -C "你的GitHub注册邮箱"
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>然后一直回车，默认不需要密码，最后得到了两个文件 id_rsa 和 id_rsa.pub。</p>
 <h3 id="拷贝密钥到-GitHub"><a href="#拷贝密钥到-GitHub" class="headerlink" title="拷贝密钥到 GitHub"></a>拷贝密钥到 GitHub</h3><p>打开 id_rsa.pub 文件，将里面的内容全部复制，然后粘贴到 GitHub -&gt; 头像-&gt; Settings -&gt; SSH and GPG keys -&gt; New SSH key。</p>
 <p>然后测试一下 GitHub SSH，打开 Git Bush ，输入下面的命令</p>
-<pre class=" language-lang-bash"><code class="language-lang-bash">ssh -T git@github.com
-</code></pre>
+<pre class="line-numbers language-lang-bash"><code class="language-lang-bash">ssh -T git@github.com
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>看到</p>
 <pre><code>Are you sure you want to continue connecting (yes/no)?
 </code></pre><p>选择 <code>yes</code></p>
 <pre><code>Hi liuzhihan0! You&#39;ve successfully authenticated, but GitHub does not provide shell access.
 </code></pre><p>Hi 后面出现你的 GitHub 用户名那么就成功了。</p>
 <h3 id="安装-Hexo"><a href="#安装-Hexo" class="headerlink" title="安装 Hexo"></a>安装 Hexo</h3><p>有了 Node.js ，就可以使用 npm 安装 Hexo ，打开 cmd ，输入以下命令。</p>
-<pre class=" language-lang-bash"><code class="language-lang-bash">$ npm install -g hexo-cli
-</code></pre>
+<pre class="line-numbers language-lang-bash"><code class="language-lang-bash">$ npm install -g hexo-cli
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h3 id="使用-Hexo"><a href="#使用-Hexo" class="headerlink" title="使用 Hexo"></a>使用 Hexo</h3><p>安装完成后，先初始化。</p>
-<pre class=" language-lang-bash"><code class="language-lang-bash">hexo init foldername
-</code></pre>
+<pre class="line-numbers language-lang-bash"><code class="language-lang-bash">hexo init foldername
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>这样就在当前目录下创建了一个名为 foldername 的指定文件夹， Hexo 将会在指定文件夹中新建所需要的文件。</p>
 <p>接下来进入 foldername 目录下，输入</p>
-<pre class=" language-lang-bash"><code class="language-lang-bash">hexo g # 生成静态页面
+<pre class="line-numbers language-lang-bash"><code class="language-lang-bash">hexo g # 生成静态页面
 hexo s # 在本地预览
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>在浏览器中输入 <code>localhost:4000</code> ，就能预览到搭建的博客页面了。</p>
-<h3 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h3><h4 id="安装-hexo-deployer-git"><a href="#安装-hexo-deployer-git" class="headerlink" title="安装 hexo-deployer-git"></a>安装 hexo-deployer-git</h4><pre class=" language-lang-bash"><code class="language-lang-bash">npm install hexo-deployer-git --save
-</code></pre>
+<h3 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h3><h4 id="安装-hexo-deployer-git"><a href="#安装-hexo-deployer-git" class="headerlink" title="安装 hexo-deployer-git"></a>安装 hexo-deployer-git</h4><pre class="line-numbers language-lang-bash"><code class="language-lang-bash">npm install hexo-deployer-git --save
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h4 id="修改站点配置文件"><a href="#修改站点配置文件" class="headerlink" title="修改站点配置文件"></a>修改站点配置文件</h4><p>修改 foldername 文件下的 <code>_config.yml</code> 的参数。</p>
 <p>站点配置文件中 <code>url</code> 和 <code>root</code> 比较容易导致错误，可以像我这样写，最后显示的网址是比如标签页是 <code>https://liuzhihan0.github.io/tags/</code> ，deploy 下必须写上 <code>type: git</code>，repo 的写法是 <code>https://github.com/username/username.github.io</code> ，前面说过这两个 username 是完全相同的。</p>
-<pre class=" language-lang-yml"><code class="language-lang-yml"># URL
+<pre class="line-numbers language-lang-yml"><code class="language-lang-yml"># URL
 url: http://liuzhihan0.github.io
 root: /
 
@@ -555,62 +556,62 @@ deploy:
   type: git
   repo: https://github.com/liuzhihan0/liuzhihan0.github.io.git
   branch: master
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>然后执行命令</p>
-<pre class=" language-lang-bash"><code class="language-lang-bash">hexo d
-</code></pre>
+<pre class="line-numbers language-lang-bash"><code class="language-lang-bash">hexo d
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>在浏览器中输入 username.github.io ，就能看到搭建好的博客了。</p>
 <p>以后就可以一点点的完善博客了。</p>
-<h3 id="写文章"><a href="#写文章" class="headerlink" title="写文章"></a>写文章</h3><pre class=" language-lang-bash"><code class="language-lang-bash">hexo new "文章名称"
-</code></pre>
+<h3 id="写文章"><a href="#写文章" class="headerlink" title="写文章"></a>写文章</h3><pre class="line-numbers language-lang-bash"><code class="language-lang-bash">hexo new "文章名称"
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>新建的文章都在 <code>.\source\_posts</code> 目录下，md 格式，可以直接导入。</p>
 <p>在本地写好文章后保存，然后执行 <strong>部署三部曲</strong> 更新博客内容：</p>
-<pre class=" language-lang-bash"><code class="language-lang-bash">hexo clean
+<pre class="line-numbers language-lang-bash"><code class="language-lang-bash">hexo clean
 hexo g
 hexo d
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>当然，执行 <code>hexo d</code> 之前可以先 <code>hexo s</code> 预览一下效果，如果觉得可以了再部署。</p>
 <p>这个就是 Hexo 比较麻烦的地方了，它只能在自己的电脑上把文章写好改好，然后再通过命令行终端cmd部署，每次修改都需要重新部署，但是它免费啊，唉，忍忍吧。</p>
 <p>写 Markdown 可以用 VScode 或者 Typora 。</p>
-<h3 id="本地预览"><a href="#本地预览" class="headerlink" title="本地预览"></a>本地预览</h3><pre class=" language-lang-bash"><code class="language-lang-bash">hexo clean
+<h3 id="本地预览"><a href="#本地预览" class="headerlink" title="本地预览"></a>本地预览</h3><pre class="line-numbers language-lang-bash"><code class="language-lang-bash">hexo clean
 hexo g
 hexo s
-</code></pre>
-<h3 id="本地调试（-debug）"><a href="#本地调试（-debug）" class="headerlink" title="本地调试（--debug）"></a>本地调试（<code>--debug</code>）</h3><pre class=" language-lang-bash"><code class="language-lang-bash">hexo clean
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h3 id="本地调试（-debug）"><a href="#本地调试（-debug）" class="headerlink" title="本地调试（--debug）"></a>本地调试（<code>--debug</code>）</h3><pre class="line-numbers language-lang-bash"><code class="language-lang-bash">hexo clean
 hexo g
 hexo s --debug
-</code></pre>
-<h3 id="部署步骤"><a href="#部署步骤" class="headerlink" title="部署步骤"></a>部署步骤</h3><pre class=" language-lang-bash"><code class="language-lang-bash">hexo clean
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h3 id="部署步骤"><a href="#部署步骤" class="headerlink" title="部署步骤"></a>部署步骤</h3><pre class="line-numbers language-lang-bash"><code class="language-lang-bash">hexo clean
 hexo g
 hexo d
-</code></pre>
-<h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><pre class=" language-lang-bash"><code class="language-lang-bash">hexo new "postName"      # 新建文章
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><pre class="line-numbers language-lang-bash"><code class="language-lang-bash">hexo new "postName"      # 新建文章
 hexo new page "pageName" # 新建页面
 hexo generate            # 生成静态页面至public目录
 hexo server              # 开启预览访问端口(默认端口4000)
 hexo deploy              # 项目部署
 hexo help                # 查看帮助
 hexo version             # 查看Hexo的版本
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <hr>
-<h2 id="NexT-主题配置"><a href="#NexT-主题配置" class="headerlink" title="NexT 主题配置"></a>NexT 主题配置</h2><h3 id="下载-NexT-主题"><a href="#下载-NexT-主题" class="headerlink" title="下载 NexT 主题"></a>下载 NexT 主题</h3><pre class=" language-lang-bash"><code class="language-lang-bash">git clone https://github.com/theme-next/hexo-theme-next themes/next
-</code></pre>
+<h2 id="NexT-主题配置"><a href="#NexT-主题配置" class="headerlink" title="NexT 主题配置"></a>NexT 主题配置</h2><h3 id="下载-NexT-主题"><a href="#下载-NexT-主题" class="headerlink" title="下载 NexT 主题"></a>下载 NexT 主题</h3><pre class="line-numbers language-lang-bash"><code class="language-lang-bash">git clone https://github.com/theme-next/hexo-theme-next themes/next
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>themes/next 是安装的相对路径，next是对应的主题文件夹名称。</p>
 <h3 id="主题配置文件"><a href="#主题配置文件" class="headerlink" title="主题配置文件"></a>主题配置文件</h3><h4 id="版权信息"><a href="#版权信息" class="headerlink" title="版权信息"></a>版权信息</h4><p>找到 creative_commons 改为下面所示。</p>
-<pre class=" language-lang-yml"><code class="language-lang-yml">creative_commons:
+<pre class="line-numbers language-lang-yml"><code class="language-lang-yml">creative_commons:
   license: by-nc-sa
   sidebar: true
   post: true
   language:
-</code></pre>
-<h4 id="NexT-主题的四种样式"><a href="#NexT-主题的四种样式" class="headerlink" title="NexT 主题的四种样式"></a>NexT 主题的四种样式</h4><pre class=" language-lang-yml"><code class="language-lang-yml"># Schemes
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="NexT-主题的四种样式"><a href="#NexT-主题的四种样式" class="headerlink" title="NexT 主题的四种样式"></a>NexT 主题的四种样式</h4><pre class="line-numbers language-lang-yml"><code class="language-lang-yml"># Schemes
 #scheme: Muse
 #scheme: Mist
 #scheme: Pisces
 scheme: Gemini
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="menu-菜单"><a href="#menu-菜单" class="headerlink" title="menu 菜单"></a>menu 菜单</h4><p><code>||</code> 后是图标名称，不要修改。</p>
-<pre class=" language-lang-yml"><code class="language-lang-yml">menu:
+<pre class="line-numbers language-lang-yml"><code class="language-lang-yml">menu:
   home: / || fa fa-home                     # 首页
   about: /about/ || fa fa-user              # 关于
   tags: /tags/ || fa fa-tags                # 标签
@@ -624,8 +625,8 @@ scheme: Gemini
 menu_settings:
   icons: true
   badges: false
-</code></pre>
-<h4 id="作者栏"><a href="#作者栏" class="headerlink" title="作者栏"></a>作者栏</h4><pre class=" language-lang-yml"><code class="language-lang-yml">avatar:
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="作者栏"><a href="#作者栏" class="headerlink" title="作者栏"></a>作者栏</h4><pre class="line-numbers language-lang-yml"><code class="language-lang-yml">avatar:
   # 头像图片路径 \themes\next6\source\images\
   url: /images/author.jpg
   # true为圆形，false为方形
@@ -656,9 +657,9 @@ links_settings:
 
 links:
   #Title: http://yoursite.com
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="打赏功能"><a href="#打赏功能" class="headerlink" title="打赏功能"></a>打赏功能</h4><p>把自己的收款二维码放到 <code>\themes\next6\source\images\</code> 目录下。</p>
-<pre class=" language-lang-yml"><code class="language-lang-yml">reward_settings:
+<pre class="line-numbers language-lang-yml"><code class="language-lang-yml">reward_settings:
   # true开启打赏功能
   enable: true
   animation: true
@@ -669,13 +670,13 @@ reward:
   alipay: /images/alipay.png
   #paypal: /images/paypal.png
   #bitcoin: /images/bitcoin.png
-</code></pre>
-<h4 id="右上角显示-GitHub-绑带"><a href="#右上角显示-GitHub-绑带" class="headerlink" title="右上角显示 GitHub 绑带"></a>右上角显示 GitHub 绑带</h4><pre class=" language-lang-yml"><code class="language-lang-yml">github_banner:
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="右上角显示-GitHub-绑带"><a href="#右上角显示-GitHub-绑带" class="headerlink" title="右上角显示 GitHub 绑带"></a>右上角显示 GitHub 绑带</h4><pre class="line-numbers language-lang-yml"><code class="language-lang-yml">github_banner:
   enable: true
   permalink: https://github.com/liuzhihan0
   title: Follow me on GitHub # 鼠标放到上面显示 title
-</code></pre>
-<h4 id="开启不蒜子统计功能"><a href="#开启不蒜子统计功能" class="headerlink" title="开启不蒜子统计功能"></a>开启不蒜子统计功能</h4><pre class=" language-lang-yml"><code class="language-lang-yml">busuanzi_count:
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="开启不蒜子统计功能"><a href="#开启不蒜子统计功能" class="headerlink" title="开启不蒜子统计功能"></a>开启不蒜子统计功能</h4><pre class="line-numbers language-lang-yml"><code class="language-lang-yml">busuanzi_count:
   enable: true
   total_visitors: true
   total_visitors_icon: fa fa-user
@@ -683,18 +684,18 @@ reward:
   total_views_icon: fa fa-eye
   post_views: true
   post_views_icon: fa fa-eye
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="添加本地搜索功能"><a href="#添加本地搜索功能" class="headerlink" title="添加本地搜索功能"></a>添加本地搜索功能</h4><p>安装 hexo-generator-searchdb 插件</p>
 <pre><code>$ npm install hexo-generator-searchdb --save
 </code></pre><p>打开 _config.yml 找到 local_search ，将 enable 改为 true 。</p>
-<pre class=" language-lang-yml"><code class="language-lang-yml"># 本地搜索
+<pre class="line-numbers language-lang-yml"><code class="language-lang-yml"># 本地搜索
 local_search:
   enable: true
   trigger: auto
   top_n_per_article: 1
   unescape: false
   preload: false
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="闪烁之狐主题"><a href="#闪烁之狐主题" class="headerlink" title="闪烁之狐主题"></a>闪烁之狐主题</h2><p>最近换了闪烁之狐这个主题，这是个比较成熟的主题，想要的东西基本都有。<a href="https://blinkfox.github.io/2018/09/28/qian-duan/hexo-bo-ke-zhu-ti-zhi-hexo-theme-matery-de-jie-shao/" target="_blank" rel="noopener">Hexo博客主题之hexo-theme-matery的介绍</a></p>
 <hr>
 <p>如果有什么建议或者文章有需要修改的地方欢迎指出 😁</p>

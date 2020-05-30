@@ -1,25 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hello World</title>
-    <url>/2020/04/14/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<p>Quick Start</p>
-<h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class=" language-lang-bash"><code class="language-lang-bash">$ hexo new "My New Post"
-</code></pre>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class=" language-lang-bash"><code class="language-lang-bash">$ hexo server
-</code></pre>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class=" language-lang-bash"><code class="language-lang-bash">$ hexo generate
-</code></pre>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class=" language-lang-bash"><code class="language-lang-bash">$ hexo deploy
-</code></pre>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>Github+Hexo搭建博客</title>
     <url>/2020/04/15/bloghexo/</url>
     <content><![CDATA[<p>在家闲来无事（其实是一直在家憋得慌）就搭了这个博客，太麻烦了，这么多配置的坑一个一个填，现在还没把小图标不显示的问题解决</p>
@@ -35,40 +16,40 @@
 <p><a href="https://nodejs.org/en/" target="_blank" rel="noopener">Node.js</a><br><a href="https://git-scm.com/" target="_blank" rel="noopener">Git</a></p>
 </blockquote>
 <h3 id="配置信息"><a href="#配置信息" class="headerlink" title="配置信息"></a>配置信息</h3><p>安装好 Git 后，需要进行下面的配置。<br>打开 Git Bush 终端进行操作，设置 user.name 和 user.email 配置信息，这里设置为全局。</p>
-<pre class=" language-lang-bash"><code class="language-lang-bash">git config --global user.name "你的GitHub用户名"
+<pre class="line-numbers language-lang-bash"><code class="language-lang-bash">git config --global user.name "你的GitHub用户名"
 git config --global user.email "你的GitHub注册邮箱"
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>加引号。</p>
 <h3 id="生成密钥"><a href="#生成密钥" class="headerlink" title="生成密钥"></a>生成密钥</h3><p>通过注册的邮箱生成 ssh 密钥文件，这个同样在 Git Bush 下：</p>
-<pre class=" language-lang-bash"><code class="language-lang-bash">ssh-keygen -t rsa -C "你的GitHub注册邮箱"
-</code></pre>
+<pre class="line-numbers language-lang-bash"><code class="language-lang-bash">ssh-keygen -t rsa -C "你的GitHub注册邮箱"
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>然后一直回车，默认不需要密码，最后得到了两个文件 id_rsa 和 id_rsa.pub。</p>
 <h3 id="拷贝密钥到-GitHub"><a href="#拷贝密钥到-GitHub" class="headerlink" title="拷贝密钥到 GitHub"></a>拷贝密钥到 GitHub</h3><p>打开 id_rsa.pub 文件，将里面的内容全部复制，然后粘贴到 GitHub -&gt; 头像-&gt; Settings -&gt; SSH and GPG keys -&gt; New SSH key。</p>
 <p>然后测试一下 GitHub SSH，打开 Git Bush ，输入下面的命令</p>
-<pre class=" language-lang-bash"><code class="language-lang-bash">ssh -T git@github.com
-</code></pre>
+<pre class="line-numbers language-lang-bash"><code class="language-lang-bash">ssh -T git@github.com
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>看到</p>
 <pre><code>Are you sure you want to continue connecting (yes/no)?
 </code></pre><p>选择 <code>yes</code></p>
 <pre><code>Hi liuzhihan0! You&#39;ve successfully authenticated, but GitHub does not provide shell access.
 </code></pre><p>Hi 后面出现你的 GitHub 用户名那么就成功了。</p>
 <h3 id="安装-Hexo"><a href="#安装-Hexo" class="headerlink" title="安装 Hexo"></a>安装 Hexo</h3><p>有了 Node.js ，就可以使用 npm 安装 Hexo ，打开 cmd ，输入以下命令。</p>
-<pre class=" language-lang-bash"><code class="language-lang-bash">$ npm install -g hexo-cli
-</code></pre>
+<pre class="line-numbers language-lang-bash"><code class="language-lang-bash">$ npm install -g hexo-cli
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h3 id="使用-Hexo"><a href="#使用-Hexo" class="headerlink" title="使用 Hexo"></a>使用 Hexo</h3><p>安装完成后，先初始化。</p>
-<pre class=" language-lang-bash"><code class="language-lang-bash">hexo init foldername
-</code></pre>
+<pre class="line-numbers language-lang-bash"><code class="language-lang-bash">hexo init foldername
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>这样就在当前目录下创建了一个名为 foldername 的指定文件夹， Hexo 将会在指定文件夹中新建所需要的文件。</p>
 <p>接下来进入 foldername 目录下，输入</p>
-<pre class=" language-lang-bash"><code class="language-lang-bash">hexo g # 生成静态页面
+<pre class="line-numbers language-lang-bash"><code class="language-lang-bash">hexo g # 生成静态页面
 hexo s # 在本地预览
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>在浏览器中输入 <code>localhost:4000</code> ，就能预览到搭建的博客页面了。</p>
-<h3 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h3><h4 id="安装-hexo-deployer-git"><a href="#安装-hexo-deployer-git" class="headerlink" title="安装 hexo-deployer-git"></a>安装 hexo-deployer-git</h4><pre class=" language-lang-bash"><code class="language-lang-bash">npm install hexo-deployer-git --save
-</code></pre>
+<h3 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h3><h4 id="安装-hexo-deployer-git"><a href="#安装-hexo-deployer-git" class="headerlink" title="安装 hexo-deployer-git"></a>安装 hexo-deployer-git</h4><pre class="line-numbers language-lang-bash"><code class="language-lang-bash">npm install hexo-deployer-git --save
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h4 id="修改站点配置文件"><a href="#修改站点配置文件" class="headerlink" title="修改站点配置文件"></a>修改站点配置文件</h4><p>修改 foldername 文件下的 <code>_config.yml</code> 的参数。</p>
 <p>站点配置文件中 <code>url</code> 和 <code>root</code> 比较容易导致错误，可以像我这样写，最后显示的网址是比如标签页是 <code>https://liuzhihan0.github.io/tags/</code> ，deploy 下必须写上 <code>type: git</code>，repo 的写法是 <code>https://github.com/username/username.github.io</code> ，前面说过这两个 username 是完全相同的。</p>
-<pre class=" language-lang-yml"><code class="language-lang-yml"># URL
+<pre class="line-numbers language-lang-yml"><code class="language-lang-yml"># URL
 url: http://liuzhihan0.github.io
 root: /
 
@@ -78,62 +59,62 @@ deploy:
   type: git
   repo: https://github.com/liuzhihan0/liuzhihan0.github.io.git
   branch: master
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>然后执行命令</p>
-<pre class=" language-lang-bash"><code class="language-lang-bash">hexo d
-</code></pre>
+<pre class="line-numbers language-lang-bash"><code class="language-lang-bash">hexo d
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>在浏览器中输入 username.github.io ，就能看到搭建好的博客了。</p>
 <p>以后就可以一点点的完善博客了。</p>
-<h3 id="写文章"><a href="#写文章" class="headerlink" title="写文章"></a>写文章</h3><pre class=" language-lang-bash"><code class="language-lang-bash">hexo new "文章名称"
-</code></pre>
+<h3 id="写文章"><a href="#写文章" class="headerlink" title="写文章"></a>写文章</h3><pre class="line-numbers language-lang-bash"><code class="language-lang-bash">hexo new "文章名称"
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>新建的文章都在 <code>.\source\_posts</code> 目录下，md 格式，可以直接导入。</p>
 <p>在本地写好文章后保存，然后执行 <strong>部署三部曲</strong> 更新博客内容：</p>
-<pre class=" language-lang-bash"><code class="language-lang-bash">hexo clean
+<pre class="line-numbers language-lang-bash"><code class="language-lang-bash">hexo clean
 hexo g
 hexo d
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>当然，执行 <code>hexo d</code> 之前可以先 <code>hexo s</code> 预览一下效果，如果觉得可以了再部署。</p>
 <p>这个就是 Hexo 比较麻烦的地方了，它只能在自己的电脑上把文章写好改好，然后再通过命令行终端cmd部署，每次修改都需要重新部署，但是它免费啊，唉，忍忍吧。</p>
 <p>写 Markdown 可以用 VScode 或者 Typora 。</p>
-<h3 id="本地预览"><a href="#本地预览" class="headerlink" title="本地预览"></a>本地预览</h3><pre class=" language-lang-bash"><code class="language-lang-bash">hexo clean
+<h3 id="本地预览"><a href="#本地预览" class="headerlink" title="本地预览"></a>本地预览</h3><pre class="line-numbers language-lang-bash"><code class="language-lang-bash">hexo clean
 hexo g
 hexo s
-</code></pre>
-<h3 id="本地调试（-debug）"><a href="#本地调试（-debug）" class="headerlink" title="本地调试（--debug）"></a>本地调试（<code>--debug</code>）</h3><pre class=" language-lang-bash"><code class="language-lang-bash">hexo clean
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h3 id="本地调试（-debug）"><a href="#本地调试（-debug）" class="headerlink" title="本地调试（--debug）"></a>本地调试（<code>--debug</code>）</h3><pre class="line-numbers language-lang-bash"><code class="language-lang-bash">hexo clean
 hexo g
 hexo s --debug
-</code></pre>
-<h3 id="部署步骤"><a href="#部署步骤" class="headerlink" title="部署步骤"></a>部署步骤</h3><pre class=" language-lang-bash"><code class="language-lang-bash">hexo clean
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h3 id="部署步骤"><a href="#部署步骤" class="headerlink" title="部署步骤"></a>部署步骤</h3><pre class="line-numbers language-lang-bash"><code class="language-lang-bash">hexo clean
 hexo g
 hexo d
-</code></pre>
-<h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><pre class=" language-lang-bash"><code class="language-lang-bash">hexo new "postName"      # 新建文章
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><pre class="line-numbers language-lang-bash"><code class="language-lang-bash">hexo new "postName"      # 新建文章
 hexo new page "pageName" # 新建页面
 hexo generate            # 生成静态页面至public目录
 hexo server              # 开启预览访问端口(默认端口4000)
 hexo deploy              # 项目部署
 hexo help                # 查看帮助
 hexo version             # 查看Hexo的版本
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <hr>
-<h2 id="NexT-主题配置"><a href="#NexT-主题配置" class="headerlink" title="NexT 主题配置"></a>NexT 主题配置</h2><h3 id="下载-NexT-主题"><a href="#下载-NexT-主题" class="headerlink" title="下载 NexT 主题"></a>下载 NexT 主题</h3><pre class=" language-lang-bash"><code class="language-lang-bash">git clone https://github.com/theme-next/hexo-theme-next themes/next
-</code></pre>
+<h2 id="NexT-主题配置"><a href="#NexT-主题配置" class="headerlink" title="NexT 主题配置"></a>NexT 主题配置</h2><h3 id="下载-NexT-主题"><a href="#下载-NexT-主题" class="headerlink" title="下载 NexT 主题"></a>下载 NexT 主题</h3><pre class="line-numbers language-lang-bash"><code class="language-lang-bash">git clone https://github.com/theme-next/hexo-theme-next themes/next
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>themes/next 是安装的相对路径，next是对应的主题文件夹名称。</p>
 <h3 id="主题配置文件"><a href="#主题配置文件" class="headerlink" title="主题配置文件"></a>主题配置文件</h3><h4 id="版权信息"><a href="#版权信息" class="headerlink" title="版权信息"></a>版权信息</h4><p>找到 creative_commons 改为下面所示。</p>
-<pre class=" language-lang-yml"><code class="language-lang-yml">creative_commons:
+<pre class="line-numbers language-lang-yml"><code class="language-lang-yml">creative_commons:
   license: by-nc-sa
   sidebar: true
   post: true
   language:
-</code></pre>
-<h4 id="NexT-主题的四种样式"><a href="#NexT-主题的四种样式" class="headerlink" title="NexT 主题的四种样式"></a>NexT 主题的四种样式</h4><pre class=" language-lang-yml"><code class="language-lang-yml"># Schemes
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="NexT-主题的四种样式"><a href="#NexT-主题的四种样式" class="headerlink" title="NexT 主题的四种样式"></a>NexT 主题的四种样式</h4><pre class="line-numbers language-lang-yml"><code class="language-lang-yml"># Schemes
 #scheme: Muse
 #scheme: Mist
 #scheme: Pisces
 scheme: Gemini
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="menu-菜单"><a href="#menu-菜单" class="headerlink" title="menu 菜单"></a>menu 菜单</h4><p><code>||</code> 后是图标名称，不要修改。</p>
-<pre class=" language-lang-yml"><code class="language-lang-yml">menu:
+<pre class="line-numbers language-lang-yml"><code class="language-lang-yml">menu:
   home: / || fa fa-home                     # 首页
   about: /about/ || fa fa-user              # 关于
   tags: /tags/ || fa fa-tags                # 标签
@@ -147,8 +128,8 @@ scheme: Gemini
 menu_settings:
   icons: true
   badges: false
-</code></pre>
-<h4 id="作者栏"><a href="#作者栏" class="headerlink" title="作者栏"></a>作者栏</h4><pre class=" language-lang-yml"><code class="language-lang-yml">avatar:
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="作者栏"><a href="#作者栏" class="headerlink" title="作者栏"></a>作者栏</h4><pre class="line-numbers language-lang-yml"><code class="language-lang-yml">avatar:
   # 头像图片路径 \themes\next6\source\images\
   url: /images/author.jpg
   # true为圆形，false为方形
@@ -179,9 +160,9 @@ links_settings:
 
 links:
   #Title: http://yoursite.com
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="打赏功能"><a href="#打赏功能" class="headerlink" title="打赏功能"></a>打赏功能</h4><p>把自己的收款二维码放到 <code>\themes\next6\source\images\</code> 目录下。</p>
-<pre class=" language-lang-yml"><code class="language-lang-yml">reward_settings:
+<pre class="line-numbers language-lang-yml"><code class="language-lang-yml">reward_settings:
   # true开启打赏功能
   enable: true
   animation: true
@@ -192,13 +173,13 @@ reward:
   alipay: /images/alipay.png
   #paypal: /images/paypal.png
   #bitcoin: /images/bitcoin.png
-</code></pre>
-<h4 id="右上角显示-GitHub-绑带"><a href="#右上角显示-GitHub-绑带" class="headerlink" title="右上角显示 GitHub 绑带"></a>右上角显示 GitHub 绑带</h4><pre class=" language-lang-yml"><code class="language-lang-yml">github_banner:
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="右上角显示-GitHub-绑带"><a href="#右上角显示-GitHub-绑带" class="headerlink" title="右上角显示 GitHub 绑带"></a>右上角显示 GitHub 绑带</h4><pre class="line-numbers language-lang-yml"><code class="language-lang-yml">github_banner:
   enable: true
   permalink: https://github.com/liuzhihan0
   title: Follow me on GitHub # 鼠标放到上面显示 title
-</code></pre>
-<h4 id="开启不蒜子统计功能"><a href="#开启不蒜子统计功能" class="headerlink" title="开启不蒜子统计功能"></a>开启不蒜子统计功能</h4><pre class=" language-lang-yml"><code class="language-lang-yml">busuanzi_count:
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="开启不蒜子统计功能"><a href="#开启不蒜子统计功能" class="headerlink" title="开启不蒜子统计功能"></a>开启不蒜子统计功能</h4><pre class="line-numbers language-lang-yml"><code class="language-lang-yml">busuanzi_count:
   enable: true
   total_visitors: true
   total_visitors_icon: fa fa-user
@@ -206,18 +187,18 @@ reward:
   total_views_icon: fa fa-eye
   post_views: true
   post_views_icon: fa fa-eye
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="添加本地搜索功能"><a href="#添加本地搜索功能" class="headerlink" title="添加本地搜索功能"></a>添加本地搜索功能</h4><p>安装 hexo-generator-searchdb 插件</p>
 <pre><code>$ npm install hexo-generator-searchdb --save
 </code></pre><p>打开 _config.yml 找到 local_search ，将 enable 改为 true 。</p>
-<pre class=" language-lang-yml"><code class="language-lang-yml"># 本地搜索
+<pre class="line-numbers language-lang-yml"><code class="language-lang-yml"># 本地搜索
 local_search:
   enable: true
   trigger: auto
   top_n_per_article: 1
   unescape: false
   preload: false
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="闪烁之狐主题"><a href="#闪烁之狐主题" class="headerlink" title="闪烁之狐主题"></a>闪烁之狐主题</h2><p>最近换了闪烁之狐这个主题，这是个比较成熟的主题，想要的东西基本都有。<a href="https://blinkfox.github.io/2018/09/28/qian-duan/hexo-bo-ke-zhu-ti-zhi-hexo-theme-matery-de-jie-shao/" target="_blank" rel="noopener">Hexo博客主题之hexo-theme-matery的介绍</a></p>
 <hr>
 <p>如果有什么建议或者文章有需要修改的地方欢迎指出 😁</p>
@@ -227,115 +208,126 @@ local_search:
       </tags>
   </entry>
   <entry>
-    <title>Linux命令学习</title>
-    <url>/2020/04/17/linux-command/</url>
-    <content><![CDATA[<p>2020年春大二下学期，我们开设了操作系统课程，开始接触Linux，用这篇文章记录学习到的命令。  </p>
-<p><a href="https://www.runoob.com/linux/linux-command-manual.html" target="_blank" rel="noopener">Linux 命令大全 | 菜鸟教程</a> ——列出了很多命令，有详细说明</p>
-<p><a href="https://man.linuxde.net/" target="_blank" rel="noopener">Linux命令大全(手册)</a> ——可以搜索某个命令的用法和解释</p>
-<h2 id="Linux-命令"><a href="#Linux-命令" class="headerlink" title="Linux 命令"></a>Linux 命令</h2><h3 id="cd"><a href="#cd" class="headerlink" title="cd"></a>cd</h3><p>切换当前工作目录至 dirName(目录参数)。</p>
-<h4 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h4><pre class=" language-lang-bash"><code class="language-lang-bash">cd [dirName]
-</code></pre>
-<ul>
-<li>dirName：要切换的目标目录。</li>
-<li>若省略 dirName，则变换至使用者的 home 目录</li>
-<li>另外，”~” 也表示 home 目录，”.” 表示目前所在的目录，”..” 则表示目前目录位置的上一层目录。</li>
-</ul>
-<h3 id="pwd"><a href="#pwd" class="headerlink" title="pwd"></a>pwd</h3><p>显示当前所在的工作目录。</p>
-<h4 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h4><pre class=" language-lang-bash"><code class="language-lang-bash">pwd
-</code></pre>
-<h3 id="ls"><a href="#ls" class="headerlink" title="ls"></a>ls</h3><p>显示指定工作目录下之内容（列出目前工作目录所含之文件及子目录)。它有很多参数可用。比如：</p>
-<pre class=" language-lang-bash"><code class="language-lang-bash">ls
-ls -a
-ls -l
-ls -all
-ls fileName -l
-</code></pre>
+    <title>Hello World</title>
+    <url>/2020/04/14/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<p>Quick Start</p>
+<h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class="line-numbers language-lang-bash"><code class="language-lang-bash">$ hexo new "My New Post"
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class="line-numbers language-lang-bash"><code class="language-lang-bash">$ hexo server
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class="line-numbers language-lang-bash"><code class="language-lang-bash">$ hexo generate
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class="line-numbers language-lang-bash"><code class="language-lang-bash">$ hexo deploy
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 ]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-      </tags>
   </entry>
   <entry>
-    <title>软件工程概论第一章笔记</title>
-    <url>/2020/05/14/software-engineering1/</url>
-    <content><![CDATA[<blockquote>
-<p>教材：软件工程——原理、方法与应用（第3版）</p>
+    <title>测试</title>
+    <url>/2020/05/29/test/</url>
+    <content><![CDATA[<p>测试</p>
+<pre class="line-numbers language-lang-python"><code class="language-lang-python">print('Hello World!')
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<blockquote>
+<p><a href="https://blinkfox.github.io/2018/09/28/qian-duan/hexo-bo-ke-zhu-ti-zhi-hexo-theme-matery-de-jie-shao/" target="_blank" rel="noopener">https://blinkfox.github.io/2018/09/28/qian-duan/hexo-bo-ke-zhu-ti-zhi-hexo-theme-matery-de-jie-shao/</a></p>
 </blockquote>
-<h2 id="第1章-绪论"><a href="#第1章-绪论" class="headerlink" title="第1章 绪论"></a>第1章 绪论</h2><h3 id="1-1-软件和软件危机"><a href="#1-1-软件和软件危机" class="headerlink" title="1.1 软件和软件危机"></a>1.1 软件和软件危机</h3><h4 id="1-1-1-软件的定义"><a href="#1-1-1-软件的定义" class="headerlink" title="1.1.1 软件的定义"></a>1.1.1 软件的定义</h4><p><strong>软件</strong>是能够完成预定功能和性能的可执行的计算机程序和使程序正常执行所需要的数据，加上描述程序的操作和使用的文档</p>
-<p><strong>软件 = 程序 + 数据 + 文档</strong></p>
-<p><strong>程序</strong>是按事先设计的功能和性能要求执行的指令序列<br><strong>数据</strong>是使程序能正常操纵信息的数据结构<br><strong>文档</strong>是与程序开发，维护和使用有关的图文材料</p>
-<h4 id="1-1-2-软件的特征"><a href="#1-1-2-软件的特征" class="headerlink" title="1.1.2 软件的特征"></a>1.1.2 软件的特征</h4><p>软件是逻辑的而不是物理的，是一种<strong>逻辑实体</strong></p>
+<h2 id="文章-Front-matter-介绍"><a href="#文章-Front-matter-介绍" class="headerlink" title="文章 Front-matter 介绍"></a>文章 Front-matter 介绍</h2><h3 id="Front-matter-选项详解"><a href="#Front-matter-选项详解" class="headerlink" title="Front-matter 选项详解"></a>Front-matter 选项详解</h3><p><code>Front-matter</code> 选项中的所有内容均为<strong>非必填</strong>的。但我仍然建议至少填写 <code>title</code> 和 <code>date</code> 的值。</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">配置选项</th>
+<th style="text-align:left">默认值</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">title</td>
+<td style="text-align:left"><code>Markdown</code> 的文件标题</td>
+<td style="text-align:left">文章标题，强烈建议填写此选项</td>
+</tr>
+<tr>
+<td style="text-align:left">date</td>
+<td style="text-align:left">文件创建时的日期时间</td>
+<td style="text-align:left">发布时间，强烈建议填写此选项，且最好保证全局唯一</td>
+</tr>
+<tr>
+<td style="text-align:left">author</td>
+<td style="text-align:left">根 <code>_config.yml</code> 中的 <code>author</code></td>
+<td style="text-align:left">文章作者</td>
+</tr>
+<tr>
+<td style="text-align:left">img</td>
+<td style="text-align:left"><code>featureImages</code> 中的某个值</td>
+<td style="text-align:left">文章特征图，推荐使用图床(腾讯云、七牛云、又拍云等)来做图片的路径.如: <code>http://xxx.com/xxx.jpg</code></td>
+</tr>
+<tr>
+<td style="text-align:left">top</td>
+<td style="text-align:left"><code>true</code></td>
+<td style="text-align:left">推荐文章（文章是否置顶），如果 <code>top</code> 值为 <code>true</code>，则会作为首页推荐文章</td>
+</tr>
+<tr>
+<td style="text-align:left">cover</td>
+<td style="text-align:left"><code>false</code></td>
+<td style="text-align:left"><code>v1.0.2</code>版本新增，表示该文章是否需要加入到首页轮播封面中</td>
+</tr>
+<tr>
+<td style="text-align:left">coverImg</td>
+<td style="text-align:left">无</td>
+<td style="text-align:left"><code>v1.0.2</code>版本新增，表示该文章在首页轮播封面需要显示的图片路径，如果没有，则默认使用文章的特色图片</td>
+</tr>
+<tr>
+<td style="text-align:left">password</td>
+<td style="text-align:left">无</td>
+<td style="text-align:left">文章阅读密码，如果要对文章设置阅读验证密码的话，就可以设置 <code>password</code> 的值，该值必须是用 <code>SHA256</code> 加密后的密码，防止被他人识破。前提是在主题的 <code>config.yml</code> 中激活了 <code>verifyPassword</code> 选项</td>
+</tr>
+<tr>
+<td style="text-align:left">toc</td>
+<td style="text-align:left"><code>true</code></td>
+<td style="text-align:left">是否开启 TOC，可以针对某篇文章单独关闭 TOC 的功能。前提是在主题的 <code>config.yml</code> 中激活了 <code>toc</code> 选项</td>
+</tr>
+<tr>
+<td style="text-align:left">mathjax</td>
+<td style="text-align:left"><code>false</code></td>
+<td style="text-align:left">是否开启数学公式支持 ，本文章是否开启 <code>mathjax</code>，且需要在主题的 <code>_config.yml</code> 文件中也需要开启才行</td>
+</tr>
+<tr>
+<td style="text-align:left">summary</td>
+<td style="text-align:left">无</td>
+<td style="text-align:left">文章摘要，自定义的文章摘要内容，如果这个属性有值，文章卡片摘要就显示这段文字，否则程序会自动截取文章的部分内容作为摘要</td>
+</tr>
+<tr>
+<td style="text-align:left">categories</td>
+<td style="text-align:left">无</td>
+<td style="text-align:left">文章分类，本主题的分类表示宏观上大的分类，只建议一篇文章一个分类</td>
+</tr>
+<tr>
+<td style="text-align:left">tags</td>
+<td style="text-align:left">无</td>
+<td style="text-align:left">文章标签，一篇文章可以多个标签</td>
+</tr>
+</tbody>
+</table>
+</div>
+<blockquote>
+<p><strong>注意</strong>:</p>
 <ol>
-<li><p>软件开发不同于硬件设计</p>
-<p>软件开发的成本很难估计，通常占整个生产成本的大部分</p>
-</li>
-<li><p>软件生产不同于硬件制造</p>
-<p>在它的开发过程中没有明显的制造过程</p>
-</li>
-<li><p>软件维护不同于软件维修</p>
-<p>软件没有硬件那样的机械磨损，老化问题，但在使用过程中的维护却比硬件复杂的多。如果软件内部的逻辑关系比较复杂或规模比较大，在维护过程中很可能产生新的错误</p>
-</li>
+<li>如果 <code>img</code> 属性不填写的话，文章特色图会根据文章标题的 <code>hashcode</code> 的值取余，然后选取主题中对应的特色图片，从而达到让所有文章都的特色图<strong>各有特色</strong>。</li>
+<li><code>date</code> 的值尽量保证每篇文章是唯一的，因为本主题中 <code>Gitalk</code> 和 <code>Gitment</code> 识别 <code>id</code> 是通过 <code>date</code> 的值来作为唯一标识的。</li>
+<li>如果要对文章设置阅读验证密码的功能，不仅要在 Front-matter 中设置采用了 SHA256 加密的 password 的值，还需要在主题的 <code>_config.yml</code> 中激活了配置。有些在线的 SHA256 加密的地址，可供你使用：<a href="http://tool.oschina.net/encrypt?type=2" target="_blank" rel="noopener">开源中国在线工具</a>、<a href="http://encode.chahuo.com/" target="_blank" rel="noopener">chahuo</a>、<a href="http://tool.chinaz.com/tools/hash.aspx" target="_blank" rel="noopener">站长工具</a>。</li>
 </ol>
-<h4 id="1-1-3-软件危机"><a href="#1-1-3-软件危机" class="headerlink" title="1.1.3 软件危机"></a>1.1.3 软件危机</h4><p>定义：在软件开发和维护过程中所存在一系列严重问题（开发费用超出预算、完成时间拖期、软件可靠性往往随着规模的增长而下降，质量差）</p>
-<p>原因（从<strong>维护</strong>和<strong>生产</strong>两个方面）</p>
-<ol>
-<li><p>软件维护费用急剧上升，直接威胁计算机应用的扩大</p>
-<p>纠错性维护、完善性性维护、适应性维护</p>
-</li>
-<li><p>软件生产技术进步缓慢，是加剧软件危机的重要原因</p>
-</li>
-</ol>
-<h3 id="1-2-软件工程学范畴"><a href="#1-2-软件工程学范畴" class="headerlink" title="1.2 软件工程学范畴"></a>1.2 软件工程学范畴</h3><p>宗旨：摆脱软件危机，谋求解决这一危机的方法。<br>中心思想：把软件当作一种工业产品，用工程的方法进行开发</p>
-<h4 id="1-2-1-软件开发方法学"><a href="#1-2-1-软件开发方法学" class="headerlink" title="1.2.1 软件开发方法学"></a>1.2.1 软件开发方法学</h4><ul>
-<li><p>早期的程序设计</p>
-<p>   追求程序设计技巧和效率，程序员各行其是，无统一标准</p>
-</li>
-<li><p>结构化程序设计</p>
-<p>   三种基本程序结构，自顶向下、逐步细化的开发方法，形成“结构化分析”、“结构化设计”传统方法</p>
-</li>
-<li><p>面向对象的程序设计</p>
-<p>   引入对象、类、继承等概念，形成构件，达到软件复用的目的</p>
-</li>
-</ul>
-<h4 id="1-2-2-软件工具"><a href="#1-2-2-软件工具" class="headerlink" title="1.2.2 软件工具"></a>1.2.2 软件工具</h4><p>帮助开发和维护软件的软件</p>
-<p>编译程序、编辑程序、连接程序以及支持他们的计算机操作系统，都属于软件工具</p>
-<p>另外还有：分析工具、设计工具、测试工具、维护工具</p>
-<h4 id="1-2-3-软件工程环境"><a href="#1-2-3-软件工程环境" class="headerlink" title="1.2.3 软件工程环境"></a>1.2.3 软件工程环境</h4><p>方法与工具相结合，再加上配套的软、硬件支持就形成环境。</p>
-<h4 id="1-2-4-软件工程管理"><a href="#1-2-4-软件工程管理" class="headerlink" title="1.2.4 软件工程管理"></a>1.2.4 软件工程管理</h4><p>软件工程管理的目的，是为了按照进度及预算完成软件开发计划，实现预期的经济和社会效益。它包括成本估算<br>进度安排、人员组织和质量保证等多方面的内容，还涉及管理学、度量学和经济学等多个学科方面的知识。</p>
-<p>一个理想的软件工程环境，应该同时具备支持开发和支持管理两个方面的工具。</p>
-<h3 id="1-3-软件工程的发展"><a href="#1-3-软件工程的发展" class="headerlink" title="1.3 软件工程的发展"></a>1.3 软件工程的发展</h3><h4 id="1-3-1-3种编程范型"><a href="#1-3-1-3种编程范型" class="headerlink" title="1.3.1 3种编程范型"></a>1.3.1 3种编程范型</h4><ol>
-<li><p>过程式编程范型</p>
-<p>程序 = 数据结构 + 算法</p>
-</li>
-<li><p>面向对象编程范型</p>
-<p>程序 = 对象 + 消息</p>
-</li>
-<li><p>基于构件技术的编程范型</p>
-<p>构件：标准化的对象类。</p>
-</li>
-</ol>
-<h4 id="1-3-2-3代软件工程"><a href="#1-3-2-3代软件工程" class="headerlink" title="1.3.2 3代软件工程"></a>1.3.2 3代软件工程</h4><p>软件工程的分代</p>
-<ol>
-<li><p>传统的软件工程</p>
-<p>以结构化的程序设计为基础</p>
-</li>
-<li><p>面向对象的软件工程</p>
-<p>以面向对象的程序设计为基础</p>
-</li>
-<li><p>基于构件的软件工程</p>
-<p>以软件复用为目标、领域工程为基础</p>
-</li>
-</ol>
-<h3 id="1-4-软件工程的应用"><a href="#1-4-软件工程的应用" class="headerlink" title="1.4 软件工程的应用"></a>1.4 软件工程的应用</h3><p>略</p>
+</blockquote>
 ]]></content>
       <categories>
-        <category>软件工程概论</category>
+        <category>Markdown</category>
       </categories>
       <tags>
-        <tag>软件工程概论</tag>
+        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -346,11 +338,11 @@ ls fileName -l
 <p><a href="https://pypi.org/project/pip/" target="_blank" rel="noopener">pip 官网</a> </p>
 <p><a href="https://www.runoob.com/w3cnote/python-pip-install-usage.html" target="_blank" rel="noopener">Python pip 安装与使用 | 菜鸟教程</a></p>
 </blockquote>
-<h3 id="pip安装库使用豆瓣镜像源"><a href="#pip安装库使用豆瓣镜像源" class="headerlink" title="pip安装库使用豆瓣镜像源"></a>pip安装库使用豆瓣镜像源</h3><pre class=" language-lang-bash"><code class="language-lang-bash">pip install name -i http://pypi.douban.com/simple --trusted-host
+<h3 id="pip安装库使用豆瓣镜像源"><a href="#pip安装库使用豆瓣镜像源" class="headerlink" title="pip安装库使用豆瓣镜像源"></a>pip安装库使用豆瓣镜像源</h3><pre class="line-numbers language-lang-bash"><code class="language-lang-bash">pip install name -i http://pypi.douban.com/simple --trusted-host
 pypi.douban.com
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <hr>
-<h2 id="实例1：温度转换"><a href="#实例1：温度转换" class="headerlink" title="实例1：温度转换"></a>实例1：温度转换</h2><pre class=" language-lang-python"><code class="language-lang-python"># TempConvert.py
+<h2 id="实例1：温度转换"><a href="#实例1：温度转换" class="headerlink" title="实例1：温度转换"></a>实例1：温度转换</h2><pre class="line-numbers language-lang-python"><code class="language-lang-python"># TempConvert.py
 TempStr = input("请输入带有符号的温度值：")
 if TempStr[-1] in ['F', 'f']:
     C = (eval(TempStr[0:-1]) - 32) / 1.8
@@ -360,7 +352,7 @@ elif TempStr[-1] in ['C', 'c']:
     print("转换后的温度是{:.2f}F".format(F))
 else:
     print("输入格式错误")
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li><p><strong>缩进</strong> 表达程序的框架</p>
 <ol>
@@ -509,7 +501,7 @@ else:
 </li>
 </ul>
 <hr>
-<h2 id="实例2：Python蟒蛇绘制"><a href="#实例2：Python蟒蛇绘制" class="headerlink" title="实例2：Python蟒蛇绘制"></a>实例2：Python蟒蛇绘制</h2><pre class=" language-lang-python"><code class="language-lang-python">#PythonDraw.py
+<h2 id="实例2：Python蟒蛇绘制"><a href="#实例2：Python蟒蛇绘制" class="headerlink" title="实例2：Python蟒蛇绘制"></a>实例2：Python蟒蛇绘制</h2><pre class="line-numbers language-lang-python"><code class="language-lang-python">#PythonDraw.py
 import turtle
 turtle.setup(650, 350, 200, 200)
 turtle.penup()
@@ -526,7 +518,7 @@ turtle.fd(40)
 turtle.circle(16, 180)
 turtle.fd(40 * 2/3)
 turtle.done()
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><code>import</code>保留字引入了一个绘图库，名字叫<code>turtle</code></p>
 <h3 id="turtle库的使用"><a href="#turtle库的使用" class="headerlink" title="turtle库的使用"></a>turtle库的使用</h3><p>turtle(海龟)库是turtle绘图体系的Python实现，turtle绘图体系诞生于1969年，主要用于程序设计入门，是Python语言的<strong>标准库</strong>之一，是入门级的图形绘制函数库。</p>
 <ul>
@@ -641,16 +633,16 @@ turtle.done()
 <li><code>complex(x)</code>，将x变成复数，增加虚数部分</li>
 </ul>
 <hr>
-<h2 id="实例3"><a href="#实例3" class="headerlink" title="实例3"></a>实例3</h2><pre class=" language-lang-python"><code class="language-lang-python">#DayDayUp.py
+<h2 id="实例3"><a href="#实例3" class="headerlink" title="实例3"></a>实例3</h2><pre class="line-numbers language-lang-python"><code class="language-lang-python">#DayDayUp.py
 dayup = pow(1.001, 365)
 daydown = pow(0.999, 365)
 print("向上:{:.2f}, 向下:{:.2f}".format(dayup, daydown))
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p>运行结果</p>
 <p>向上:1.44, 向下:0.69</p>
 </blockquote>
-<pre class=" language-lang-python"><code class="language-lang-python">#DayDayUp3.py
+<pre class="line-numbers language-lang-python"><code class="language-lang-python">#DayDayUp3.py
 dayup = 1.0
 dayfactor = 0.01
 for i in range(365):
@@ -659,8 +651,8 @@ for i in range(365):
    else:
       dayup = dayup * (1 + dayfactor)
 print("工作日的力量:{:.2f}".format(dayup))
-</code></pre>
-<pre class=" language-lang-python"><code class="language-lang-python">#DayDayUp4.py
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-lang-python"><code class="language-lang-python">#DayDayUp4.py
 def dayUP(df):
    dayup = 1
    for i in range(365):
@@ -673,7 +665,7 @@ dayfactor = 0.01
 while dayUP(dayfactor) < 37.78:
    dayfactor += 0.001
 print("工作日的努力参数是:{:.2f}".format(dayfactor))
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <hr>
 <h2 id="字符串类型及操作"><a href="#字符串类型及操作" class="headerlink" title="字符串类型及操作"></a>字符串类型及操作</h2><h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><p>字符串有2类共4种 表示方法</p>
 <ul>
@@ -824,10 +816,10 @@ print("工作日的努力参数是:{:.2f}".format(dayfactor))
 <p>tpl是格式化模板字符串，用来定义输出效果，ts是计算机内部时间类型变量  </p>
 </li>
 </ul>
-<pre class=" language-lang-python"><code class="language-lang-python">import time
+<pre class="line-numbers language-lang-python"><code class="language-lang-python">import time
 t = time.gmtime()
 time.strftime("%Y-%m-%d %H:%M:%S",t)
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p>结果：<code>&#39;2019-10-23 09:50:37&#39;</code></p>
 </blockquote>
@@ -910,10 +902,10 @@ time.strftime("%Y-%m-%d %H:%M:%S",t)
 <p>tpl是格式化模板字符串，用来定义输入效果</p>
 </li>
 </ul>
-<pre class=" language-lang-python"><code class="language-lang-python">import time
+<pre class="line-numbers language-lang-python"><code class="language-lang-python">import time
 t = '2019-10-23 09:50:37'
 time.strptime(t, "%Y-%m-%d %H:%M:%S")
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p>结果：<code>time.struct_time(tm_year=2019, tm_mon=10, tm_mday=23, tm_hour=9, tm_min=50, tm_sec=37, tm_wday=2, tm_yday=296, tm_isdst=-1)</code></p>
 </blockquote>
@@ -926,7 +918,7 @@ time.strptime(t, "%Y-%m-%d %H:%M:%S")
 </li>
 </ul>
 <hr>
-<h2 id="实例4-文本进度条"><a href="#实例4-文本进度条" class="headerlink" title="实例4 文本进度条"></a>实例4 文本进度条</h2><pre class=" language-lang-python"><code class="language-lang-python">import time
+<h2 id="实例4-文本进度条"><a href="#实例4-文本进度条" class="headerlink" title="实例4 文本进度条"></a>实例4 文本进度条</h2><pre class="line-numbers language-lang-python"><code class="language-lang-python">import time
 scale = 50
 start = time.perf_counter()
 for i in range(scale + 1):
@@ -936,7 +928,7 @@ for i in range(scale + 1):
     dur = time.perf_counter() - start
     print("\r{:^3.0f}%[{}->{}] {:.2f}s".format(c, a, b, dur), end="")
     time.sleep(0.1)
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <ul>
 <li><code>end</code>是<code>print()</code>函数的一个参数，默认情况下不加它指的是我输出了一个信息之后，默认在最后增加一个换行<code>\n</code>，但是如果增加 “<code>,end=</code>” 这样一个参数，就会改变每次print输出最后增加的那个信息  </li>
@@ -1007,7 +999,7 @@ for i in range(scale + 1):
 </ul>
 </li>
 </ul>
-<h3 id="实例5-身体质量指数"><a href="#实例5-身体质量指数" class="headerlink" title="实例5 身体质量指数"></a>实例5 身体质量指数</h3><pre class=" language-lang-python"><code class="language-lang-python">height, weight = eval(input("请输入身高(米)和体重(公斤)[逗号隔开]"))
+<h3 id="实例5-身体质量指数"><a href="#实例5-身体质量指数" class="headerlink" title="实例5 身体质量指数"></a>实例5 身体质量指数</h3><pre class="line-numbers language-lang-python"><code class="language-lang-python">height, weight = eval(input("请输入身高(米)和体重(公斤)[逗号隔开]"))
 bmi = weight / pow(height, 2)
 print("BMI指数为：{:.2f}".format(bmi))
 who, nat = "", ""
@@ -1021,7 +1013,7 @@ elif 25 <= bmi <28:
    who, nat = "偏胖", "偏胖"
 elif 28 <= bmi <30:
    who, nat = "偏胖", "偏胖"
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="程序的循环结构"><a href="#程序的循环结构" class="headerlink" title="程序的循环结构"></a>程序的循环结构</h3><ul>
 <li>遍历循环<code>for</code><ul>
 <li>计数循环</li>
@@ -1073,7 +1065,7 @@ elif 28 <= bmi <30:
 <script type="math/tex; mode=display">
 \pi=\sum^{\inf}_{k=0}[\frac{1}{16^k}(\frac{4}{8k+1}-\frac{2}{8k+4}-\frac{1}{8k+5}-\frac{1}{8k+6})]</script><p>蒙特卡罗方法</p>
 </blockquote>
-<pre class=" language-lang-python"><code class="language-lang-python">from random import random
+<pre class="line-numbers language-lang-python"><code class="language-lang-python">from random import random
 from time import perf_counter
 DARTS = 1000 * 1000
 hits = 0.0
@@ -1086,7 +1078,7 @@ for i in range(1, DARTS + 1):
 pi = 4 * (hits / DARTS)
 print("圆周率是: {}".format(pi))
 print("运行时间: {:.5f}s".format(perf_counter() - start))
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <hr>
 <h2 id="函数和代码复用"><a href="#函数和代码复用" class="headerlink" title="函数和代码复用"></a>函数和代码复用</h2><h3 id="函数的定义与使用"><a href="#函数的定义与使用" class="headerlink" title="函数的定义与使用"></a>函数的定义与使用</h3><ul>
 <li><p>函数的定义<code>def</code></p>
@@ -1095,20 +1087,20 @@ print("运行时间: {:.5f}s".format(perf_counter() - start))
 <p> 函数定义时可以为某些参数<strong>指定默认值</strong>，构成可选参数，可选参数必须放必选参数的后面</p>
 </li>
 </ul>
-<pre class=" language-lang-python"><code class="language-lang-python">#例 可选参数
+<pre class="line-numbers language-lang-python"><code class="language-lang-python">#例 可选参数
 def fact(n, m=1):
    s = 1
    for i in range(1, n+1):
       s *= i
    return s//m
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li><p>可变参数传递(<code>*b</code>)</p>
 <p> 函数接受的参数是可变数量的，即不确定参数总数量</p>
 <p> 在确定参数后面增加一个<code>*b</code></p>
 </li>
 </ul>
-<pre class=" language-lang-python"><code class="language-lang-python">#例 使用可变参数
+<pre class="line-numbers language-lang-python"><code class="language-lang-python">#例 使用可变参数
 def fact(n, *b):
    s = 1
    for i in range(1, n+1):
@@ -1116,7 +1108,7 @@ def fact(n, *b):
    for item in b:
       s *= item
    return s
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>参数传递的两种方式  <ul>
 <li>位置传递</li>
@@ -1124,11 +1116,11 @@ def fact(n, *b):
 </ul>
 </li>
 </ul>
-<pre class=" language-lang-python"><code class="language-lang-python">#位置传递
+<pre class="line-numbers language-lang-python"><code class="language-lang-python">#位置传递
 fact(10, 5)
 #名称传递
 fact(m=5, n=10)
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li><p>函数的返回值 <code>return</code></p>
 <p> 可以返回任意多个结果</p>
@@ -1154,7 +1146,7 @@ fact(m=5, n=10)
 <p> <code>print(f())</code></p>
 </li>
 </ul>
-<h3 id="实例7：七段数码管绘制"><a href="#实例7：七段数码管绘制" class="headerlink" title="实例7：七段数码管绘制"></a>实例7：七段数码管绘制</h3><pre class=" language-lang-python"><code class="language-lang-python"># 七段数码管绘制
+<h3 id="实例7：七段数码管绘制"><a href="#实例7：七段数码管绘制" class="headerlink" title="实例7：七段数码管绘制"></a>实例7：七段数码管绘制</h3><pre class="line-numbers language-lang-python"><code class="language-lang-python"># 七段数码管绘制
 import turtle, time
 
 def draw_gap():
@@ -1213,13 +1205,13 @@ def main():
 
 if __name__ == '__main__':
     main()
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <hr>
 <h3 id="代码复用与函数递归"><a href="#代码复用与函数递归" class="headerlink" title="代码复用与函数递归"></a>代码复用与函数递归</h3><ul>
 <li>模块化设计思想：松耦合、紧耦合</li>
 <li>函数递归的两个特征：基例和链条</li>
 </ul>
-<pre class=" language-lang-python"><code class="language-lang-python"># 汉诺塔 递归实现
+<pre class="line-numbers language-lang-python"><code class="language-lang-python"># 汉诺塔 递归实现
 count = 0
 
 def hanoi(n, src, dst, mid):
@@ -1237,19 +1229,19 @@ if __name__ == '__main__':
     x = int(input())
     hanoi(x, 'A', 'C', 'B')
     print(count)
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="模块4：pyinstaller库的使用"><a href="#模块4：pyinstaller库的使用" class="headerlink" title="模块4：pyinstaller库的使用"></a>模块4：pyinstaller库的使用</h3><blockquote>
 <p>将.py源代码转换成无需原代码的可执行文件<br>pyinstaller是第三方库</p>
 </blockquote>
-<h4 id="安装：打开-cmd"><a href="#安装：打开-cmd" class="headerlink" title="安装：打开 cmd"></a>安装：打开 cmd</h4><pre class=" language-lang-bash"><code class="language-lang-bash">pip3 install pyinstaller
-</code></pre>
-<h4 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h4><pre class=" language-lang-bash"><code class="language-lang-bash">pyinstaller -F <文件名.py>
-</code></pre>
+<h4 id="安装：打开-cmd"><a href="#安装：打开-cmd" class="headerlink" title="安装：打开 cmd"></a>安装：打开 cmd</h4><pre class="line-numbers language-lang-bash"><code class="language-lang-bash">pip3 install pyinstaller
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h4 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h4><pre class="line-numbers language-lang-bash"><code class="language-lang-bash">pyinstaller -F <文件名.py>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>执行命令后打开目录，会看到另外生成的三个目录 <strong>__pycache__</strong> , <strong>build</strong> , <strong>dist</strong> ，然后 <strong>__pycache__</strong> , <strong>build</strong> 这两个目录可以安全地删除。在 <code>dist</code> 文件夹中会看到与 .py 文件同名的 exe 文件，这个文件就是打包之后生成的文件。</p>
 <h4 id="常用参数"><a href="#常用参数" class="headerlink" title="常用参数"></a>常用参数</h4><ol>
 <li><p><code>-h</code> 查看帮助</p>
-<pre class=" language-lang-bash"><code class="language-lang-bash"> pyinstaller -h
-</code></pre>
+<pre class="line-numbers language-lang-bash"><code class="language-lang-bash"> pyinstaller -h
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </li>
 <li><p><code>--clean</code> 清理打包过程中的临时文件</p>
 <p> 使用 <code>pyinstaller</code> 是加上参数 <code>--clean</code> ，比如产生的 <strong>__pycache__</strong> 和 <strong>build</strong> 文件夹等其他的没用的文件都会被清理掉。</p>
@@ -1258,15 +1250,15 @@ if __name__ == '__main__':
 <p> 通过加 <code>-D</code> 参数或者什么都不加，生成dist文件夹，这个文件夹中的所有文件都是必须的。</p>
 </li>
 <li><p><code>-F</code> 在dist文件夹中只生成独立的打包文件</p>
-<pre class=" language-lang-bash"><code class="language-lang-bash"> pyinstaller -F <文件名.py>
-</code></pre>
+<pre class="line-numbers language-lang-bash"><code class="language-lang-bash"> pyinstaller -F <文件名.py>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </li>
 <li><p><code>-i &lt;图标名称.ico&gt;</code> 指定打包文件使用的图标文件</p>
-<pre class=" language-lang-bash"><code class="language-lang-bash"> pyinstaller -i <图标名.ico> -F <文件名.py>
-</code></pre>
+<pre class="line-numbers language-lang-bash"><code class="language-lang-bash"> pyinstaller -i <图标名.ico> -F <文件名.py>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </li>
 </ol>
-<h3 id="实例8：科赫雪花小包裹"><a href="#实例8：科赫雪花小包裹" class="headerlink" title="实例8：科赫雪花小包裹"></a>实例8：科赫雪花小包裹</h3><pre class=" language-lang-python"><code class="language-lang-python"># 科赫雪花
+<h3 id="实例8：科赫雪花小包裹"><a href="#实例8：科赫雪花小包裹" class="headerlink" title="实例8：科赫雪花小包裹"></a>实例8：科赫雪花小包裹</h3><pre class="line-numbers language-lang-python"><code class="language-lang-python"># 科赫雪花
 import turtle
 
 def koch(size, n):
@@ -1294,114 +1286,122 @@ def main():
 
 if __name__ == '__main__':
     main()
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 ]]></content>
       <tags>
         <tag>Python基础</tag>
       </tags>
   </entry>
   <entry>
-    <title>测试</title>
-    <url>/2020/05/29/test/</url>
-    <content><![CDATA[<p>测试</p>
-<pre class=" language-lang-python"><code class="language-lang-python">print('Hello World!')
-</code></pre>
-<blockquote>
-<p><a href="https://blinkfox.github.io/2018/09/28/qian-duan/hexo-bo-ke-zhu-ti-zhi-hexo-theme-matery-de-jie-shao/" target="_blank" rel="noopener">https://blinkfox.github.io/2018/09/28/qian-duan/hexo-bo-ke-zhu-ti-zhi-hexo-theme-matery-de-jie-shao/</a></p>
+    <title>软件工程概论第一章笔记</title>
+    <url>/2020/05/14/software-engineering1/</url>
+    <content><![CDATA[<blockquote>
+<p>教材：软件工程——原理、方法与应用（第3版）</p>
 </blockquote>
-<h2 id="文章-Front-matter-介绍"><a href="#文章-Front-matter-介绍" class="headerlink" title="文章 Front-matter 介绍"></a>文章 Front-matter 介绍</h2><h3 id="Front-matter-选项详解"><a href="#Front-matter-选项详解" class="headerlink" title="Front-matter 选项详解"></a>Front-matter 选项详解</h3><p><code>Front-matter</code> 选项中的所有内容均为<strong>非必填</strong>的。但我仍然建议至少填写 <code>title</code> 和 <code>date</code> 的值。</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:left">配置选项</th>
-<th style="text-align:left">默认值</th>
-<th style="text-align:left">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">title</td>
-<td style="text-align:left"><code>Markdown</code> 的文件标题</td>
-<td style="text-align:left">文章标题，强烈建议填写此选项</td>
-</tr>
-<tr>
-<td style="text-align:left">date</td>
-<td style="text-align:left">文件创建时的日期时间</td>
-<td style="text-align:left">发布时间，强烈建议填写此选项，且最好保证全局唯一</td>
-</tr>
-<tr>
-<td style="text-align:left">author</td>
-<td style="text-align:left">根 <code>_config.yml</code> 中的 <code>author</code></td>
-<td style="text-align:left">文章作者</td>
-</tr>
-<tr>
-<td style="text-align:left">img</td>
-<td style="text-align:left"><code>featureImages</code> 中的某个值</td>
-<td style="text-align:left">文章特征图，推荐使用图床(腾讯云、七牛云、又拍云等)来做图片的路径.如: <code>http://xxx.com/xxx.jpg</code></td>
-</tr>
-<tr>
-<td style="text-align:left">top</td>
-<td style="text-align:left"><code>true</code></td>
-<td style="text-align:left">推荐文章（文章是否置顶），如果 <code>top</code> 值为 <code>true</code>，则会作为首页推荐文章</td>
-</tr>
-<tr>
-<td style="text-align:left">cover</td>
-<td style="text-align:left"><code>false</code></td>
-<td style="text-align:left"><code>v1.0.2</code>版本新增，表示该文章是否需要加入到首页轮播封面中</td>
-</tr>
-<tr>
-<td style="text-align:left">coverImg</td>
-<td style="text-align:left">无</td>
-<td style="text-align:left"><code>v1.0.2</code>版本新增，表示该文章在首页轮播封面需要显示的图片路径，如果没有，则默认使用文章的特色图片</td>
-</tr>
-<tr>
-<td style="text-align:left">password</td>
-<td style="text-align:left">无</td>
-<td style="text-align:left">文章阅读密码，如果要对文章设置阅读验证密码的话，就可以设置 <code>password</code> 的值，该值必须是用 <code>SHA256</code> 加密后的密码，防止被他人识破。前提是在主题的 <code>config.yml</code> 中激活了 <code>verifyPassword</code> 选项</td>
-</tr>
-<tr>
-<td style="text-align:left">toc</td>
-<td style="text-align:left"><code>true</code></td>
-<td style="text-align:left">是否开启 TOC，可以针对某篇文章单独关闭 TOC 的功能。前提是在主题的 <code>config.yml</code> 中激活了 <code>toc</code> 选项</td>
-</tr>
-<tr>
-<td style="text-align:left">mathjax</td>
-<td style="text-align:left"><code>false</code></td>
-<td style="text-align:left">是否开启数学公式支持 ，本文章是否开启 <code>mathjax</code>，且需要在主题的 <code>_config.yml</code> 文件中也需要开启才行</td>
-</tr>
-<tr>
-<td style="text-align:left">summary</td>
-<td style="text-align:left">无</td>
-<td style="text-align:left">文章摘要，自定义的文章摘要内容，如果这个属性有值，文章卡片摘要就显示这段文字，否则程序会自动截取文章的部分内容作为摘要</td>
-</tr>
-<tr>
-<td style="text-align:left">categories</td>
-<td style="text-align:left">无</td>
-<td style="text-align:left">文章分类，本主题的分类表示宏观上大的分类，只建议一篇文章一个分类</td>
-</tr>
-<tr>
-<td style="text-align:left">tags</td>
-<td style="text-align:left">无</td>
-<td style="text-align:left">文章标签，一篇文章可以多个标签</td>
-</tr>
-</tbody>
-</table>
-</div>
-<blockquote>
-<p><strong>注意</strong>:</p>
+<h2 id="第1章-绪论"><a href="#第1章-绪论" class="headerlink" title="第1章 绪论"></a>第1章 绪论</h2><h3 id="1-1-软件和软件危机"><a href="#1-1-软件和软件危机" class="headerlink" title="1.1 软件和软件危机"></a>1.1 软件和软件危机</h3><h4 id="1-1-1-软件的定义"><a href="#1-1-1-软件的定义" class="headerlink" title="1.1.1 软件的定义"></a>1.1.1 软件的定义</h4><p><strong>软件</strong>是能够完成预定功能和性能的可执行的计算机程序和使程序正常执行所需要的数据，加上描述程序的操作和使用的文档</p>
+<p><strong>软件 = 程序 + 数据 + 文档</strong></p>
+<p><strong>程序</strong>是按事先设计的功能和性能要求执行的指令序列<br><strong>数据</strong>是使程序能正常操纵信息的数据结构<br><strong>文档</strong>是与程序开发，维护和使用有关的图文材料</p>
+<h4 id="1-1-2-软件的特征"><a href="#1-1-2-软件的特征" class="headerlink" title="1.1.2 软件的特征"></a>1.1.2 软件的特征</h4><p>软件是逻辑的而不是物理的，是一种<strong>逻辑实体</strong></p>
 <ol>
-<li>如果 <code>img</code> 属性不填写的话，文章特色图会根据文章标题的 <code>hashcode</code> 的值取余，然后选取主题中对应的特色图片，从而达到让所有文章都的特色图<strong>各有特色</strong>。</li>
-<li><code>date</code> 的值尽量保证每篇文章是唯一的，因为本主题中 <code>Gitalk</code> 和 <code>Gitment</code> 识别 <code>id</code> 是通过 <code>date</code> 的值来作为唯一标识的。</li>
-<li>如果要对文章设置阅读验证密码的功能，不仅要在 Front-matter 中设置采用了 SHA256 加密的 password 的值，还需要在主题的 <code>_config.yml</code> 中激活了配置。有些在线的 SHA256 加密的地址，可供你使用：<a href="http://tool.oschina.net/encrypt?type=2" target="_blank" rel="noopener">开源中国在线工具</a>、<a href="http://encode.chahuo.com/" target="_blank" rel="noopener">chahuo</a>、<a href="http://tool.chinaz.com/tools/hash.aspx" target="_blank" rel="noopener">站长工具</a>。</li>
+<li><p>软件开发不同于硬件设计</p>
+<p>软件开发的成本很难估计，通常占整个生产成本的大部分</p>
+</li>
+<li><p>软件生产不同于硬件制造</p>
+<p>在它的开发过程中没有明显的制造过程</p>
+</li>
+<li><p>软件维护不同于软件维修</p>
+<p>软件没有硬件那样的机械磨损，老化问题，但在使用过程中的维护却比硬件复杂的多。如果软件内部的逻辑关系比较复杂或规模比较大，在维护过程中很可能产生新的错误</p>
+</li>
 </ol>
-</blockquote>
+<h4 id="1-1-3-软件危机"><a href="#1-1-3-软件危机" class="headerlink" title="1.1.3 软件危机"></a>1.1.3 软件危机</h4><p>定义：在软件开发和维护过程中所存在一系列严重问题（开发费用超出预算、完成时间拖期、软件可靠性往往随着规模的增长而下降，质量差）</p>
+<p>原因（从<strong>维护</strong>和<strong>生产</strong>两个方面）</p>
+<ol>
+<li><p>软件维护费用急剧上升，直接威胁计算机应用的扩大</p>
+<p>纠错性维护、完善性性维护、适应性维护</p>
+</li>
+<li><p>软件生产技术进步缓慢，是加剧软件危机的重要原因</p>
+</li>
+</ol>
+<h3 id="1-2-软件工程学范畴"><a href="#1-2-软件工程学范畴" class="headerlink" title="1.2 软件工程学范畴"></a>1.2 软件工程学范畴</h3><p>宗旨：摆脱软件危机，谋求解决这一危机的方法。<br>中心思想：把软件当作一种工业产品，用工程的方法进行开发</p>
+<h4 id="1-2-1-软件开发方法学"><a href="#1-2-1-软件开发方法学" class="headerlink" title="1.2.1 软件开发方法学"></a>1.2.1 软件开发方法学</h4><ul>
+<li><p>早期的程序设计</p>
+<p>   追求程序设计技巧和效率，程序员各行其是，无统一标准</p>
+</li>
+<li><p>结构化程序设计</p>
+<p>   三种基本程序结构，自顶向下、逐步细化的开发方法，形成“结构化分析”、“结构化设计”传统方法</p>
+</li>
+<li><p>面向对象的程序设计</p>
+<p>   引入对象、类、继承等概念，形成构件，达到软件复用的目的</p>
+</li>
+</ul>
+<h4 id="1-2-2-软件工具"><a href="#1-2-2-软件工具" class="headerlink" title="1.2.2 软件工具"></a>1.2.2 软件工具</h4><p>帮助开发和维护软件的软件</p>
+<p>编译程序、编辑程序、连接程序以及支持他们的计算机操作系统，都属于软件工具</p>
+<p>另外还有：分析工具、设计工具、测试工具、维护工具</p>
+<h4 id="1-2-3-软件工程环境"><a href="#1-2-3-软件工程环境" class="headerlink" title="1.2.3 软件工程环境"></a>1.2.3 软件工程环境</h4><p>方法与工具相结合，再加上配套的软、硬件支持就形成环境。</p>
+<h4 id="1-2-4-软件工程管理"><a href="#1-2-4-软件工程管理" class="headerlink" title="1.2.4 软件工程管理"></a>1.2.4 软件工程管理</h4><p>软件工程管理的目的，是为了按照进度及预算完成软件开发计划，实现预期的经济和社会效益。它包括成本估算<br>进度安排、人员组织和质量保证等多方面的内容，还涉及管理学、度量学和经济学等多个学科方面的知识。</p>
+<p>一个理想的软件工程环境，应该同时具备支持开发和支持管理两个方面的工具。</p>
+<h3 id="1-3-软件工程的发展"><a href="#1-3-软件工程的发展" class="headerlink" title="1.3 软件工程的发展"></a>1.3 软件工程的发展</h3><h4 id="1-3-1-3种编程范型"><a href="#1-3-1-3种编程范型" class="headerlink" title="1.3.1 3种编程范型"></a>1.3.1 3种编程范型</h4><ol>
+<li><p>过程式编程范型</p>
+<p>程序 = 数据结构 + 算法</p>
+</li>
+<li><p>面向对象编程范型</p>
+<p>程序 = 对象 + 消息</p>
+</li>
+<li><p>基于构件技术的编程范型</p>
+<p>构件：标准化的对象类。</p>
+</li>
+</ol>
+<h4 id="1-3-2-3代软件工程"><a href="#1-3-2-3代软件工程" class="headerlink" title="1.3.2 3代软件工程"></a>1.3.2 3代软件工程</h4><p>软件工程的分代</p>
+<ol>
+<li><p>传统的软件工程</p>
+<p>以结构化的程序设计为基础</p>
+</li>
+<li><p>面向对象的软件工程</p>
+<p>以面向对象的程序设计为基础</p>
+</li>
+<li><p>基于构件的软件工程</p>
+<p>以软件复用为目标、领域工程为基础</p>
+</li>
+</ol>
+<h3 id="1-4-软件工程的应用"><a href="#1-4-软件工程的应用" class="headerlink" title="1.4 软件工程的应用"></a>1.4 软件工程的应用</h3><p>略</p>
 ]]></content>
       <categories>
-        <category>Markdown</category>
+        <category>软件工程概论</category>
       </categories>
       <tags>
-        <tag>Hexo</tag>
+        <tag>软件工程概论</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Linux命令学习</title>
+    <url>/2020/04/17/linux-command/</url>
+    <content><![CDATA[<p>2020年春大二下学期，我们开设了操作系统课程，开始接触Linux，用这篇文章记录学习到的命令。  </p>
+<p><a href="https://www.runoob.com/linux/linux-command-manual.html" target="_blank" rel="noopener">Linux 命令大全 | 菜鸟教程</a> ——列出了很多命令，有详细说明</p>
+<p><a href="https://man.linuxde.net/" target="_blank" rel="noopener">Linux命令大全(手册)</a> ——可以搜索某个命令的用法和解释</p>
+<h2 id="Linux-命令"><a href="#Linux-命令" class="headerlink" title="Linux 命令"></a>Linux 命令</h2><h3 id="cd"><a href="#cd" class="headerlink" title="cd"></a>cd</h3><p>切换当前工作目录至 dirName(目录参数)。</p>
+<h4 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h4><pre class="line-numbers language-lang-bash"><code class="language-lang-bash">cd [dirName]
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li>dirName：要切换的目标目录。</li>
+<li>若省略 dirName，则变换至使用者的 home 目录</li>
+<li>另外，”~” 也表示 home 目录，”.” 表示目前所在的目录，”..” 则表示目前目录位置的上一层目录。</li>
+</ul>
+<h3 id="pwd"><a href="#pwd" class="headerlink" title="pwd"></a>pwd</h3><p>显示当前所在的工作目录。</p>
+<h4 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h4><pre class="line-numbers language-lang-bash"><code class="language-lang-bash">pwd
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="ls"><a href="#ls" class="headerlink" title="ls"></a>ls</h3><p>显示指定工作目录下之内容（列出目前工作目录所含之文件及子目录)。它有很多参数可用。比如：</p>
+<pre class="line-numbers language-lang-bash"><code class="language-lang-bash">ls
+ls -a
+ls -l
+ls -all
+ls fileName -l
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
       </tags>
   </entry>
 </search>
