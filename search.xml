@@ -1,6 +1,175 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>数据库系统概论第十章</title>
+    <url>/2020/05/30/sql-chapter-1/</url>
+    <content><![CDATA[<h1 id="第十章-数据库恢复技术"><a href="#第十章-数据库恢复技术" class="headerlink" title="第十章 数据库恢复技术"></a>第十章 数据库恢复技术</h1><h2 id="10-1-事物的基本概述"><a href="#10-1-事物的基本概述" class="headerlink" title="10.1 事物的基本概述"></a>10.1 事物的基本概述</h2><h3 id="1-事务"><a href="#1-事务" class="headerlink" title="1. 事务"></a>1. 事务</h3><p>所谓<strong>事务</strong>是用户定义的<strong>一个数据库操作序列</strong>，这些操作==要么全做，要么全不做==，是一个不可分割的工作单位。</p>
+<p>例如，在关系数据库中，一个事务可以是一条SQL语句、一组SQL语句或整个程序。</p>
+<p>事务和程序是两个概念。一般地讲，<strong>一个程序中包含多个事务</strong>。事务和程序是<strong>多对多</strong>的关系。</p>
+<p><strong>定义事务</strong></p>
+<ol>
+<li><p>BEGIN TRANSACTION</p>
+<p>事务的开始</p>
+</li>
+<li><p>COMMIT 表示提交，即提交事务的所有操作</p>
+<p>事务正常结束</p>
+</li>
+<li><p>ROLLBACK 表示回滚</p>
+<p>事务异常终止，系统将事务中对数据库的所有操作全部撤销，回滚到事务开始时的状态。</p>
+</li>
+</ol>
+<h3 id="2-事务的特性（ACID）"><a href="#2-事务的特性（ACID）" class="headerlink" title="2. 事务的特性（ACID）"></a>2. 事务的特性（ACID）</h3><ul>
+<li><p><strong>原子性 A</strong></p>
+<p>事务是数据库的逻辑工作单位，事务中包括的诸操作<strong>要么都做，要么都不做</strong>。</p>
+</li>
+<li><p><strong>一致性 C</strong></p>
+<p>事务执行的结果必须是使数据库从一个<strong>一致性状态</strong>变到<strong>另一个一致性状态</strong>。</p>
+<p>一致性状态：数据库中只包含成功事务提交的结果</p>
+<p>不一致状态：数据库中包含失败事务的结果</p>
+</li>
+<li><p><strong>隔离性 I</strong></p>
+<p><strong>一个事务的执行不能被其他事务干扰</strong>。即一个事务内部的操作及使用的数据对其他并发事务是隔离的，并发执行的各个事务之间不能互相干扰。</p>
+</li>
+<li><p><strong>持续性 D</strong></p>
+<p>持续性也称永久性（Permanence），一个事务一旦提交，它对数据库中数据的改变就应该是永久性的。接下来的其他操作或故障不应该对其执行结果有任何影响。</p>
+</li>
+</ul>
+<p>事务恢复和并发控制的基本单位。</p>
+<p>保证事务ACID特性是事务管理的重要任务。事务ACID特性可能遭到破坏的因素有：</p>
+<ol>
+<li>多个事务并行运行时，不同事物的操作交叉执行</li>
+<li>事务在运行过程中被强行停止</li>
+</ol>
+<h2 id="10-2-数据库恢复概述"><a href="#10-2-数据库恢复概述" class="headerlink" title="10.2 数据库恢复概述"></a>10.2 数据库恢复概述</h2><p>故障是不可避免的（系统故障：计算机软、硬件故障，人为故障：操作员的失误、恶意的破坏等）。</p>
+<p>数据库的恢复：把数据库从错误状态恢复到某一已知的正确状态（亦称为一致状态或完整状态）。</p>
+<p>防止数据库的安全性和完整性被破坏。</p>
+<p>故障的影响</p>
+<ol>
+<li><p>运行事务非正常中断</p>
+</li>
+<li><p>破坏数据库</p>
+</li>
+</ol>
+<p>数据库管理系统应对故障的对策</p>
+<ol>
+<li><p>DBMS提供恢复子系统</p>
+</li>
+<li><p>保证故障发生后，能把数据库中的数据从错误状态恢复到某种逻辑一致的状态</p>
+</li>
+<li><p>保证事务ACID</p>
+</li>
+</ol>
+<p>恢复技术是衡量数据库系统优劣的重要指标</p>
+<h2 id="10-3-故障的种类"><a href="#10-3-故障的种类" class="headerlink" title="10.3 故障的种类"></a>10.3 故障的种类</h2><h3 id="1-事务内部的故障"><a href="#1-事务内部的故障" class="headerlink" title="1. 事务内部的故障"></a>1. 事务内部的故障</h3><p>有的是可以通过事务程序本身发现的，有的是非预期的，无法由事务程序处理。</p>
+<p>事务内部更多的故障是<strong>非预期的</strong>，是不能由应用程序处理的。</p>
+<p>事务故障的恢复：<strong>事务撤销（UNDO）</strong></p>
+<h3 id="2-系统故障"><a href="#2-系统故障" class="headerlink" title="2. 系统故障"></a>2. 系统故障</h3><p>称为<strong>软故障</strong>，是指<strong>造成系统停止运转</strong>的任何事件，使得系统要重新启动。 例如，CPU故障、操作系统故障、DBMS故障、系统断电等，这类故障影响正在运行的所有事务，<strong>但不破坏数据库</strong>。</p>
+<p>发生故障时，事务未提交 —— <strong>强行撤销</strong>（UNDO）所有未完成事务</p>
+<p>发生故障时，事务已提交，但缓冲区中的信息尚未完全写回到磁盘中 —— <strong>重做</strong>（REDO）所有已提交的事务</p>
+<h3 id="3-介质故障"><a href="#3-介质故障" class="headerlink" title="3. 介质故障"></a>3. 介质故障</h3><p>称为<strong>硬故障</strong>，指<strong>外存故障</strong>，如磁盘损坏、磁头碰撞等，这类故障将破坏数据库或部分数据库，并影响正在存取这部分数据的所有事务。这类故障比前两类发生的可能性小得多，但破坏性最大。</p>
+<h3 id="4-计算机病毒"><a href="#4-计算机病毒" class="headerlink" title="4. 计算机病毒"></a>4. 计算机病毒</h3><p>计算机病毒是<strong>一种人为的故障或破坏</strong>，是一些恶作剧者研制的一种计算机程序。可以繁殖和传播，并打造成对计算机系统包括数据库的危害。</p>
+<h2 id="10-4-恢复的实现技术"><a href="#10-4-恢复的实现技术" class="headerlink" title="10.4 恢复的实现技术"></a>10.4 恢复的实现技术</h2><p>恢复操作的基本原理：<strong>冗余</strong></p>
+<p>两个关键问题：</p>
+<ol>
+<li><p>如何建立冗余数据：</p>
+<ul>
+<li><p><strong>数据转储</strong>（backup）</p>
+</li>
+<li><p><strong>登录日志文件</strong>（logging）</p>
+</li>
+</ul>
+</li>
+<li><p>如何利用这些冗余数据实施数据库恢复</p>
+</li>
+</ol>
+<h3 id="10-4-1-数据转储"><a href="#10-4-1-数据转储" class="headerlink" title="10.4.1 数据转储"></a>10.4.1 数据转储</h3><p>数据转储是数据库恢复中采用的基本技术。所谓<strong>转储</strong>是指DBA将整个数据库复制到磁带或另一个磁盘上<strong>保存起来</strong>的过程，备用的数据称为<strong>后备副本</strong>或后援副本。</p>
+<p>重装后备副本只能将数据库恢复到转储时的状态。</p>
+<p>使用：</p>
+<ul>
+<li><p>数据库遭到破坏后可以将后备副本重新装入</p>
+</li>
+<li><p>重装后备副本只能将数据库恢复到转储时的状态</p>
+</li>
+</ul>
+<h4 id="静态转储"><a href="#静态转储" class="headerlink" title="静态转储"></a>静态转储</h4><p>静态转储是在系统中无运行事务时进行的转储操作。即转储开始时数据库处于一致性状态，转储期间不允许对数据库的任何存取、修改活动。静态转储得到的一定是一个数据一致性的副本。</p>
+<p>优点：实现简单</p>
+<p>缺点：降低了数据库的可用性，转储必须等待正运行的用户事务结束才能进行，新的事务必须等转储结束才能执行</p>
+<h4 id="动态转储"><a href="#动态转储" class="headerlink" title="动态转储"></a>动态转储</h4><p>动态转储是指转储期间允许对数据库进行存取或修改。即转储和用户事务可以并发执行。</p>
+<p>优点：不用等待正在运行的用户事务结束，不会影响新事务的运行。</p>
+<p>缺点：不能保证副本中的数据正确有效。</p>
+<p><strong>利用动态转储得到的副本进行故障恢复：</strong></p>
+<ul>
+<li><p>需要把动态转储期间各事务对数据库的修改活动登记下来，建立<strong>日志文件</strong></p>
+</li>
+<li><p><strong>后备副本</strong>加上<strong>日志文件</strong>才能把数据库恢复到某一时刻的正确状态</p>
+</li>
+</ul>
+<h4 id="海量转储"><a href="#海量转储" class="headerlink" title="海量转储"></a>海量转储</h4><p>每次转储全部数据库。</p>
+<h4 id="增量转储"><a href="#增量转储" class="headerlink" title="增量转储"></a>增量转储</h4><p>只转储上次转储后更新过的数据。</p>
+<h4 id="转储策略"><a href="#转储策略" class="headerlink" title="转储策略"></a>转储策略</h4><p>应定期进行数据转储，制作后备副本。</p>
+<p>但转储又是十分耗费时间和资源的，不能频繁进行。</p>
+<p>DBA应该根据数据库使用情况确定适当的转储周期和转储方法。</p>
+<blockquote>
+<p>例：</p>
+<ul>
+<li><p>每天晚上进行动态增量转储</p>
+</li>
+<li><p>每周进行一次动态海量转储</p>
+</li>
+<li><p>每月进行一次静态海量转储</p>
+</li>
+</ul>
+</blockquote>
+<h3 id="10-4-2-登录日志文件"><a href="#10-4-2-登录日志文件" class="headerlink" title="10.4.2 登录日志文件"></a>10.4.2 登录日志文件</h3><h4 id="1-日志文件的格式和内容"><a href="#1-日志文件的格式和内容" class="headerlink" title="1. 日志文件的格式和内容"></a>1. 日志文件的格式和内容</h4><p>日志文件是用来<strong>记录事务对数据库的更新操作</strong>的文件。日志文件主要由两种格式：以记录为单位的日志文件 和 以数据块为单位的日志文件。</p>
+<h5 id="a-以记录为单位"><a href="#a-以记录为单位" class="headerlink" title="a. 以记录为单位"></a>a. 以记录为单位</h5><p>日志文件中==需要登记的内容==包括：</p>
+<ul>
+<li><p>各个事务的开始（BEGIN TRANSACTION）标记。</p>
+</li>
+<li><p>各个事务的结束（COMMIT或ROLLBACK）标记。</p>
+</li>
+<li><p>各个事务的所有更新操作。</p>
+</li>
+</ul>
+<p>这里每个事务的开始标记、每个事务的结束标记和每个更新操作均作为日志文件中的==一个日志记录==</p>
+<p>==每条日志记录==的内容：</p>
+<ul>
+<li>事务标识（标明是哪个事务） </li>
+<li>操作类型（插入、删除或修改）</li>
+<li>操作对象（记录内部标识）</li>
+<li>更新前数据的旧值（对插入操作而言，此项为空值）</li>
+<li>更新后数据的新值（对删除操作而言, 此项为空值）</li>
+</ul>
+<h5 id="b-以数据块为单位"><a href="#b-以数据块为单位" class="headerlink" title="b. 以数据块为单位"></a>b. 以数据块为单位</h5><p>对于以数据块为单位的日志文件，==每条日志记录的内容==包括：</p>
+<ul>
+<li>事务标识（标明是那个事务）</li>
+<li>被更新的数据块</li>
+</ul>
+<p>由于将更新前的整个块和更新后的整个块都放入日志文件中，操作类型和操作对象等信息就不必放入日志记录中了。</p>
+<h4 id="2-日志文件的作用"><a href="#2-日志文件的作用" class="headerlink" title="2. 日志文件的作用"></a>2. 日志文件的作用</h4><ul>
+<li><p>进行事务故障恢复</p>
+</li>
+<li><p>进行系统故障恢复</p>
+</li>
+<li><p>协助后备副本进行介质故障恢复</p>
+</li>
+</ul>
+<h4 id="3-登记日志文件"><a href="#3-登记日志文件" class="headerlink" title="3. 登记日志文件"></a>3. 登记日志文件</h4><p><strong>为保证数据库是可恢复的</strong>，登录日志文件时，必须遵循==两条原则==：</p>
+<ul>
+<li>登记的次序严格按并行事务执行的时间次序</li>
+<li>必须先写日志文件，后写数据库</li>
+</ul>
+<hr>
+<p>Finished</p>
+]]></content>
+      <categories>
+        <category>数据库</category>
+      </categories>
+      <tags>
+        <tag>数据库</tag>
+        <tag>SQL</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hello World</title>
     <url>/2020/04/14/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
@@ -982,6 +1151,145 @@ if __name__ == '__main__':
       </tags>
   </entry>
   <entry>
+    <title>测试</title>
+    <url>/2020/05/29/test/</url>
+    <content><![CDATA[<p>测试</p>
+<pre class="line-numbers language-lang-python"><code class="language-lang-python">print('Hello World!')
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<blockquote>
+<p><a href="https://blinkfox.github.io/2018/09/28/qian-duan/hexo-bo-ke-zhu-ti-zhi-hexo-theme-matery-de-jie-shao/" target="_blank" rel="noopener">https://blinkfox.github.io/2018/09/28/qian-duan/hexo-bo-ke-zhu-ti-zhi-hexo-theme-matery-de-jie-shao/</a></p>
+</blockquote>
+<h2 id="文章-Front-matter-介绍"><a href="#文章-Front-matter-介绍" class="headerlink" title="文章 Front-matter 介绍"></a>文章 Front-matter 介绍</h2><h3 id="Front-matter-选项详解"><a href="#Front-matter-选项详解" class="headerlink" title="Front-matter 选项详解"></a>Front-matter 选项详解</h3><p><code>Front-matter</code> 选项中的所有内容均为<strong>非必填</strong>的。但我仍然建议至少填写 <code>title</code> 和 <code>date</code> 的值。</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">配置选项</th>
+<th style="text-align:left">默认值</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">title</td>
+<td style="text-align:left"><code>Markdown</code> 的文件标题</td>
+<td style="text-align:left">文章标题，强烈建议填写此选项</td>
+</tr>
+<tr>
+<td style="text-align:left">date</td>
+<td style="text-align:left">文件创建时的日期时间</td>
+<td style="text-align:left">发布时间，强烈建议填写此选项，且最好保证全局唯一</td>
+</tr>
+<tr>
+<td style="text-align:left">author</td>
+<td style="text-align:left">根 <code>_config.yml</code> 中的 <code>author</code></td>
+<td style="text-align:left">文章作者</td>
+</tr>
+<tr>
+<td style="text-align:left">img</td>
+<td style="text-align:left"><code>featureImages</code> 中的某个值</td>
+<td style="text-align:left">文章特征图，推荐使用图床(腾讯云、七牛云、又拍云等)来做图片的路径.如: <code>http://xxx.com/xxx.jpg</code></td>
+</tr>
+<tr>
+<td style="text-align:left">top</td>
+<td style="text-align:left"><code>true</code></td>
+<td style="text-align:left">推荐文章（文章是否置顶），如果 <code>top</code> 值为 <code>true</code>，则会作为首页推荐文章</td>
+</tr>
+<tr>
+<td style="text-align:left">cover</td>
+<td style="text-align:left"><code>false</code></td>
+<td style="text-align:left"><code>v1.0.2</code>版本新增，表示该文章是否需要加入到首页轮播封面中</td>
+</tr>
+<tr>
+<td style="text-align:left">coverImg</td>
+<td style="text-align:left">无</td>
+<td style="text-align:left"><code>v1.0.2</code>版本新增，表示该文章在首页轮播封面需要显示的图片路径，如果没有，则默认使用文章的特色图片</td>
+</tr>
+<tr>
+<td style="text-align:left">password</td>
+<td style="text-align:left">无</td>
+<td style="text-align:left">文章阅读密码，如果要对文章设置阅读验证密码的话，就可以设置 <code>password</code> 的值，该值必须是用 <code>SHA256</code> 加密后的密码，防止被他人识破。前提是在主题的 <code>config.yml</code> 中激活了 <code>verifyPassword</code> 选项</td>
+</tr>
+<tr>
+<td style="text-align:left">toc</td>
+<td style="text-align:left"><code>true</code></td>
+<td style="text-align:left">是否开启 TOC，可以针对某篇文章单独关闭 TOC 的功能。前提是在主题的 <code>config.yml</code> 中激活了 <code>toc</code> 选项</td>
+</tr>
+<tr>
+<td style="text-align:left">mathjax</td>
+<td style="text-align:left"><code>false</code></td>
+<td style="text-align:left">是否开启数学公式支持 ，本文章是否开启 <code>mathjax</code>，且需要在主题的 <code>_config.yml</code> 文件中也需要开启才行</td>
+</tr>
+<tr>
+<td style="text-align:left">summary</td>
+<td style="text-align:left">无</td>
+<td style="text-align:left">文章摘要，自定义的文章摘要内容，如果这个属性有值，文章卡片摘要就显示这段文字，否则程序会自动截取文章的部分内容作为摘要</td>
+</tr>
+<tr>
+<td style="text-align:left">categories</td>
+<td style="text-align:left">无</td>
+<td style="text-align:left">文章分类，本主题的分类表示宏观上大的分类，只建议一篇文章一个分类</td>
+</tr>
+<tr>
+<td style="text-align:left">tags</td>
+<td style="text-align:left">无</td>
+<td style="text-align:left">文章标签，一篇文章可以多个标签</td>
+</tr>
+</tbody>
+</table>
+</div>
+<blockquote>
+<p><strong>注意</strong>:</p>
+<ol>
+<li>如果 <code>img</code> 属性不填写的话，文章特色图会根据文章标题的 <code>hashcode</code> 的值取余，然后选取主题中对应的特色图片，从而达到让所有文章都的特色图<strong>各有特色</strong>。</li>
+<li><code>date</code> 的值尽量保证每篇文章是唯一的，因为本主题中 <code>Gitalk</code> 和 <code>Gitment</code> 识别 <code>id</code> 是通过 <code>date</code> 的值来作为唯一标识的。</li>
+<li>如果要对文章设置阅读验证密码的功能，不仅要在 Front-matter 中设置采用了 SHA256 加密的 password 的值，还需要在主题的 <code>_config.yml</code> 中激活了配置。有些在线的 SHA256 加密的地址，可供你使用：<a href="http://tool.oschina.net/encrypt?type=2" target="_blank" rel="noopener">开源中国在线工具</a>、<a href="http://encode.chahuo.com/" target="_blank" rel="noopener">chahuo</a>、<a href="http://tool.chinaz.com/tools/hash.aspx" target="_blank" rel="noopener">站长工具</a>。</li>
+</ol>
+</blockquote>
+<h3 id="最全实例"><a href="#最全实例" class="headerlink" title="最全实例"></a>最全实例</h3><pre class="line-numbers language-lang-markdown"><code class="language-lang-markdown">---
+title: typora
+date: 2020-01-01 00:00:00
+author: A
+img: /source/images/xxx.jpg
+top: true
+cover: true
+coverImg: /images/1.jpg
+password: 8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92
+toc: false
+mathjax: true
+summary: 这是你自定义的文章摘要内容，如果这个属性有值，文章卡片摘要就显示这段文字，否则程序会自动截取文章的部分内容作为摘要
+categories: Markdown
+tags:
+  - Typora
+  - Markdown
+---
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>常用模板</p>
+<pre class="line-numbers language-lang-markdown"><code class="language-lang-markdown">---
+title: typora
+date: 2020-01-01 00:00:00
+author: A
+top: false
+cover: true
+password: 8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92
+toc: false
+mathjax: true
+summary: 这是你自定义的文章摘要内容，如果这个属性有值，文章卡片摘要就显示这段文字，否则程序会自动截取文章的部分内容作为摘要
+categories: Markdown
+tags:
+  - Typora
+  - Markdown
+---
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+]]></content>
+      <categories>
+        <category>Markdown</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Linux命令学习</title>
     <url>/2020/04/17/linux-command/</url>
     <content><![CDATA[<p>2020年春大二下学期，我们开设了操作系统课程，开始接触Linux，用这篇文章记录学习到的命令。  </p>
@@ -1014,8 +1322,88 @@ ls fileName -l
       </tags>
   </entry>
   <entry>
+    <title>软件工程概论第一章笔记</title>
+    <url>/2020/05/14/software-engineering-1/</url>
+    <content><![CDATA[<blockquote>
+<p>教材：软件工程——原理、方法与应用（第3版）</p>
+</blockquote>
+<h2 id="第1章-绪论"><a href="#第1章-绪论" class="headerlink" title="第1章 绪论"></a>第1章 绪论</h2><h3 id="1-1-软件和软件危机"><a href="#1-1-软件和软件危机" class="headerlink" title="1.1 软件和软件危机"></a>1.1 软件和软件危机</h3><h4 id="1-1-1-软件的定义"><a href="#1-1-1-软件的定义" class="headerlink" title="1.1.1 软件的定义"></a>1.1.1 软件的定义</h4><p><strong>软件</strong>是能够完成预定功能和性能的可执行的计算机程序和使程序正常执行所需要的数据，加上描述程序的操作和使用的文档</p>
+<p><strong>软件 = 程序 + 数据 + 文档</strong></p>
+<p><strong>程序</strong>是按事先设计的功能和性能要求执行的指令序列<br><strong>数据</strong>是使程序能正常操纵信息的数据结构<br><strong>文档</strong>是与程序开发，维护和使用有关的图文材料</p>
+<h4 id="1-1-2-软件的特征"><a href="#1-1-2-软件的特征" class="headerlink" title="1.1.2 软件的特征"></a>1.1.2 软件的特征</h4><p>软件是逻辑的而不是物理的，是一种<strong>逻辑实体</strong></p>
+<ol>
+<li><p>软件开发不同于硬件设计</p>
+<p>软件开发的成本很难估计，通常占整个生产成本的大部分</p>
+</li>
+<li><p>软件生产不同于硬件制造</p>
+<p>在它的开发过程中没有明显的制造过程</p>
+</li>
+<li><p>软件维护不同于软件维修</p>
+<p>软件没有硬件那样的机械磨损，老化问题，但在使用过程中的维护却比硬件复杂的多。如果软件内部的逻辑关系比较复杂或规模比较大，在维护过程中很可能产生新的错误</p>
+</li>
+</ol>
+<h4 id="1-1-3-软件危机"><a href="#1-1-3-软件危机" class="headerlink" title="1.1.3 软件危机"></a>1.1.3 软件危机</h4><p>定义：在软件开发和维护过程中所存在一系列严重问题（开发费用超出预算、完成时间拖期、软件可靠性往往随着规模的增长而下降，质量差）</p>
+<p>原因（从<strong>维护</strong>和<strong>生产</strong>两个方面）</p>
+<ol>
+<li><p>软件维护费用急剧上升，直接威胁计算机应用的扩大</p>
+<p>纠错性维护、完善性性维护、适应性维护</p>
+</li>
+<li><p>软件生产技术进步缓慢，是加剧软件危机的重要原因</p>
+</li>
+</ol>
+<h3 id="1-2-软件工程学范畴"><a href="#1-2-软件工程学范畴" class="headerlink" title="1.2 软件工程学范畴"></a>1.2 软件工程学范畴</h3><p>宗旨：摆脱软件危机，谋求解决这一危机的方法。<br>中心思想：把软件当作一种工业产品，用工程的方法进行开发</p>
+<h4 id="1-2-1-软件开发方法学"><a href="#1-2-1-软件开发方法学" class="headerlink" title="1.2.1 软件开发方法学"></a>1.2.1 软件开发方法学</h4><ul>
+<li><p>早期的程序设计</p>
+<p>   追求程序设计技巧和效率，程序员各行其是，无统一标准</p>
+</li>
+<li><p>结构化程序设计</p>
+<p>   三种基本程序结构，自顶向下、逐步细化的开发方法，形成“结构化分析”、“结构化设计”传统方法</p>
+</li>
+<li><p>面向对象的程序设计</p>
+<p>   引入对象、类、继承等概念，形成构件，达到软件复用的目的</p>
+</li>
+</ul>
+<h4 id="1-2-2-软件工具"><a href="#1-2-2-软件工具" class="headerlink" title="1.2.2 软件工具"></a>1.2.2 软件工具</h4><p>帮助开发和维护软件的软件</p>
+<p>编译程序、编辑程序、连接程序以及支持他们的计算机操作系统，都属于软件工具</p>
+<p>另外还有：分析工具、设计工具、测试工具、维护工具</p>
+<h4 id="1-2-3-软件工程环境"><a href="#1-2-3-软件工程环境" class="headerlink" title="1.2.3 软件工程环境"></a>1.2.3 软件工程环境</h4><p>方法与工具相结合，再加上配套的软、硬件支持就形成环境。</p>
+<h4 id="1-2-4-软件工程管理"><a href="#1-2-4-软件工程管理" class="headerlink" title="1.2.4 软件工程管理"></a>1.2.4 软件工程管理</h4><p>软件工程管理的目的，是为了按照进度及预算完成软件开发计划，实现预期的经济和社会效益。它包括成本估算<br>进度安排、人员组织和质量保证等多方面的内容，还涉及管理学、度量学和经济学等多个学科方面的知识。</p>
+<p>一个理想的软件工程环境，应该同时具备支持开发和支持管理两个方面的工具。</p>
+<h3 id="1-3-软件工程的发展"><a href="#1-3-软件工程的发展" class="headerlink" title="1.3 软件工程的发展"></a>1.3 软件工程的发展</h3><h4 id="1-3-1-3种编程范型"><a href="#1-3-1-3种编程范型" class="headerlink" title="1.3.1 3种编程范型"></a>1.3.1 3种编程范型</h4><ol>
+<li><p>过程式编程范型</p>
+<p>程序 = 数据结构 + 算法</p>
+</li>
+<li><p>面向对象编程范型</p>
+<p>程序 = 对象 + 消息</p>
+</li>
+<li><p>基于构件技术的编程范型</p>
+<p>构件：标准化的对象类。</p>
+</li>
+</ol>
+<h4 id="1-3-2-3代软件工程"><a href="#1-3-2-3代软件工程" class="headerlink" title="1.3.2 3代软件工程"></a>1.3.2 3代软件工程</h4><p>软件工程的分代</p>
+<ol>
+<li><p>传统的软件工程</p>
+<p>以结构化的程序设计为基础</p>
+</li>
+<li><p>面向对象的软件工程</p>
+<p>以面向对象的程序设计为基础</p>
+</li>
+<li><p>基于构件的软件工程</p>
+<p>以软件复用为目标、领域工程为基础</p>
+</li>
+</ol>
+<h3 id="1-4-软件工程的应用"><a href="#1-4-软件工程的应用" class="headerlink" title="1.4 软件工程的应用"></a>1.4 软件工程的应用</h3><p>略</p>
+]]></content>
+      <categories>
+        <category>软件工程概论</category>
+      </categories>
+      <tags>
+        <tag>软件工程概论</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Github+Hexo搭建博客</title>
-    <url>/2020/04/15/bloghexo/</url>
+    <url>/2020/04/15/blog-hexo/</url>
     <content><![CDATA[<p>在家闲来无事（其实是一直在家憋得慌）就搭了这个博客，太麻烦了，这么多配置的坑一个一个填，现在还没把小图标不显示的问题解决</p>
 <p>2020.2.15 23:32</p>
 <p>解决了小图标的问题，小图标的问题是icon图标名称前的 <code>fa fa-xxx</code> 前缀的原因，我之前以为fa是多余的就都给删了，重新下载了一次 NexT 主题，默认的东西都没动，图标名称也没动。现在我也是在尝试着一点一点完善这个博客，感觉挺好玩的。</p>
@@ -1216,225 +1604,6 @@ local_search:
 <hr>
 <p>如果有什么建议或者文章有需要修改的地方欢迎指出 😁</p>
 ]]></content>
-      <tags>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>软件工程概论第一章笔记</title>
-    <url>/2020/05/14/software-engineering1/</url>
-    <content><![CDATA[<blockquote>
-<p>教材：软件工程——原理、方法与应用（第3版）</p>
-</blockquote>
-<h2 id="第1章-绪论"><a href="#第1章-绪论" class="headerlink" title="第1章 绪论"></a>第1章 绪论</h2><h3 id="1-1-软件和软件危机"><a href="#1-1-软件和软件危机" class="headerlink" title="1.1 软件和软件危机"></a>1.1 软件和软件危机</h3><h4 id="1-1-1-软件的定义"><a href="#1-1-1-软件的定义" class="headerlink" title="1.1.1 软件的定义"></a>1.1.1 软件的定义</h4><p><strong>软件</strong>是能够完成预定功能和性能的可执行的计算机程序和使程序正常执行所需要的数据，加上描述程序的操作和使用的文档</p>
-<p><strong>软件 = 程序 + 数据 + 文档</strong></p>
-<p><strong>程序</strong>是按事先设计的功能和性能要求执行的指令序列<br><strong>数据</strong>是使程序能正常操纵信息的数据结构<br><strong>文档</strong>是与程序开发，维护和使用有关的图文材料</p>
-<h4 id="1-1-2-软件的特征"><a href="#1-1-2-软件的特征" class="headerlink" title="1.1.2 软件的特征"></a>1.1.2 软件的特征</h4><p>软件是逻辑的而不是物理的，是一种<strong>逻辑实体</strong></p>
-<ol>
-<li><p>软件开发不同于硬件设计</p>
-<p>软件开发的成本很难估计，通常占整个生产成本的大部分</p>
-</li>
-<li><p>软件生产不同于硬件制造</p>
-<p>在它的开发过程中没有明显的制造过程</p>
-</li>
-<li><p>软件维护不同于软件维修</p>
-<p>软件没有硬件那样的机械磨损，老化问题，但在使用过程中的维护却比硬件复杂的多。如果软件内部的逻辑关系比较复杂或规模比较大，在维护过程中很可能产生新的错误</p>
-</li>
-</ol>
-<h4 id="1-1-3-软件危机"><a href="#1-1-3-软件危机" class="headerlink" title="1.1.3 软件危机"></a>1.1.3 软件危机</h4><p>定义：在软件开发和维护过程中所存在一系列严重问题（开发费用超出预算、完成时间拖期、软件可靠性往往随着规模的增长而下降，质量差）</p>
-<p>原因（从<strong>维护</strong>和<strong>生产</strong>两个方面）</p>
-<ol>
-<li><p>软件维护费用急剧上升，直接威胁计算机应用的扩大</p>
-<p>纠错性维护、完善性性维护、适应性维护</p>
-</li>
-<li><p>软件生产技术进步缓慢，是加剧软件危机的重要原因</p>
-</li>
-</ol>
-<h3 id="1-2-软件工程学范畴"><a href="#1-2-软件工程学范畴" class="headerlink" title="1.2 软件工程学范畴"></a>1.2 软件工程学范畴</h3><p>宗旨：摆脱软件危机，谋求解决这一危机的方法。<br>中心思想：把软件当作一种工业产品，用工程的方法进行开发</p>
-<h4 id="1-2-1-软件开发方法学"><a href="#1-2-1-软件开发方法学" class="headerlink" title="1.2.1 软件开发方法学"></a>1.2.1 软件开发方法学</h4><ul>
-<li><p>早期的程序设计</p>
-<p>   追求程序设计技巧和效率，程序员各行其是，无统一标准</p>
-</li>
-<li><p>结构化程序设计</p>
-<p>   三种基本程序结构，自顶向下、逐步细化的开发方法，形成“结构化分析”、“结构化设计”传统方法</p>
-</li>
-<li><p>面向对象的程序设计</p>
-<p>   引入对象、类、继承等概念，形成构件，达到软件复用的目的</p>
-</li>
-</ul>
-<h4 id="1-2-2-软件工具"><a href="#1-2-2-软件工具" class="headerlink" title="1.2.2 软件工具"></a>1.2.2 软件工具</h4><p>帮助开发和维护软件的软件</p>
-<p>编译程序、编辑程序、连接程序以及支持他们的计算机操作系统，都属于软件工具</p>
-<p>另外还有：分析工具、设计工具、测试工具、维护工具</p>
-<h4 id="1-2-3-软件工程环境"><a href="#1-2-3-软件工程环境" class="headerlink" title="1.2.3 软件工程环境"></a>1.2.3 软件工程环境</h4><p>方法与工具相结合，再加上配套的软、硬件支持就形成环境。</p>
-<h4 id="1-2-4-软件工程管理"><a href="#1-2-4-软件工程管理" class="headerlink" title="1.2.4 软件工程管理"></a>1.2.4 软件工程管理</h4><p>软件工程管理的目的，是为了按照进度及预算完成软件开发计划，实现预期的经济和社会效益。它包括成本估算<br>进度安排、人员组织和质量保证等多方面的内容，还涉及管理学、度量学和经济学等多个学科方面的知识。</p>
-<p>一个理想的软件工程环境，应该同时具备支持开发和支持管理两个方面的工具。</p>
-<h3 id="1-3-软件工程的发展"><a href="#1-3-软件工程的发展" class="headerlink" title="1.3 软件工程的发展"></a>1.3 软件工程的发展</h3><h4 id="1-3-1-3种编程范型"><a href="#1-3-1-3种编程范型" class="headerlink" title="1.3.1 3种编程范型"></a>1.3.1 3种编程范型</h4><ol>
-<li><p>过程式编程范型</p>
-<p>程序 = 数据结构 + 算法</p>
-</li>
-<li><p>面向对象编程范型</p>
-<p>程序 = 对象 + 消息</p>
-</li>
-<li><p>基于构件技术的编程范型</p>
-<p>构件：标准化的对象类。</p>
-</li>
-</ol>
-<h4 id="1-3-2-3代软件工程"><a href="#1-3-2-3代软件工程" class="headerlink" title="1.3.2 3代软件工程"></a>1.3.2 3代软件工程</h4><p>软件工程的分代</p>
-<ol>
-<li><p>传统的软件工程</p>
-<p>以结构化的程序设计为基础</p>
-</li>
-<li><p>面向对象的软件工程</p>
-<p>以面向对象的程序设计为基础</p>
-</li>
-<li><p>基于构件的软件工程</p>
-<p>以软件复用为目标、领域工程为基础</p>
-</li>
-</ol>
-<h3 id="1-4-软件工程的应用"><a href="#1-4-软件工程的应用" class="headerlink" title="1.4 软件工程的应用"></a>1.4 软件工程的应用</h3><p>略</p>
-]]></content>
-      <categories>
-        <category>软件工程概论</category>
-      </categories>
-      <tags>
-        <tag>软件工程概论</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>测试</title>
-    <url>/2020/05/29/test/</url>
-    <content><![CDATA[<p>测试</p>
-<pre class="line-numbers language-lang-python"><code class="language-lang-python">print('Hello World!')
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<blockquote>
-<p><a href="https://blinkfox.github.io/2018/09/28/qian-duan/hexo-bo-ke-zhu-ti-zhi-hexo-theme-matery-de-jie-shao/" target="_blank" rel="noopener">https://blinkfox.github.io/2018/09/28/qian-duan/hexo-bo-ke-zhu-ti-zhi-hexo-theme-matery-de-jie-shao/</a></p>
-</blockquote>
-<h2 id="文章-Front-matter-介绍"><a href="#文章-Front-matter-介绍" class="headerlink" title="文章 Front-matter 介绍"></a>文章 Front-matter 介绍</h2><h3 id="Front-matter-选项详解"><a href="#Front-matter-选项详解" class="headerlink" title="Front-matter 选项详解"></a>Front-matter 选项详解</h3><p><code>Front-matter</code> 选项中的所有内容均为<strong>非必填</strong>的。但我仍然建议至少填写 <code>title</code> 和 <code>date</code> 的值。</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:left">配置选项</th>
-<th style="text-align:left">默认值</th>
-<th style="text-align:left">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">title</td>
-<td style="text-align:left"><code>Markdown</code> 的文件标题</td>
-<td style="text-align:left">文章标题，强烈建议填写此选项</td>
-</tr>
-<tr>
-<td style="text-align:left">date</td>
-<td style="text-align:left">文件创建时的日期时间</td>
-<td style="text-align:left">发布时间，强烈建议填写此选项，且最好保证全局唯一</td>
-</tr>
-<tr>
-<td style="text-align:left">author</td>
-<td style="text-align:left">根 <code>_config.yml</code> 中的 <code>author</code></td>
-<td style="text-align:left">文章作者</td>
-</tr>
-<tr>
-<td style="text-align:left">img</td>
-<td style="text-align:left"><code>featureImages</code> 中的某个值</td>
-<td style="text-align:left">文章特征图，推荐使用图床(腾讯云、七牛云、又拍云等)来做图片的路径.如: <code>http://xxx.com/xxx.jpg</code></td>
-</tr>
-<tr>
-<td style="text-align:left">top</td>
-<td style="text-align:left"><code>true</code></td>
-<td style="text-align:left">推荐文章（文章是否置顶），如果 <code>top</code> 值为 <code>true</code>，则会作为首页推荐文章</td>
-</tr>
-<tr>
-<td style="text-align:left">cover</td>
-<td style="text-align:left"><code>false</code></td>
-<td style="text-align:left"><code>v1.0.2</code>版本新增，表示该文章是否需要加入到首页轮播封面中</td>
-</tr>
-<tr>
-<td style="text-align:left">coverImg</td>
-<td style="text-align:left">无</td>
-<td style="text-align:left"><code>v1.0.2</code>版本新增，表示该文章在首页轮播封面需要显示的图片路径，如果没有，则默认使用文章的特色图片</td>
-</tr>
-<tr>
-<td style="text-align:left">password</td>
-<td style="text-align:left">无</td>
-<td style="text-align:left">文章阅读密码，如果要对文章设置阅读验证密码的话，就可以设置 <code>password</code> 的值，该值必须是用 <code>SHA256</code> 加密后的密码，防止被他人识破。前提是在主题的 <code>config.yml</code> 中激活了 <code>verifyPassword</code> 选项</td>
-</tr>
-<tr>
-<td style="text-align:left">toc</td>
-<td style="text-align:left"><code>true</code></td>
-<td style="text-align:left">是否开启 TOC，可以针对某篇文章单独关闭 TOC 的功能。前提是在主题的 <code>config.yml</code> 中激活了 <code>toc</code> 选项</td>
-</tr>
-<tr>
-<td style="text-align:left">mathjax</td>
-<td style="text-align:left"><code>false</code></td>
-<td style="text-align:left">是否开启数学公式支持 ，本文章是否开启 <code>mathjax</code>，且需要在主题的 <code>_config.yml</code> 文件中也需要开启才行</td>
-</tr>
-<tr>
-<td style="text-align:left">summary</td>
-<td style="text-align:left">无</td>
-<td style="text-align:left">文章摘要，自定义的文章摘要内容，如果这个属性有值，文章卡片摘要就显示这段文字，否则程序会自动截取文章的部分内容作为摘要</td>
-</tr>
-<tr>
-<td style="text-align:left">categories</td>
-<td style="text-align:left">无</td>
-<td style="text-align:left">文章分类，本主题的分类表示宏观上大的分类，只建议一篇文章一个分类</td>
-</tr>
-<tr>
-<td style="text-align:left">tags</td>
-<td style="text-align:left">无</td>
-<td style="text-align:left">文章标签，一篇文章可以多个标签</td>
-</tr>
-</tbody>
-</table>
-</div>
-<blockquote>
-<p><strong>注意</strong>:</p>
-<ol>
-<li>如果 <code>img</code> 属性不填写的话，文章特色图会根据文章标题的 <code>hashcode</code> 的值取余，然后选取主题中对应的特色图片，从而达到让所有文章都的特色图<strong>各有特色</strong>。</li>
-<li><code>date</code> 的值尽量保证每篇文章是唯一的，因为本主题中 <code>Gitalk</code> 和 <code>Gitment</code> 识别 <code>id</code> 是通过 <code>date</code> 的值来作为唯一标识的。</li>
-<li>如果要对文章设置阅读验证密码的功能，不仅要在 Front-matter 中设置采用了 SHA256 加密的 password 的值，还需要在主题的 <code>_config.yml</code> 中激活了配置。有些在线的 SHA256 加密的地址，可供你使用：<a href="http://tool.oschina.net/encrypt?type=2" target="_blank" rel="noopener">开源中国在线工具</a>、<a href="http://encode.chahuo.com/" target="_blank" rel="noopener">chahuo</a>、<a href="http://tool.chinaz.com/tools/hash.aspx" target="_blank" rel="noopener">站长工具</a>。</li>
-</ol>
-</blockquote>
-<h3 id="最全实例"><a href="#最全实例" class="headerlink" title="最全实例"></a>最全实例</h3><pre class="line-numbers language-lang-markdown"><code class="language-lang-markdown">---
-title: typora
-date: 2020-01-01 00:00:00
-author: A
-img: /source/images/xxx.jpg
-top: true
-cover: true
-coverImg: /images/1.jpg
-password: 8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92
-toc: false
-mathjax: true
-summary: 这是你自定义的文章摘要内容，如果这个属性有值，文章卡片摘要就显示这段文字，否则程序会自动截取文章的部分内容作为摘要
-categories: Markdown
-tags:
-  - Typora
-  - Markdown
----
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>常用模板</p>
-<pre class="line-numbers language-lang-markdown"><code class="language-lang-markdown">---
-title: typora
-date: 2020-01-01 00:00:00
-author: A
-top: false
-cover: true
-password: 8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92
-toc: false
-mathjax: true
-summary: 这是你自定义的文章摘要内容，如果这个属性有值，文章卡片摘要就显示这段文字，否则程序会自动截取文章的部分内容作为摘要
-categories: Markdown
-tags:
-  - Typora
-  - Markdown
----
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-]]></content>
-      <categories>
-        <category>Markdown</category>
-      </categories>
       <tags>
         <tag>Hexo</tag>
       </tags>
