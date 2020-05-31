@@ -2129,8 +2129,8 @@ ul.staggered-list li {
   }
 }
 .page-footer {
-  padding: 90px 0px 90px 0px;
-  height: 300px;
+  padding-top: 50px;
+  padding-bottom: 30px;
   color: #3a3a3a;
   background-color: #585858;
 }
