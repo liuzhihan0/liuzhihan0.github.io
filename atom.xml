@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://liuzhihan0.github.io/"/>
-  <updated>2020-06-02T11:44:09.056Z</updated>
+  <updated>2020-06-09T00:00:42.333Z</updated>
   <id>http://liuzhihan0.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>第4章 随机变量的数字特征</title>
+    <link href="http://liuzhihan0.github.io/2020/06/09/probability-theory-4/"/>
+    <id>http://liuzhihan0.github.io/2020/06/09/probability-theory-4/</id>
+    <published>2020-06-08T23:58:18.000Z</published>
+    <updated>2020-06-09T00:00:42.333Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;推荐b站&lt;a href=&quot;https://www.bilibili.com/video/BV1ot411y7mU&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="概率论" scheme="http://liuzhihan0.github.io/categories/%E6%A6%82%E7%8E%87%E8%AE%BA/"/>
+    
+    
+      <category term="概率论" scheme="http://liuzhihan0.github.io/tags/%E6%A6%82%E7%8E%87%E8%AE%BA/"/>
+    
+  </entry>
   
   <entry>
     <title>数据库系统概论第六章</title>
