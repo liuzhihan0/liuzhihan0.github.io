@@ -1,173 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>数据库系统概论第十章</title>
-    <url>/2020/05/30/sql-chapter-10/</url>
-    <content><![CDATA[<h1 id="第十章-数据库恢复技术"><a href="#第十章-数据库恢复技术" class="headerlink" title="第十章 数据库恢复技术"></a>第十章 数据库恢复技术</h1><h2 id="10-1-事物的基本概述"><a href="#10-1-事物的基本概述" class="headerlink" title="10.1 事物的基本概述"></a>10.1 事物的基本概述</h2><h3 id="1-事务"><a href="#1-事务" class="headerlink" title="1. 事务"></a>1. 事务</h3><p>所谓<strong>事务</strong>是用户定义的<strong>一个数据库操作序列</strong>，这些操作<strong>要么全做，要么全不做</strong>，是一个不可分割的工作单位。</p>
-<p>例如，在关系数据库中，一个事务可以是一条SQL语句、一组SQL语句或整个程序。</p>
-<p>事务和程序是两个概念。一般地讲，<strong>一个程序中包含多个事务</strong>。事务和程序是<strong>多对多</strong>的关系。</p>
-<p><strong>定义事务</strong></p>
-<ol>
-<li><p>BEGIN TRANSACTION</p>
-<p>事务的开始</p>
-</li>
-<li><p>COMMIT 表示提交，即提交事务的所有操作</p>
-<p>事务正常结束</p>
-</li>
-<li><p>ROLLBACK 表示回滚</p>
-<p>事务异常终止，系统将事务中对数据库的所有操作全部撤销，回滚到事务开始时的状态。</p>
-</li>
-</ol>
-<h3 id="2-事务的特性（ACID）"><a href="#2-事务的特性（ACID）" class="headerlink" title="2. 事务的特性（ACID）"></a>2. 事务的特性（ACID）</h3><ul>
-<li><p><strong>原子性 A</strong></p>
-<p>事务是数据库的逻辑工作单位，事务中包括的诸操作<strong>要么都做，要么都不做</strong>。</p>
-</li>
-<li><p><strong>一致性 C</strong></p>
-<p>事务执行的结果必须是使数据库从一个<strong>一致性状态</strong>变到<strong>另一个一致性状态</strong>。</p>
-<p>一致性状态：数据库中只包含成功事务提交的结果</p>
-<p>不一致状态：数据库中包含失败事务的结果</p>
-</li>
-<li><p><strong>隔离性 I</strong></p>
-<p><strong>一个事务的执行不能被其他事务干扰</strong>。即一个事务内部的操作及使用的数据对其他并发事务是隔离的，并发执行的各个事务之间不能互相干扰。</p>
-</li>
-<li><p><strong>持续性 D</strong></p>
-<p>持续性也称永久性（Permanence），一个事务一旦提交，它对数据库中数据的改变就应该是永久性的。接下来的其他操作或故障不应该对其执行结果有任何影响。</p>
-</li>
-</ul>
-<p>事务恢复和并发控制的基本单位。</p>
-<p>保证事务ACID特性是事务管理的重要任务。事务ACID特性可能遭到破坏的因素有：</p>
-<ol>
-<li>多个事务并行运行时，不同事物的操作交叉执行</li>
-<li>事务在运行过程中被强行停止</li>
-</ol>
-<h2 id="10-2-数据库恢复概述"><a href="#10-2-数据库恢复概述" class="headerlink" title="10.2 数据库恢复概述"></a>10.2 数据库恢复概述</h2><p>故障是不可避免的（系统故障：计算机软、硬件故障，人为故障：操作员的失误、恶意的破坏等）。</p>
-<p>数据库的恢复：把数据库从错误状态恢复到某一已知的正确状态（亦称为一致状态或完整状态）。</p>
-<p>防止数据库的安全性和完整性被破坏。</p>
-<p>故障的影响</p>
-<ol>
-<li><p>运行事务非正常中断</p>
-</li>
-<li><p>破坏数据库</p>
-</li>
-</ol>
-<p>数据库管理系统应对故障的对策</p>
-<ol>
-<li><p>DBMS提供恢复子系统</p>
-</li>
-<li><p>保证故障发生后，能把数据库中的数据从错误状态恢复到某种逻辑一致的状态</p>
-</li>
-<li><p>保证事务ACID</p>
-</li>
-</ol>
-<p>恢复技术是衡量数据库系统优劣的重要指标</p>
-<h2 id="10-3-故障的种类"><a href="#10-3-故障的种类" class="headerlink" title="10.3 故障的种类"></a>10.3 故障的种类</h2><h3 id="1-事务内部的故障"><a href="#1-事务内部的故障" class="headerlink" title="1. 事务内部的故障"></a>1. 事务内部的故障</h3><p>有的是可以通过事务程序本身发现的，有的是非预期的，无法由事务程序处理。</p>
-<p>事务内部更多的故障是<strong>非预期的</strong>，是不能由应用程序处理的。</p>
-<p>事务故障的恢复：<strong>事务撤销（UNDO）</strong></p>
-<h3 id="2-系统故障"><a href="#2-系统故障" class="headerlink" title="2. 系统故障"></a>2. 系统故障</h3><p>称为<strong>软故障</strong>，是指<strong>造成系统停止运转</strong>的任何事件，使得系统要重新启动。 例如，CPU故障、操作系统故障、DBMS故障、系统断电等，这类故障影响正在运行的所有事务，<strong>但不破坏数据库</strong>。</p>
-<p>发生故障时，事务未提交 —— <strong>强行撤销</strong>（UNDO）所有未完成事务</p>
-<p>发生故障时，事务已提交，但缓冲区中的信息尚未完全写回到磁盘中 —— <strong>重做</strong>（REDO）所有已提交的事务</p>
-<h3 id="3-介质故障"><a href="#3-介质故障" class="headerlink" title="3. 介质故障"></a>3. 介质故障</h3><p>称为<strong>硬故障</strong>，指<strong>外存故障</strong>，如磁盘损坏、磁头碰撞等，这类故障将破坏数据库或部分数据库，并影响正在存取这部分数据的所有事务。这类故障比前两类发生的可能性小得多，但破坏性最大。</p>
-<h3 id="4-计算机病毒"><a href="#4-计算机病毒" class="headerlink" title="4. 计算机病毒"></a>4. 计算机病毒</h3><p>计算机病毒是<strong>一种人为的故障或破坏</strong>，是一些恶作剧者研制的一种计算机程序。可以繁殖和传播，并打造成对计算机系统包括数据库的危害。</p>
-<h2 id="10-4-恢复的实现技术"><a href="#10-4-恢复的实现技术" class="headerlink" title="10.4 恢复的实现技术"></a>10.4 恢复的实现技术</h2><p>恢复操作的基本原理：<strong>冗余</strong></p>
-<p>两个关键问题：</p>
-<ol>
-<li><p>如何建立冗余数据：</p>
-<ul>
-<li><p><strong>数据转储</strong>（backup）</p>
-</li>
-<li><p><strong>登录日志文件</strong>（logging）</p>
-</li>
-</ul>
-</li>
-<li><p>如何利用这些冗余数据实施数据库恢复</p>
-</li>
-</ol>
-<h3 id="10-4-1-数据转储"><a href="#10-4-1-数据转储" class="headerlink" title="10.4.1 数据转储"></a>10.4.1 数据转储</h3><p>数据转储是数据库恢复中采用的基本技术。所谓<strong>转储</strong>是指DBA将整个数据库复制到磁带或另一个磁盘上<strong>保存起来</strong>的过程，备用的数据称为<strong>后备副本</strong>或后援副本。</p>
-<p>重装后备副本只能将数据库恢复到转储时的状态。</p>
-<p>使用：</p>
-<ul>
-<li><p>数据库遭到破坏后可以将后备副本重新装入</p>
-</li>
-<li><p>重装后备副本只能将数据库恢复到转储时的状态</p>
-</li>
-</ul>
-<h4 id="静态转储"><a href="#静态转储" class="headerlink" title="静态转储"></a>静态转储</h4><p>静态转储是在系统中无运行事务时进行的转储操作。即转储开始时数据库处于一致性状态，转储期间不允许对数据库的任何存取、修改活动。静态转储得到的一定是一个数据一致性的副本。</p>
-<p>优点：实现简单</p>
-<p>缺点：降低了数据库的可用性，转储必须等待正运行的用户事务结束才能进行，新的事务必须等转储结束才能执行</p>
-<h4 id="动态转储"><a href="#动态转储" class="headerlink" title="动态转储"></a>动态转储</h4><p>动态转储是指转储期间允许对数据库进行存取或修改。即转储和用户事务可以并发执行。</p>
-<p>优点：不用等待正在运行的用户事务结束，不会影响新事务的运行。</p>
-<p>缺点：不能保证副本中的数据正确有效。</p>
-<p><strong>利用动态转储得到的副本进行故障恢复：</strong></p>
-<ul>
-<li><p>需要把动态转储期间各事务对数据库的修改活动登记下来，建立<strong>日志文件</strong></p>
-</li>
-<li><p><strong>后备副本</strong>加上<strong>日志文件</strong>才能把数据库恢复到某一时刻的正确状态</p>
-</li>
-</ul>
-<h4 id="海量转储"><a href="#海量转储" class="headerlink" title="海量转储"></a>海量转储</h4><p>每次转储全部数据库。</p>
-<h4 id="增量转储"><a href="#增量转储" class="headerlink" title="增量转储"></a>增量转储</h4><p>只转储上次转储后更新过的数据。</p>
-<h4 id="转储策略"><a href="#转储策略" class="headerlink" title="转储策略"></a>转储策略</h4><p>应定期进行数据转储，制作后备副本。</p>
-<p>但转储又是十分耗费时间和资源的，不能频繁进行。</p>
-<p>DBA应该根据数据库使用情况确定适当的转储周期和转储方法。</p>
-<blockquote>
-<p>例：</p>
-<ul>
-<li><p>每天晚上进行动态增量转储</p>
-</li>
-<li><p>每周进行一次动态海量转储</p>
-</li>
-<li><p>每月进行一次静态海量转储</p>
-</li>
-</ul>
-</blockquote>
-<h3 id="10-4-2-登录日志文件"><a href="#10-4-2-登录日志文件" class="headerlink" title="10.4.2 登录日志文件"></a>10.4.2 登录日志文件</h3><h4 id="1-日志文件的格式和内容"><a href="#1-日志文件的格式和内容" class="headerlink" title="1. 日志文件的格式和内容"></a>1. 日志文件的格式和内容</h4><p>日志文件是用来<strong>记录事务对数据库的更新操作</strong>的文件。日志文件主要由两种格式：以记录为单位的日志文件 和 以数据块为单位的日志文件。</p>
-<h5 id="a-以记录为单位"><a href="#a-以记录为单位" class="headerlink" title="a. 以记录为单位"></a>a. 以记录为单位</h5><p>日志文件中<strong>需要登记的内容</strong>包括：</p>
-<ul>
-<li><p>各个事务的开始（BEGIN TRANSACTION）标记。</p>
-</li>
-<li><p>各个事务的结束（COMMIT或ROLLBACK）标记。</p>
-</li>
-<li><p>各个事务的所有更新操作。</p>
-</li>
-</ul>
-<p>这里每个事务的开始标记、每个事务的结束标记和每个更新操作均作为日志文件中的<strong>一个日志记录</strong></p>
-<p><strong>每条日志记录</strong>的内容：</p>
-<ul>
-<li>事务标识（标明是哪个事务） </li>
-<li>操作类型（插入、删除或修改）</li>
-<li>操作对象（记录内部标识）</li>
-<li>更新前数据的旧值（对插入操作而言，此项为空值）</li>
-<li>更新后数据的新值（对删除操作而言, 此项为空值）</li>
-</ul>
-<h5 id="b-以数据块为单位"><a href="#b-以数据块为单位" class="headerlink" title="b. 以数据块为单位"></a>b. 以数据块为单位</h5><p>对于以数据块为单位的日志文件，<strong>每条日志记录的内容</strong>包括：</p>
-<ul>
-<li>事务标识（标明是那个事务）</li>
-<li>被更新的数据块</li>
-</ul>
-<p>由于将更新前的整个块和更新后的整个块都放入日志文件中，操作类型和操作对象等信息就不必放入日志记录中了。</p>
-<h4 id="2-日志文件的作用"><a href="#2-日志文件的作用" class="headerlink" title="2. 日志文件的作用"></a>2. 日志文件的作用</h4><ul>
-<li><p>进行事务故障恢复</p>
-</li>
-<li><p>进行系统故障恢复</p>
-</li>
-<li><p>协助后备副本进行介质故障恢复</p>
-</li>
-</ul>
-<h4 id="3-登记日志文件"><a href="#3-登记日志文件" class="headerlink" title="3. 登记日志文件"></a>3. 登记日志文件</h4><p><strong>为保证数据库是可恢复的</strong>，登录日志文件时，必须遵循<strong>两条原则</strong>：</p>
-<ul>
-<li>登记的次序严格按并行事务执行的时间次序</li>
-<li>必须先写日志文件，后写数据库</li>
-</ul>
-]]></content>
-      <categories>
-        <category>数据库</category>
-      </categories>
-      <tags>
-        <tag>数据库</tag>
-        <tag>SQL</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>数据库系统概论第六章</title>
     <url>/2020/06/02/sql-chapter-6/</url>
     <content><![CDATA[<h1 id="第六章-关系数据理论"><a href="#第六章-关系数据理论" class="headerlink" title="第六章 关系数据理论"></a>第六章 关系数据理论</h1><h2 id="6-1-问题的提出"><a href="#6-1-问题的提出" class="headerlink" title="6.1 问题的提出"></a>6.1 问题的提出</h2><p>在第2章关系数据库中已经讲过，一个关系模式应当是一个五元组。 </p>
@@ -518,6 +351,192 @@ local_search:
       </tags>
   </entry>
   <entry>
+    <title>数据库系统概论第十章</title>
+    <url>/2020/05/30/sql-chapter-10/</url>
+    <content><![CDATA[<h1 id="第十章-数据库恢复技术"><a href="#第十章-数据库恢复技术" class="headerlink" title="第十章 数据库恢复技术"></a>第十章 数据库恢复技术</h1><h2 id="10-1-事物的基本概述"><a href="#10-1-事物的基本概述" class="headerlink" title="10.1 事物的基本概述"></a>10.1 事物的基本概述</h2><h3 id="1-事务"><a href="#1-事务" class="headerlink" title="1. 事务"></a>1. 事务</h3><p>所谓<strong>事务</strong>是用户定义的<strong>一个数据库操作序列</strong>，这些操作<strong>要么全做，要么全不做</strong>，是一个不可分割的工作单位。</p>
+<p>例如，在关系数据库中，一个事务可以是一条SQL语句、一组SQL语句或整个程序。</p>
+<p>事务和程序是两个概念。一般地讲，<strong>一个程序中包含多个事务</strong>。事务和程序是<strong>多对多</strong>的关系。</p>
+<p><strong>定义事务</strong></p>
+<ol>
+<li><p>BEGIN TRANSACTION</p>
+<p>事务的开始</p>
+</li>
+<li><p>COMMIT 表示提交，即提交事务的所有操作</p>
+<p>事务正常结束</p>
+</li>
+<li><p>ROLLBACK 表示回滚</p>
+<p>事务异常终止，系统将事务中对数据库的所有操作全部撤销，回滚到事务开始时的状态。</p>
+</li>
+</ol>
+<h3 id="2-事务的特性（ACID）"><a href="#2-事务的特性（ACID）" class="headerlink" title="2. 事务的特性（ACID）"></a>2. 事务的特性（ACID）</h3><ul>
+<li><p><strong>原子性 A</strong></p>
+<p>事务是数据库的逻辑工作单位，事务中包括的诸操作<strong>要么都做，要么都不做</strong>。</p>
+</li>
+<li><p><strong>一致性 C</strong></p>
+<p>事务执行的结果必须是使数据库从一个<strong>一致性状态</strong>变到<strong>另一个一致性状态</strong>。</p>
+<p>一致性状态：数据库中只包含成功事务提交的结果</p>
+<p>不一致状态：数据库中包含失败事务的结果</p>
+</li>
+<li><p><strong>隔离性 I</strong></p>
+<p><strong>一个事务的执行不能被其他事务干扰</strong>。即一个事务内部的操作及使用的数据对其他并发事务是隔离的，并发执行的各个事务之间不能互相干扰。</p>
+</li>
+<li><p><strong>持续性 D</strong></p>
+<p>持续性也称永久性（Permanence），一个事务一旦提交，它对数据库中数据的改变就应该是永久性的。接下来的其他操作或故障不应该对其执行结果有任何影响。</p>
+</li>
+</ul>
+<p>事务恢复和并发控制的基本单位。</p>
+<p>保证事务ACID特性是事务管理的重要任务。事务ACID特性可能遭到破坏的因素有：</p>
+<ol>
+<li>多个事务并行运行时，不同事物的操作交叉执行</li>
+<li>事务在运行过程中被强行停止</li>
+</ol>
+<h2 id="10-2-数据库恢复概述"><a href="#10-2-数据库恢复概述" class="headerlink" title="10.2 数据库恢复概述"></a>10.2 数据库恢复概述</h2><p>故障是不可避免的（系统故障：计算机软、硬件故障，人为故障：操作员的失误、恶意的破坏等）。</p>
+<p>数据库的恢复：把数据库从错误状态恢复到某一已知的正确状态（亦称为一致状态或完整状态）。</p>
+<p>防止数据库的安全性和完整性被破坏。</p>
+<p>故障的影响</p>
+<ol>
+<li><p>运行事务非正常中断</p>
+</li>
+<li><p>破坏数据库</p>
+</li>
+</ol>
+<p>数据库管理系统应对故障的对策</p>
+<ol>
+<li><p>DBMS提供恢复子系统</p>
+</li>
+<li><p>保证故障发生后，能把数据库中的数据从错误状态恢复到某种逻辑一致的状态</p>
+</li>
+<li><p>保证事务ACID</p>
+</li>
+</ol>
+<p>恢复技术是衡量数据库系统优劣的重要指标</p>
+<h2 id="10-3-故障的种类"><a href="#10-3-故障的种类" class="headerlink" title="10.3 故障的种类"></a>10.3 故障的种类</h2><h3 id="1-事务内部的故障"><a href="#1-事务内部的故障" class="headerlink" title="1. 事务内部的故障"></a>1. 事务内部的故障</h3><p>有的是可以通过事务程序本身发现的，有的是非预期的，无法由事务程序处理。</p>
+<p>事务内部更多的故障是<strong>非预期的</strong>，是不能由应用程序处理的。</p>
+<p>事务故障的恢复：<strong>事务撤销（UNDO）</strong></p>
+<h3 id="2-系统故障"><a href="#2-系统故障" class="headerlink" title="2. 系统故障"></a>2. 系统故障</h3><p>称为<strong>软故障</strong>，是指<strong>造成系统停止运转</strong>的任何事件，使得系统要重新启动。 例如，CPU故障、操作系统故障、DBMS故障、系统断电等，这类故障影响正在运行的所有事务，<strong>但不破坏数据库</strong>。</p>
+<p>发生故障时，事务未提交 —— <strong>强行撤销</strong>（UNDO）所有未完成事务</p>
+<p>发生故障时，事务已提交，但缓冲区中的信息尚未完全写回到磁盘中 —— <strong>重做</strong>（REDO）所有已提交的事务</p>
+<h3 id="3-介质故障"><a href="#3-介质故障" class="headerlink" title="3. 介质故障"></a>3. 介质故障</h3><p>称为<strong>硬故障</strong>，指<strong>外存故障</strong>，如磁盘损坏、磁头碰撞等，这类故障将破坏数据库或部分数据库，并影响正在存取这部分数据的所有事务。这类故障比前两类发生的可能性小得多，但破坏性最大。</p>
+<h3 id="4-计算机病毒"><a href="#4-计算机病毒" class="headerlink" title="4. 计算机病毒"></a>4. 计算机病毒</h3><p>计算机病毒是<strong>一种人为的故障或破坏</strong>，是一些恶作剧者研制的一种计算机程序。可以繁殖和传播，并打造成对计算机系统包括数据库的危害。</p>
+<h2 id="10-4-恢复的实现技术"><a href="#10-4-恢复的实现技术" class="headerlink" title="10.4 恢复的实现技术"></a>10.4 恢复的实现技术</h2><p>恢复操作的基本原理：<strong>冗余</strong></p>
+<p>两个关键问题：</p>
+<ol>
+<li><p>如何建立冗余数据：</p>
+<ul>
+<li><p><strong>数据转储</strong>（backup）</p>
+</li>
+<li><p><strong>登录日志文件</strong>（logging）</p>
+</li>
+</ul>
+</li>
+<li><p>如何利用这些冗余数据实施数据库恢复</p>
+</li>
+</ol>
+<h3 id="10-4-1-数据转储"><a href="#10-4-1-数据转储" class="headerlink" title="10.4.1 数据转储"></a>10.4.1 数据转储</h3><p>数据转储是数据库恢复中采用的基本技术。所谓<strong>转储</strong>是指DBA将整个数据库复制到磁带或另一个磁盘上<strong>保存起来</strong>的过程，备用的数据称为<strong>后备副本</strong>或后援副本。</p>
+<p>重装后备副本只能将数据库恢复到转储时的状态。</p>
+<p>使用：</p>
+<ul>
+<li><p>数据库遭到破坏后可以将后备副本重新装入</p>
+</li>
+<li><p>重装后备副本只能将数据库恢复到转储时的状态</p>
+</li>
+</ul>
+<h4 id="静态转储"><a href="#静态转储" class="headerlink" title="静态转储"></a>静态转储</h4><p>静态转储是在系统中无运行事务时进行的转储操作。即转储开始时数据库处于一致性状态，转储期间不允许对数据库的任何存取、修改活动。静态转储得到的一定是一个数据一致性的副本。</p>
+<p>优点：实现简单</p>
+<p>缺点：降低了数据库的可用性，转储必须等待正运行的用户事务结束才能进行，新的事务必须等转储结束才能执行</p>
+<h4 id="动态转储"><a href="#动态转储" class="headerlink" title="动态转储"></a>动态转储</h4><p>动态转储是指转储期间允许对数据库进行存取或修改。即转储和用户事务可以并发执行。</p>
+<p>优点：不用等待正在运行的用户事务结束，不会影响新事务的运行。</p>
+<p>缺点：不能保证副本中的数据正确有效。</p>
+<p><strong>利用动态转储得到的副本进行故障恢复：</strong></p>
+<ul>
+<li><p>需要把动态转储期间各事务对数据库的修改活动登记下来，建立<strong>日志文件</strong></p>
+</li>
+<li><p><strong>后备副本</strong>加上<strong>日志文件</strong>才能把数据库恢复到某一时刻的正确状态</p>
+</li>
+</ul>
+<h4 id="海量转储"><a href="#海量转储" class="headerlink" title="海量转储"></a>海量转储</h4><p>每次转储全部数据库。</p>
+<h4 id="增量转储"><a href="#增量转储" class="headerlink" title="增量转储"></a>增量转储</h4><p>只转储上次转储后更新过的数据。</p>
+<h4 id="转储策略"><a href="#转储策略" class="headerlink" title="转储策略"></a>转储策略</h4><p>应定期进行数据转储，制作后备副本。</p>
+<p>但转储又是十分耗费时间和资源的，不能频繁进行。</p>
+<p>DBA应该根据数据库使用情况确定适当的转储周期和转储方法。</p>
+<blockquote>
+<p>例：</p>
+<ul>
+<li><p>每天晚上进行动态增量转储</p>
+</li>
+<li><p>每周进行一次动态海量转储</p>
+</li>
+<li><p>每月进行一次静态海量转储</p>
+</li>
+</ul>
+</blockquote>
+<h3 id="10-4-2-登录日志文件"><a href="#10-4-2-登录日志文件" class="headerlink" title="10.4.2 登录日志文件"></a>10.4.2 登录日志文件</h3><h4 id="1-日志文件的格式和内容"><a href="#1-日志文件的格式和内容" class="headerlink" title="1. 日志文件的格式和内容"></a>1. 日志文件的格式和内容</h4><p>日志文件是用来<strong>记录事务对数据库的更新操作</strong>的文件。日志文件主要由两种格式：以记录为单位的日志文件 和 以数据块为单位的日志文件。</p>
+<h5 id="a-以记录为单位"><a href="#a-以记录为单位" class="headerlink" title="a. 以记录为单位"></a>a. 以记录为单位</h5><p>日志文件中<strong>需要登记的内容</strong>包括：</p>
+<ul>
+<li><p>各个事务的开始（BEGIN TRANSACTION）标记。</p>
+</li>
+<li><p>各个事务的结束（COMMIT或ROLLBACK）标记。</p>
+</li>
+<li><p>各个事务的所有更新操作。</p>
+</li>
+</ul>
+<p>这里每个事务的开始标记、每个事务的结束标记和每个更新操作均作为日志文件中的<strong>一个日志记录</strong></p>
+<p><strong>每条日志记录</strong>的内容：</p>
+<ul>
+<li>事务标识（标明是哪个事务） </li>
+<li>操作类型（插入、删除或修改）</li>
+<li>操作对象（记录内部标识）</li>
+<li>更新前数据的旧值（对插入操作而言，此项为空值）</li>
+<li>更新后数据的新值（对删除操作而言, 此项为空值）</li>
+</ul>
+<h5 id="b-以数据块为单位"><a href="#b-以数据块为单位" class="headerlink" title="b. 以数据块为单位"></a>b. 以数据块为单位</h5><p>对于以数据块为单位的日志文件，<strong>每条日志记录的内容</strong>包括：</p>
+<ul>
+<li>事务标识（标明是那个事务）</li>
+<li>被更新的数据块</li>
+</ul>
+<p>由于将更新前的整个块和更新后的整个块都放入日志文件中，操作类型和操作对象等信息就不必放入日志记录中了。</p>
+<h4 id="2-日志文件的作用"><a href="#2-日志文件的作用" class="headerlink" title="2. 日志文件的作用"></a>2. 日志文件的作用</h4><ul>
+<li><p>进行事务故障恢复</p>
+</li>
+<li><p>进行系统故障恢复</p>
+</li>
+<li><p>协助后备副本进行介质故障恢复</p>
+</li>
+</ul>
+<h4 id="3-登记日志文件"><a href="#3-登记日志文件" class="headerlink" title="3. 登记日志文件"></a>3. 登记日志文件</h4><p><strong>为保证数据库是可恢复的</strong>，登录日志文件时，必须遵循<strong>两条原则</strong>：</p>
+<ul>
+<li>登记的次序严格按并行事务执行的时间次序</li>
+<li>必须先写日志文件，后写数据库</li>
+</ul>
+]]></content>
+      <categories>
+        <category>数据库</category>
+      </categories>
+      <tags>
+        <tag>数据库</tag>
+        <tag>SQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2020/04/14/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<p>Quick Start</p>
+<h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class="line-numbers language-lang-bash"><code class="language-lang-bash">$ hexo new "My New Post"
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class="line-numbers language-lang-bash"><code class="language-lang-bash">$ hexo server
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class="line-numbers language-lang-bash"><code class="language-lang-bash">$ hexo generate
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class="line-numbers language-lang-bash"><code class="language-lang-bash">$ hexo deploy
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>Linux命令学习</title>
     <url>/2020/04/17/linux-command/</url>
     <content><![CDATA[<p>2020年春大二下学期，我们开设了操作系统课程，开始接触Linux，用这篇文章记录学习到的命令。  </p>
@@ -548,25 +567,6 @@ ls fileName -l
       <tags>
         <tag>Linux</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2020/04/14/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<p>Quick Start</p>
-<h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class="line-numbers language-lang-bash"><code class="language-lang-bash">$ hexo new "My New Post"
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class="line-numbers language-lang-bash"><code class="language-lang-bash">$ hexo server
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class="line-numbers language-lang-bash"><code class="language-lang-bash">$ hexo generate
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class="line-numbers language-lang-bash"><code class="language-lang-bash">$ hexo deploy
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-]]></content>
   </entry>
   <entry>
     <title>第4章 随机变量的数字特征</title>
